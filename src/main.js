@@ -12,10 +12,13 @@ import {
   VBtn,
   VIcon,
   VGrid,
+  VMenu,
   VToolbar,
   transitions
 } from 'vuetify';
 import '../node_modules/vuetify/src/stylus/app.styl';
+
+import store from './store';
 
 Vue.use(Vuetify, {
   components: {
@@ -26,6 +29,7 @@ Vue.use(Vuetify, {
     VBtn,
     VIcon,
     VGrid,
+    VMenu,
     VToolbar,
     transitions
   },
@@ -46,6 +50,7 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 });
