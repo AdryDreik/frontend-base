@@ -9,7 +9,7 @@ module.exports = {
 
     // Paths
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/', // AQUÍ DEFINIMOS EL PATH DEL SISTEMA
     proxyTable: {},
 
     // Various Dev Server settings
@@ -50,7 +50,8 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: '/', // AQUÍ DEFINIMOS EL PATH DEL SISTEMA
+    portServer: 3100, // Puerto del servidor para el archivo server.js
 
     /**
      * Source Maps

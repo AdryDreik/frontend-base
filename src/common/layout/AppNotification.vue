@@ -2,7 +2,7 @@
   <v-navigation-drawer
     temporary
     :right="right"
-    v-model="rightDrawer"
+    v-model="$store.state.layout.rightDrawer"
     fixed
     app
   >
@@ -20,8 +20,7 @@
 <script>
 export default {
   data: () => ({
-    right: true,
-    rightDrawer: false
+    right: true
   })
 };
 </script>

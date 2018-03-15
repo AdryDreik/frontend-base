@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
     persistent
-    :mini-variant="miniVariant"
+    :mini-variant="$store.state.layout.miniVariant"
     :clipped="clipped"
     v-model="drawer"
     enable-resize-watcher
@@ -37,7 +37,6 @@ export default {
     drawer: true,
     title: 'Base frontend',
     clipped: false,
-    miniVariant: false,
     items: [
       {
         icon: 'home',
@@ -102,5 +101,6 @@ $bgSidenav: darken($primary, 5%);
       }
     }
   }
+
 }
 </style>

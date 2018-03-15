@@ -5,42 +5,82 @@
     height="70"
     class="app-navbar white"
   >
-    <v-toolbar-side-icon @click.stop="miniVariant = !miniVariant"></v-toolbar-side-icon>
+    <v-toolbar-side-icon @click.stop="$store.commit('layout/toggleMiniVariant')"></v-toolbar-side-icon>
     <v-spacer></v-spacer>
-    <v-menu :nudge-width="100" class="menu-user">
-      <v-toolbar-title slot="activator">
-        <span>Administrador</span>
-        <v-icon>account_circle</v-icon>
-      </v-toolbar-title>
-      <v-list>
-        <v-list-tile @click="">
-          <v-list-tile-title>
-            <v-icon>account_circle</v-icon> Mi cuenta
-          </v-list-tile-title>
-        </v-list-tile>
-        <v-list-tile @click="">
-          <v-list-tile-title>
-            <v-icon>&#xE8AC;</v-icon> Cerrar sesión
-          </v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-menu>
-    <v-btn icon @click.stop="">
-      <v-icon>fullscreen</v-icon>
-    </v-btn>
-    <v-btn icon @click.stop="rightDrawer = !rightDrawer">
+    <app-lang></app-lang>
+    <v-tooltip bottom>
+      <v-btn icon @click="fullscreen()" class="btn-fullscreen" slot="activator">
+        <v-icon>fullscreen</v-icon>
+        <v-icon>fullscreen_exit</v-icon>
+      </v-btn>
+      <span>Pantalla completa</span>
+    </v-tooltip>
+    <v-btn icon @click.stop="$store.commit('layout/toggleRightDrawer')">
       <v-icon>notifications</v-icon>
     </v-btn>
+    <v-menu
+      offset-x
+      :close-on-content-click="false"
+      max-width="320"
+    >
+      <v-toolbar-title slot="activator">
+        <v-avatar class="info">
+          <span class="white--text headline">A</span>
+        </v-avatar>
+      </v-toolbar-title>
+      <v-card>
+        <v-container grid-list-md class="menu-person">
+          <v-layout row wrap>
+            <v-flex xs3 text-md-center>
+              <v-avatar
+                class="info"
+                size="64"
+              >
+                <span class="white--text headline">A</span>
+              </v-avatar>
+            </v-flex>
+            <v-flex xs9>
+              <h3>Usuario Administrador</h3>
+              <v-icon>mail</v-icon> admin@mail.com <br>
+              <v-icon>person_pin</v-icon> Administrador del sistema <br>
+              <v-icon>location_city</v-icon> Agencia de Gobierno Electrónico y etc asdfasdf asdf afda s.
+            </v-flex>
+          </v-layout>
+        </v-container>
+        <v-divider></v-divider>
+        <v-list>
+          <v-list-tile @click="$router.push('account')">
+            <v-list-tile-title>
+              <v-icon>account_circle</v-icon> {{$t('app.account') }}
+            </v-list-tile-title>
+          </v-list-tile>
+          <v-list-tile @click="logout()">
+            <v-list-tile-title>
+              <v-icon>&#xE8AC;</v-icon> {{$t('app.logOut') }}
+            </v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-card>
+    </v-menu>
   </v-toolbar>
 </template>
 
 <script>
+import Auth from '@/components/admin/auth/mixins/auth';
+import AppLang from './AppLang';
+
 export default {
+  mixins: [ Auth ],
   data: () => ({
-    clipped: false,
-    miniVariant: false,
-    rightDrawer: false
-  })
+    clipped: false
+  }),
+  methods: {
+    fullscreen () {
+      document.querySelector('body').classList.toggle('fullscreen');
+      this.$util.fullscreen();
+    }
+  },
+  components: { AppLang }
 };
 </script>
 
@@ -67,6 +107,45 @@ export default {
     .icon {
       font-size: 40px;
     }
+  }
+
+}
+
+.btn-fullscreen {
+  .icon:last-child {
+    display: none;
+  }
+}
+
+body.fullscreen {
+  .btn-fullscreen {
+    .icon:first-child {
+      display: none;
+    }
+    .icon:last-child {
+      display: inline-block;
+    }
+  }
+}
+
+.menu-person {
+  color: lighten($warning, 10%);
+  font-size: 1rem;
+  padding: 10px 15px;
+  background-color: darken($primary, 5%);
+  background-image: url(../../assets/images/bg.png);
+  background-position: center;
+  background-size: cover;
+
+  h3 {
+    font-size: 1.3rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .icon {
+    color: white;
+    font-size: 1.1rem;
   }
 }
 </style>
