@@ -69,7 +69,7 @@ export default new Vuex.Store({
       state.user = {};
       state.permissions = {};
       state.rol = '';
-      state.breadcrumbs = {};
+      state.layout.breadcrumbs = {};
       state.modal = false;
       state.modal2 = false;
       state.modal3 = false;

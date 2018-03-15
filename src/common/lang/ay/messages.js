@@ -7,7 +7,7 @@ export default {
   validate,
   menu,
   app: {
-    title: 'Apostilla',
+    title: 'Base frontend',
     account: `Atamiri sart'awixa`,
     settings: 'Wakichawinaka',
     logOut: `Sart'awi tukuyaña`

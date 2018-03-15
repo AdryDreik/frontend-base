@@ -7,7 +7,7 @@ export default {
   validate,
   menu,
   app: {
-    title: 'Apostilla',
+    title: 'Base frontend',
     account: 'My account',
     settings: 'Settings',
     logOut: 'Logout'

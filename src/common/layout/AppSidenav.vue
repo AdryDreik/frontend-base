@@ -12,30 +12,68 @@
     mini-variant-width="68"
   >
     <div class="app-logo">
-      <h1 class="app-title"><v-icon color="white">whatshot</v-icon><span>{{ title }}</span></h1>
+      <h1 class="app-title"><v-icon color="white">whatshot</v-icon><span>{{ $t('app.title') }}</span></h1>
     </div>
-    <v-list>
-      <v-list-tile
-        value="true"
-        v-for="(item, i) in items"
-        :key="i"
-      >
-        <v-list-tile-action>
-          <v-icon v-html="item.icon"></v-icon>
-        </v-list-tile-action>
-        <v-list-tile-content>
-          <v-list-tile-title v-text="item.title"></v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
+    <v-list dense id="sidenav-menu">
+      <template v-for="(item, i) in menu">
+        <v-list-group v-if="item.submenu" v-model="item.model" no-action>
+          <v-list-tile slot="item" @click="send(item.url, item.submenu)" :data-url="item.url">
+            <v-list-tile-action>
+              <v-icon color="warning">{{ item.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                {{ getLabel(item) }}
+              </v-list-tile-title>
+              <v-icon>{{ item.model ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</v-icon>
+            </v-list-tile-content>
+          </v-list-tile>
+          <v-list-tile v-for="(child, i) in item.submenu" :key="i" @click="send(child.url)" :data-url="child.url">
+            <v-list-tile-action v-if="child.icon">
+              <v-icon>{{ child.icon }}</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>
+                {{ getLabel(child) }}
+              </v-list-tile-title>
+            </v-list-tile-content>
+          </v-list-tile>
+        </v-list-group>
+        <v-list-tile v-else @click="send(item.url, item.submenu)" :data-url="item.url">
+          <v-list-tile-action>
+            <v-icon color="warning">{{ item.icon }}</v-icon>
+          </v-list-tile-action>
+          <v-list-tile-content>
+            <v-list-tile-title>
+              {{ getLabel(item) }}
+            </v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </template>
     </v-list>
   </v-navigation-drawer>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+import Layout from './mixins/layout';
+
 export default {
+  mixins: [ Layout ],
+  mounted () {
+    if (this.$storage.exist('menu')) {
+      this.$store.commit('setMenu', this.$storage.get('menu'));
+    }
+
+    if (this.$storage.existUser()) {
+      this.$store.commit('setUser', this.$storage.getUser());
+    }
+
+    this.setActive(this.$route.path);
+    setTimeout(() => (this.clickEvent(this.$route.path)), 1000);
+  },
   data: () => ({
     drawer: true,
-    title: 'Base frontend',
     clipped: false,
     items: [
       {
@@ -47,7 +85,35 @@ export default {
         title: 'Inspire'
       }
     ]
-  })
+  }),
+  computed: {
+    ...mapState(['menu', 'user'])
+  },
+  methods: {
+    send (url, submenu) {
+      if (submenu === undefined) {
+        if (this.$storage.exist('menu')) {
+          let page = this.$util.getMenuOption(this.$storage.get('menu'), url);
+          this.$store.state.breadcrumbs = page;
+        }
+
+        this.setActive(url);
+
+        this.$router.push(url || '/');
+      }
+    },
+    getLabel (item) {
+      console.log(item);
+      // if (item.url) {
+      //   let label = this.$t(`menu.${item.url.replace('/', '')}`);
+      //   if (label.indexOf('.') === -1) {
+      //     return label;
+      //   }
+      // }
+
+      return item.label;
+    }
+  }
 };
 </script>
 

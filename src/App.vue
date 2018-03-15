@@ -51,8 +51,6 @@ export default {
       this.logout();
     }
 
-    console.log('storage', this.$storage, this.$message);
-
     // loading bar config
     this.$Progress.start();
     this.$router.beforeEach((to, from, next) => {

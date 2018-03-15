@@ -25,7 +25,7 @@
     >
       <v-toolbar-title slot="activator">
         <v-avatar class="info">
-          <span class="white--text headline">A</span>
+          <span class="white--text headline">{{ inicial }}</span>
         </v-avatar>
       </v-toolbar-title>
       <v-card>
@@ -36,14 +36,14 @@
                 class="info"
                 size="64"
               >
-                <span class="white--text headline">A</span>
+                <span class="white--text headline">{{ inicial }}</span>
               </v-avatar>
             </v-flex>
             <v-flex xs9>
-              <h3>Usuario Administrador</h3>
-              <v-icon>mail</v-icon> admin@mail.com <br>
-              <v-icon>person_pin</v-icon> Administrador del sistema <br>
-              <v-icon>location_city</v-icon> Agencia de Gobierno Electrónico y etc asdfasdf asdf afda s.
+              <h3>{{ nombreCompleto }}</h3>
+              <v-icon>mail</v-icon> {{ user.email }}<br>
+              <v-icon>person_pin</v-icon> {{ user.rol }} <br>
+              <v-icon>location_city</v-icon>{{ user.entidad }}
             </v-flex>
           </v-layout>
         </v-container>
@@ -68,6 +68,7 @@
 <script>
 import Auth from '@/components/admin/auth/mixins/auth';
 import AppLang from './AppLang';
+import { mapState } from 'vuex';
 
 export default {
   mixins: [ Auth ],
@@ -80,7 +81,22 @@ export default {
       this.$util.fullscreen();
     }
   },
-  components: { AppLang }
+  components: { AppLang },
+  computed: {
+    ...mapState(['user']),
+    nombreCompleto () {
+      let user = this.$store.state.user;
+
+      return user.nombres;
+    },
+    inicial () {
+      let user = this.$store.state.user;
+      if (user.usuario) {
+        return (user.usuario[0] || '?').toUpperCase();
+      }
+      return '?';
+    }
+  }
 };
 </script>
 
