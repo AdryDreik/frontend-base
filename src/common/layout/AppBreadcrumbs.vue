@@ -11,7 +11,7 @@
 export default {
   created () {
     if (this.$storage.exist('menu')) {
-      let items = this.$util.getMenuOption(this.$storage.get('menu'), this.$route.path);
+      let items = this.$util.getMenuOption(this.$storage.get('menu'), this.$util.trimUrl(this.$route.path));
       this.$store.commit('layout/setBreadcrumbs', items);
     }
   }

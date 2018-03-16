@@ -1,6 +1,6 @@
 @import '../../../assets/scss/_variables.scss';
 .not-found {
-  // background: darken($info, 35%) url(../../../../static/images/mountains.png) no-repeat;
+  background: darken($info, 35%) url(../../../assets/images/bg.png) no-repeat;
   background-size: cover;
   position: fixed;
   top: 0;

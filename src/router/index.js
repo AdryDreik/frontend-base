@@ -1,10 +1,18 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Dashboard from '@/components/admin/Dashboard';
-import Login from '@/components/admin/auth/Login';
 import AppNotFound from '@/common/layout/pages/AppNotFound';
 import AppForbidden from '@/common/layout/pages/AppForbidden';
 import AppError from '@/common/layout/pages/AppError';
+
+// System
+import Login from '@/components/admin/auth/Login';
+import Account from '@/components/admin/account/Account';
+import Entidad from '@/components/admin/entidad/Entidad';
+import Usuario from '@/components/admin/usuario/Usuario';
+import Modulo from '@/components/admin/modulo/Modulo';
+import Preferencias from '@/components/admin/preferencias/Preferencias';
+import Log from '@/components/admin/Log';
 
 Vue.use(Router);
 
@@ -19,6 +27,36 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/usuarios',
+      name: 'Usuario',
+      component: Usuario
+    },
+    {
+      path: '/account',
+      name: 'Account',
+      component: Account
+    },
+    {
+      path: '/entidades',
+      name: 'Entidad',
+      component: Entidad
+    },
+    {
+      path: '/parametros',
+      name: 'Preferencias',
+      component: Preferencias
+    },
+    {
+      path: '/modulos',
+      name: 'Módulo',
+      component: Modulo
+    },
+    {
+      path: '/logs',
+      name: 'Logs',
+      component: Log
     },
     {
       path: '/404',

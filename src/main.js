@@ -38,8 +38,14 @@ import {
   VForm,
   VTextField,
   VCheckbox,
+  VSelect,
+  VChip,
+  VSwitch,
+  VDataTable,
   VCard,
   VBreadcrumbs,
+  VAlert,
+  VTabs,
   transitions
 } from 'vuetify';
 import '../node_modules/vuetify/src/stylus/app.styl';
@@ -63,8 +69,14 @@ Vue.use(Vuetify, {
     VForm,
     VTextField,
     VCheckbox,
+    VSelect,
+    VChip,
+    VSwitch,
+    VDataTable,
     VCard,
     VBreadcrumbs,
+    VAlert,
+    VTabs,
     transitions
   },
   theme: {

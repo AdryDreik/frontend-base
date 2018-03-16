@@ -100,6 +100,7 @@ export default {
       order: 'Orden',
       status: 'Estado',
       visible: 'Visible',
+      is_visible: 'Es visible',
       submodule: 'Sub módulo',
       section: 'Sección',
       addModule: 'Agregar módulo',

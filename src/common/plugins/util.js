@@ -106,6 +106,15 @@ const Util = {
     return items;
   },
 
+  trimUrl (url) {
+    if (url) {
+      if (url[0] === '/') {
+        url = url.substring(1);
+      }
+    }
+    return url;
+  },
+
   getKeys (data) {
     var types = {};
 

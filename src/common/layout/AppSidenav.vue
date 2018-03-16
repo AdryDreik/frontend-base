@@ -14,42 +14,49 @@
     <div class="app-logo">
       <h1 class="app-title"><v-icon color="white">whatshot</v-icon><span>{{ $t('app.title') }}</span></h1>
     </div>
-    <v-list dense id="sidenav-menu">
-      <template v-for="(item, i) in menu">
-        <v-list-group v-if="item.submenu" v-model="item.model" no-action>
-          <v-list-tile slot="item" @click="send(item.url, item.submenu)" :data-url="item.url">
-            <v-list-tile-action>
-              <v-icon color="warning">{{ item.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>
-                {{ getLabel(item) }}
-              </v-list-tile-title>
-              <v-icon>{{ item.model ? 'keyboard_arrow_down' : 'keyboard_arrow_right' }}</v-icon>
-            </v-list-tile-content>
-          </v-list-tile>
-          <v-list-tile v-for="(child, i) in item.submenu" :key="i" @click="send(child.url)" :data-url="child.url">
-            <v-list-tile-action v-if="child.icon">
-              <v-icon>{{ child.icon }}</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>
-                {{ getLabel(child) }}
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list-group>
-        <v-list-tile v-else @click="send(item.url, item.submenu)" :data-url="item.url">
-          <v-list-tile-action>
-            <v-icon color="warning">{{ item.icon }}</v-icon>
-          </v-list-tile-action>
+    <v-list id="sidenav-menu">
+      <v-list-group
+        v-model="item.active"
+        v-for="item in menu"
+        :key="item.label"
+        :prepend-icon="item.icon"
+        v-if="item.submenu"
+        no-action
+      >
+        <v-list-tile
+          slot="activator"
+          @click="send(item.url, item.submenu)"
+          :data-url="item.url"
+        >
           <v-list-tile-content>
-            <v-list-tile-title>
-              {{ getLabel(item) }}
-            </v-list-tile-title>
+            <v-list-tile-title>{{ getLabel(item) }}</v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
-      </template>
+        <v-list-tile
+          v-for="subItem in item.submenu"
+          :key="subItem.label"
+          @click="send(subItem.url)"
+          :data-url="subItem.url"
+        >
+          <v-list-tile-content>
+            <v-list-tile-title>{{ getLabel(subItem) }}</v-list-tile-title>
+          </v-list-tile-content>
+        </v-list-tile>
+      </v-list-group>
+      <v-list-tile
+        v-else
+        @click="send(item.url, item.submenu)"
+        :data-url="item.url"
+      >
+        <v-list-tile-action>
+          <v-icon color="warning">{{ item.icon }}</v-icon>
+        </v-list-tile-action>
+        <v-list-tile-content>
+          <v-list-tile-title>
+            {{ getLabel(item) }}
+          </v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
     </v-list>
   </v-navigation-drawer>
 </template>
@@ -70,21 +77,11 @@ export default {
     }
 
     this.setActive(this.$route.path);
-    setTimeout(() => (this.clickEvent(this.$route.path)), 1000);
+    setTimeout(() => (this.clickEvent(this.$route.path)), 600);
   },
   data: () => ({
     drawer: true,
-    clipped: false,
-    items: [
-      {
-        icon: 'home',
-        title: 'Escritorio'
-      },
-      {
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }
-    ]
+    clipped: false
   }),
   computed: {
     ...mapState(['menu', 'user'])
@@ -103,7 +100,6 @@ export default {
       }
     },
     getLabel (item) {
-      console.log(item);
       // if (item.url) {
       //   let label = this.$t(`menu.${item.url.replace('/', '')}`);
       //   if (label.indexOf('.') === -1) {
@@ -127,17 +123,34 @@ $bgSidenav: darken($primary, 5%);
 
   .list {
     background-color: $bgSidenav;
+    padding: 0;
   }
 
-  .list__tile.primary--text {
-    color: lighten($primary, 40%) !important;
+  .list .list__tile--link.active {
+    background-color: rgba(0,0,0,0.12);
+  }
+
+  .list__group__items--no-action .list__tile {
+    padding-left: 60px;
+  }
+
+  .list__group__header__prepend-icon {
+    padding: 0 4px 0 16px;
+
+    & + div > .list__tile {
+      padding-left: 4px;
+    }
+  }
+
+  .list__tile.primary--text, .list__group {
+    color: lighten($primary, 40%);
+
+    .icon {
+      color: lighten($warning, 6%);
+    }
 
     .list__tile__title {
       font-size: 16px;
-    }
-
-    .list__tile__action {
-      min-width: 36px;
     }
   }
 

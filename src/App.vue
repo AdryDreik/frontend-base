@@ -4,9 +4,11 @@
     <app-navbar v-if="auth"></app-navbar>
     <v-content v-if="main">
       <app-breadcrumbs v-if="auth"></app-breadcrumbs>
-      <transition :name="transitionName" mode="out-in">
-        <router-view/>
-      </transition>
+      <div class="main">
+        <transition :name="transitionName" mode="out-in">
+          <router-view/>
+        </transition>
+      </div>
     </v-content>
     <app-notification></app-notification>
     <app-footer></app-footer>
