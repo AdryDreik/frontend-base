@@ -240,9 +240,9 @@
       </v-card-text>
     </v-card>
     <!-- Modal para permisos -->
-    <!-- <v-dialog v-model="$store.state.modal2" max-width="960">
+    <v-dialog v-model="$store.state.modal2" max-width="960">
       <permisos :modulo="modulo" :roles="roles" v-if="roles.length"></permisos>
-    </v-dialog> -->
+    </v-dialog>
   </section>
 </template>
 <script>
