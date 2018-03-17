@@ -117,7 +117,7 @@ export default {
       referencia: 'Referencia',
       ip: 'IP',
       fecha: 'Fecha de creación',
-      id_usuario: 'Usuario'
+      usuario: 'Usuario'
     }
   }
 };

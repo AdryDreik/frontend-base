@@ -64,7 +64,7 @@ export default {
           this.$message.warning('Su sesión ha sido cerrada automáticamente después de ' + process.env.TIME_SESSION_EXPIRED + ' minutos de inactividad.', '¡Sesión cerrada!', { timeout: 30000 });
           this.logout();
         }
-      }, 1000);
+      }, 15000);
     },
 
     reload () {

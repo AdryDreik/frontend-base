@@ -22,6 +22,7 @@
       offset-x
       :close-on-content-click="false"
       max-width="320"
+      min-width="320"
     >
       <v-toolbar-title slot="activator">
         <v-avatar class="info">

@@ -419,30 +419,30 @@ export default {
         }
       }
 
-      &::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        bottom: -8px;
-        left: 20px;
-        border-bottom: 12px solid $filterBackground;
-        border-left: 14px solid transparent;
-        border-right: 14px solid transparent;
-        z-index: 1;
-        display: none;
-      }
-
       &::before {
         content: "";
         position: absolute;
         width: 0;
         height: 0;
-        bottom: -7px;
-        left: 20px;
+        bottom: -10px;
+        left: 14px;
         border-bottom: 12px solid $filterBorder;
         border-left: 14px solid transparent;
         border-right: 14px solid transparent;
+        display: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        bottom: -11px;
+        left: 14px;
+        border-bottom: 12px solid $filterBackground;
+        border-left: 14px solid transparent;
+        border-right: 14px solid transparent;
+        z-index: 1;
         display: none;
       }
     }

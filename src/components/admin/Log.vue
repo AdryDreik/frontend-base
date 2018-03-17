@@ -10,6 +10,7 @@
           :order="order"
           :graphql="graphql"
           :data-graphql="dataGraphql"
+          :showFilter="true"
         >
           <template slot="items" slot-scope="items">
             <td>
@@ -28,7 +29,7 @@
             <td>{{ items.item.referencia }}</td>
             <td>{{ items.item.ip }}</td>
             <td>{{ $datetime.format(items.item.fecha, 'dd/MM/YYYY hrs. HH:mm') }}</td>
-            <td>{{ items.item.usuario_usuario }}</td>
+            <td>{{ items.item.usuario }}</td>
           </template>
         </crud-table>
       </v-card-text>
@@ -53,7 +54,7 @@ export default {
         { text: this.$t('log.crud.referencia'), value: 'referencia' },
         { text: this.$t('log.crud.ip'), value: 'ip' },
         { text: this.$t('log.crud.fecha'), value: 'fecha' },
-        { text: this.$t('log.crud.id_usuario'), value: 'id_usuario' }
+        { text: this.$t('log.crud.usuario'), value: 'usuario' }
       ],
       order: ['fecha', 'DESC'],
       dataGraphql: `
@@ -64,25 +65,9 @@ export default {
         referencia
         ip
         fecha
-        id_usuario
-        usuario_usuario
-        usuario_nombres
-        usuario_primer_apellido
-        usuario_segundo_apellido
+        usuario
       `,
       filters: [
-        {
-          field: 'mensaje',
-          label: this.$t('log.crud.mensaje'),
-          type: 'text',
-          typeG: 'String'
-        },
-        {
-          field: 'tipo',
-          label: this.$t('log.crud.tipo'),
-          type: 'text',
-          typeG: 'String'
-        },
         {
           field: 'nivel',
           label: this.$t('log.crud.nivel'),
@@ -94,6 +79,24 @@ export default {
             { value: 'INFO', text: 'INFO' },
             { value: 'ADVERTENCIA', text: 'ADVERTENCIA' }
           ]
+        },
+        {
+          field: 'tipo',
+          label: this.$t('log.crud.tipo'),
+          type: 'text',
+          typeG: 'String'
+        },
+        {
+          field: 'mensaje',
+          label: this.$t('log.crud.mensaje'),
+          type: 'text',
+          typeG: 'String'
+        },
+        {
+          field: 'usuario',
+          label: this.$t('log.crud.usuario'),
+          type: 'text',
+          typeG: 'String'
         }
       ]
     };

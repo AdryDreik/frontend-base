@@ -90,7 +90,7 @@ export default new Vuex.Store({
       state.time = value;
     },
     TIME_DECREASE (state) {
-      state.time--;
+      state.time -= 15;
     }
   },
   modules: {

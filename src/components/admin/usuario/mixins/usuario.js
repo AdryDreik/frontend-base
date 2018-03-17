@@ -58,7 +58,7 @@ export default {
             entidades.push({ value: est.id, text: (est.sigla ? `${est.sigla} - ` : '') + est.nombre });
           });
           this.entidades = entidades;
-          if (filter && this.filters[filter] && this.filters[filter].items) {
+          if ((filter || filter === 0) && this.filters[filter] && this.filters[filter].items) {
             this.filters[filter].items = this.entidades;
           }
         }

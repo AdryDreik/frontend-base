@@ -25,6 +25,7 @@
           <template slot="form" slot-scope="props">
             <v-card-title class="headline">
               <v-icon>{{ form.id ? 'person' : 'person_add' }}</v-icon> {{ form.id ? $t('user.crud.editUser') : $t('user.crud.addUser') }}
+              <v-spacer></v-spacer>
               <v-btn icon @click.native="$store.commit('closeModal')">
                 <v-icon>close</v-icon>
               </v-btn>
@@ -42,8 +43,9 @@
                   <strong><v-icon dark class="icon-small">person</v-icon> {{ $t('app.account') }}</strong>
                 </router-link>.
               </v-alert>
-              <v-card-text>
-                <v-container grid-list-md>
+              <v-card-text class="pt-0">
+                <v-container grid-list-md class="pt-0">
+                  <h4>Datos de usuario</h4>
                   <v-layout row wrap>
                     <v-flex xs6>
                       <v-text-field
@@ -73,30 +75,6 @@
                         ></v-text-field>
                     </v-flex>
 
-                    <v-flex xs4>
-                      <v-text-field
-                        label="Nombre(s)"
-                        v-model="form.nombres"
-                        maxlength="100"
-                        ></v-text-field>
-                    </v-flex>
-
-                    <v-flex xs4>
-                      <v-text-field
-                        label="Primer apellido"
-                        v-model="form.primer_apellido"
-                        maxlength="100"
-                        ></v-text-field>
-                    </v-flex>
-
-                    <v-flex xs4>
-                      <v-text-field
-                        label="Segundo apellido"
-                        v-model="form.segundo_apellido"
-                        maxlength="100"
-                        ></v-text-field>
-                    </v-flex>
-
                     <v-flex xs6>
                       <v-text-field
                         label="Correo electrónico"
@@ -109,10 +87,9 @@
 
                     <v-flex xs6>
                       <v-text-field
-                        label="Teléfono"
-                        prepend-icon="phone"
-                        v-model="form.telefono"
-                        maxlength="30"
+                        label="Cargo"
+                        v-model="form.cargo"
+                        maxlength="100"
                         ></v-text-field>
                     </v-flex>
 
@@ -142,6 +119,8 @@
                         ></v-select>
                     </v-flex>
                   </v-layout>
+                  <h4>Datos personales</h4>
+                  <persona-form></persona-form>
                 </v-container>
               </v-card-text>
               <v-card-actions>
@@ -203,7 +182,7 @@
               </v-tooltip>
             </td>
             <td>{{ items.item.usuario }}</td>
-            <td>{{ items.item.primer_apellido }} {{ items.item.segundo_apellido }} {{ items.item.nombres }}</td>
+            <td>{{ items.item.persona_primer_apellido }} {{ items.item.persona_segundo_apellido }} {{ items.item.persona_nombres }}</td>
             <td>{{ items.item.email }}</td>
             <td>{{ items.item.entidad_nombre }}</td>
             <td>{{ items.item.rol_nombre }}</td>
@@ -228,6 +207,7 @@ import crud from '@/common/util/crud-table/mixins/crud-table';
 import Auth from '@/components/admin/auth/mixins/auth';
 import validate from '@/common/mixins/validate';
 import usuario from './mixins/usuario';
+import PersonaForm from '@/components/admin/persona/PersonaForm';
 
 export default {
   mixins: [ crud, validate, Auth, usuario ],
@@ -235,9 +215,9 @@ export default {
     this.user = this.$storage.getUser();
     this.usuario = this.user.usuario;
     this.entidades = [];
-    this.getEntidades(3);
+    this.getEntidades(0);
     this.roles = [];
-    this.getRoles(4);
+    this.getRoles(1);
   },
   data () {
     return {
@@ -257,10 +237,10 @@ export default {
         id
         usuario
         email
-        nombres
-        primer_apellido
-        segundo_apellido
-        telefono
+        persona_nombres
+        persona_primer_apellido
+        persona_segundo_apellido
+        persona_telefono
         estado
         id_entidad
         id_rol
@@ -270,15 +250,25 @@ export default {
       form: {
         'usuario': '',
         'contrasena': '',
-        'nombres': '',
-        'primer_apellido': '',
-        'segundo_apellido': '',
         'email': '',
-        'telefono': '',
         'id_entidad': '',
         'id_rol': ''
       },
       filters: [
+        {
+          field: 'id_entidad',
+          label: this.$t('user.crud.entity'),
+          type: 'select',
+          typeG: 'Int',
+          items: []
+        },
+        {
+          field: 'id_rol',
+          label: this.$t('user.crud.role'),
+          type: 'select',
+          typeG: 'Int',
+          items: []
+        },
         {
           field: 'usuario',
           label: this.$t('user.crud.user'),
@@ -296,20 +286,6 @@ export default {
           label: this.$t('user.crud.email'),
           type: 'text',
           typeG: 'String'
-        },
-        {
-          field: 'id_entidad',
-          label: this.$t('user.crud.entity'),
-          type: 'select',
-          typeG: 'Int',
-          items: []
-        },
-        {
-          field: 'id_rol',
-          label: this.$t('user.crud.role'),
-          type: 'select',
-          typeG: 'Int',
-          items: []
         },
         {
           field: 'estado',
@@ -344,11 +320,7 @@ export default {
         this.form = {
           'usuario': '',
           'contrasena': '',
-          'nombres': '',
-          'primer_apellido': '',
-          'segundo_apellido': '',
           'email': '',
-          'telefono': '',
           'id_entidad': '',
           'id_rol': ''
         };
@@ -419,7 +391,8 @@ export default {
     }
   },
   components: {
-    CrudTable
+    CrudTable,
+    PersonaForm
   },
   computed: {
     getIcon () {
