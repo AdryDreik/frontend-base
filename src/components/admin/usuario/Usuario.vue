@@ -93,7 +93,7 @@
                         ></v-text-field>
                     </v-flex>
 
-                    <v-flex xs7 v-if="$store.state.user.id_rol != 5">
+                    <v-flex xs7 v-if="$store.state.user.id_rol != 3">
                       <v-select
                         :items="entidades"
                         v-model="form.id_entidad"
@@ -134,7 +134,7 @@
 
           <template slot="items" slot-scope="items">
             <td class="nowrap">
-              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update'] && items.item.id_rol != 8">
+              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update']">
                 <v-btn
                   icon
                   slot="activator"
@@ -145,7 +145,7 @@
               </v-tooltip>
               <v-tooltip
                 bottom
-                v-if="$store.state.permissions['usuarios:delete'] && items.item.id_rol != 8 && usuario !== items.item.usuario">
+                v-if="$store.state.permissions['usuarios:delete'] && usuario !== items.item.usuario">
                 <v-btn
                   icon
                   slot="activator"
@@ -156,7 +156,7 @@
               </v-tooltip>
             </td>
             <td>
-              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update'] && items.item.id_rol != 8">
+              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update']">
                 <v-switch
                   v-model="items.item.active"
                   value="ACTIVE"

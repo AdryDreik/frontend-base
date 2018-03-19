@@ -31,8 +31,7 @@ export default {
           this.$router.push(redirect || data.redirect || '/');
         }
       }).catch((error) => {
-        console.log('aaa', this.$message);
-        this.$message.error(error.response.data.error || 'Usuario y/o contraseña inválida');
+        this.$message.error(error.response ? error.response.data.error || 'Usuario y/o contraseña inválida' : 'El sistema no pudo conectarse, revise su conexión de internet.');
       });
     },
 

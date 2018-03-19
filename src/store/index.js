@@ -17,6 +17,7 @@ export default new Vuex.Store({
     auth: false,
     menu: {},
     user: {},
+    date: {},
     permissions: {},
     rol: '',
     sidenav: false,
@@ -63,10 +64,26 @@ export default new Vuex.Store({
     closeModal (state, id = '') {
       state[`modal${id}`] = false;
     },
+    setDate (state, value) {
+      if (state.date === undefined) {
+        state.date = {};
+      }
+      if (value) {
+        const keys = Object.keys(value);
+        if (keys.length) {
+          state.date[keys[0]] = value[keys[0]];
+        } else {
+          state.date = value;
+        }
+      } else {
+        state.date = value;
+      }
+    },
     setDefault (state) {
       state.auth = false;
       state.menu = {};
       state.user = {};
+      state.date = {};
       state.permissions = {};
       state.rol = '';
       state.layout.breadcrumbs = {};

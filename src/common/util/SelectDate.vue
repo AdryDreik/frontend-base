@@ -1,43 +1,46 @@
 <template>
   <div class="select-date">
-    <label>{{ label }}</label>
+    <label v-if="label.length">{{ label }}</label>
     <v-layout row wrap>
       <v-flex xs4>
-        <div class="form-group">
-          <v-text-field
-            label="Día"
-            v-model="form.day"
-            maxlength="2"
-            @keydown.native="$filter.numeric($event)"
-            ></v-text-field>
-        </div>
+        <v-text-field
+        label="Día"
+        v-model="form.day"
+        maxlength="2"
+        @keydown.native="$filter.numeric($event)"
+        :rules="$validate(['required'])"
+        required
+        ></v-text-field>
       </v-flex>
       <v-flex xs4>
-        <div class="form-group">
-          <v-text-field
-            label="Mes"
-            v-model="form.month"
-            maxlength="2"
-            @keydown.native="$filter.numeric($event)"
-            ></v-text-field>
-        </div>
+        <v-text-field
+        label="Mes"
+        v-model="form.month"
+        maxlength="2"
+        @keydown.native="$filter.numeric($event)"
+        :rules="$validate(['required'])"
+        required
+        ></v-text-field>
       </v-flex>
       <v-flex xs4>
-        <div class="form-group">
-          <v-text-field
-            label="Año"
-            v-model="form.year"
-            maxlength="4"
-            @keydown.native="$filter.numeric($event)"
-            ></v-text-field>
-        </div>
+        <v-text-field
+        label="Año"
+        v-model="form.year"
+        maxlength="4"
+        @keydown.native="$filter.numeric($event)"
+        :rules="$validate(['required'])"
+        required
+        ></v-text-field>
       </v-flex>
     </v-layout>
   </div>
 </template>
 
 <script>
+import validate from '@/common/mixins/validate';
+
 export default {
+  mixins: [ validate ],
   props: {
     label: {
       type: String,
@@ -46,6 +49,10 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    model: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -55,37 +62,43 @@ export default {
         month: '',
         year: ''
       },
-      meses: this.$datetime.months,
-      selectDate: ''
+      meses: this.$datetime.months
     };
   },
   methods: {
-    setSelectDate () {
+    setDate () {
       if (this.form.year && this.form.year.length === 4 && this.form.month && this.form.day) {
-        this.$store.commit('setSelectDate', new Date(this.form.year, this.form.month - 1, this.form.day));
+        let date = new Date(this.form.year, this.form.month - 1, this.form.day);
+        this.$store.commit('setDate', this.model.length ? { [this.model]: date } : date);
       } else {
-        this.$store.commit('setSelectDate', null);
+        this.$store.commit('setDate', this.model.length ? { [this.model]: null } : null);
       }
     }
   },
   watch: {
     'form.day': function (val) {
-      if (val > 31 || (val.length === 2 && val <= 0)) {
-        this.form.day = '';
+      if (val) {
+        if (val > 31 || (val.length === 2 && val <= 0)) {
+          this.form.day = '';
+        }
+        this.setDate();
       }
-      this.setSelectDate();
     },
     'form.month': function (val) {
-      if (val > 12 || (val.length === 2 && val <= 0)) {
-        this.form.month = '';
+      if (val) {
+        if (val > 12 || (val.length === 2 && val <= 0)) {
+          this.form.month = '';
+        }
+        this.setDate();
       }
-      this.setSelectDate();
     },
     'form.year': function (val) {
-      if (val.length === 4 && (val > this.$datetime.now('YYYY') || val < 1900)) {
-        this.form.year = '';
+      if (val) {
+        if (val.length === 4 && (val > this.$datetime.now('YYYY') || val < 1900)) {
+          this.form.year = '';
+        }
+        this.setDate();
       }
-      this.setSelectDate();
     },
     '$store.state.touch': function (val) {
       if (!val) {
