@@ -71,20 +71,20 @@
 
       <v-flex xs4>
         <v-text-field
-        label="Móvil"
-        prepend-icon="smartphone"
-        v-model="form.movil"
-        maxlength="30"
-        ></v-text-field>
+          label="Móvil"
+          prepend-icon="smartphone"
+          v-model="form.movil"
+          maxlength="30"
+          ></v-text-field>
       </v-flex>
 
       <v-flex xs4>
         <v-text-field
-        label="Teléfono"
-        prepend-icon="phone"
-        v-model="form.telefono"
-        maxlength="30"
-        ></v-text-field>
+          label="Teléfono"
+          prepend-icon="phone"
+          v-model="form.telefono"
+          maxlength="30"
+          ></v-text-field>
       </v-flex>
     </v-layout>
   </section>
