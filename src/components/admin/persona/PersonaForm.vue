@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-layout row wrap>
-      <persona-segip store="usuario"></persona-segip>
+      <persona-segip store="usuario/"></persona-segip>
       <v-flex xs4>
         <v-text-field
           label="Nombre(s)"
@@ -9,6 +9,7 @@
           maxlength="100"
           :rules="$validate(['required'])"
           required
+          :disabled="tipo_documento == 'CI'"
           ></v-text-field>
       </v-flex>
 
@@ -17,6 +18,7 @@
           label="Primer apellido"
           v-model="primer_apellido"
           maxlength="100"
+          :disabled="tipo_documento == 'CI'"
           ></v-text-field>
       </v-flex>
 
@@ -25,6 +27,7 @@
           label="Segundo apellido"
           v-model="segundo_apellido"
           maxlength="100"
+          :disabled="tipo_documento == 'CI'"
           ></v-text-field>
       </v-flex>
 
@@ -34,13 +37,13 @@
           v-model="nacionalidad"
           label="Nacionalidad"
           item-text="text"
-          item-value="id"
+          item-value="value"
           :rules="$validate(['required'])"
           required
           ></v-select>
       </v-flex>
 
-      <v-flex xs4>
+      <!-- <v-flex xs4>
         <v-select
           :items="paises"
           v-model="pais_nacimiento"
@@ -50,24 +53,7 @@
           :rules="$validate(['required'])"
           required
           ></v-select>
-      </v-flex>
-
-      <v-radio-group
-        v-model="genero"
-        row
-        class="pl-4"
-        :rules="$validate(['required'])"
-        required
-      >
-        <v-radio
-          label="Mujer"
-          value="M"
-        ></v-radio>
-        <v-radio
-          label="Varón"
-          value="V"
-        ></v-radio>
-      </v-radio-group>
+      </v-flex> -->
 
       <v-flex xs4>
         <v-text-field
@@ -86,6 +72,24 @@
           maxlength="30"
           ></v-text-field>
       </v-flex>
+
+      <v-flex xs4>
+        <v-radio-group
+          v-model="genero"
+          row
+          :rules="$validate(['required'])"
+          required
+        >
+          <v-radio
+            label="Mujer"
+            value="M"
+          ></v-radio>
+          <v-radio
+            label="Varón"
+            value="V"
+          ></v-radio>
+        </v-radio-group>
+      </v-flex>
     </v-layout>
   </section>
 </template>
@@ -93,47 +97,42 @@
 <script>
 import PersonaSegip from '@/components/admin/persona/PersonaSegip';
 import validate from '@/common/mixins/validate';
-
-import { createHelpers } from 'vuex-map-fields';
-
-const { mapFields } = createHelpers({
-  getterType: 'usuario/getField',
-  mutationType: 'usuario/updateField'
-});
+import { mapFields } from 'vuex-map-fields';
 
 export default {
   mixins: [ validate ],
+  props: {
+    store: {
+      type: String,
+      default: ''
+    }
+  },
   data () {
     return {
-      form: {
-        nombres: '',
-        primer_apellido: '',
-        segundo_apellido: '',
-        telefono: '',
-        movil: '',
-        nacionalidad: '',
-        pais_nacimiento: '',
-        genero: ''
-      },
       paises: [
-        { id: 'BOLIVIA', text: 'BOLIVIA' }
+        { value: 'BOLIVIA', text: 'BOLIVIA' }
       ],
       nacionalidades: [
-        { id: 'BOLIVIA', text: 'BOLIVIANA' }
+        { value: 'BOLIVIA', text: 'BOLIVIANA' }
       ]
     };
   },
-  computed: {
-    ...mapFields([
-      'form.nombres',
-      'form.primer_apellido',
-      'form.segundo_apellido',
-      'form.telefono',
-      'form.movil',
-      'form.nacionalidad',
-      'form.pais_nacimiento',
-      'form.genero'
-    ])
+  beforeCreate () {
+    // Creando campos del formulario en el store definido
+    let store = this.$options.propsData.store || '';
+    this.$options.computed = {
+      ...mapFields([
+        'form.nombres',
+        'form.primer_apellido',
+        'form.segundo_apellido',
+        'form.telefono',
+        'form.movil',
+        'form.nacionalidad',
+        'form.pais_nacimiento',
+        'form.tipo_documento',
+        'form.genero'
+      ], `${store}getField`, `${store}updateField`)
+    };
   },
   components: {
     PersonaSegip

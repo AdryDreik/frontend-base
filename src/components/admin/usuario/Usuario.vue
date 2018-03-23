@@ -113,14 +113,14 @@
                         v-model="id_rol"
                         label="Rol"
                         item-text="text"
-                        item-value="id"
+                        item-value="value"
                         :rules="$validate(['required'])"
                         required
                         ></v-select>
                     </v-flex>
                   </v-layout>
                   <h4>Datos personales</h4>
-                  <persona-form></persona-form>
+                  <persona-form store="usuario/"></persona-form>
                 </v-container>
               </v-card-text>
               <v-card-actions>
@@ -353,7 +353,6 @@ export default {
       if (this.$store.state.user.id_rol === 5) {
         this.form.id_entidad = this.$store.state.user.id_entidad;
       }
-      console.log('form', this.$refs.form);
       if (this.$refs.form.validate()) {
         let data = Object.assign({}, this.form);
         if (data.id_rol.value) {

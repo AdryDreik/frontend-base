@@ -8,8 +8,8 @@
         v-model="form.day"
         maxlength="2"
         @keydown.native="$filter.numeric($event)"
-        :rules="$validate(['required'])"
-        required
+        :rules="required ? $validate(['required']) : []"
+        :required="required"
         ></v-text-field>
       </v-flex>
       <v-flex xs4>
@@ -18,8 +18,8 @@
         v-model="form.month"
         maxlength="2"
         @keydown.native="$filter.numeric($event)"
-        :rules="$validate(['required'])"
-        required
+        :rules="required ? $validate(['required']) : []"
+        :required="required"
         ></v-text-field>
       </v-flex>
       <v-flex xs4>
@@ -28,8 +28,8 @@
         v-model="form.year"
         maxlength="4"
         @keydown.native="$filter.numeric($event)"
-        :rules="$validate(['required'])"
-        required
+        :rules="required ? $validate(['required']) : []"
+        :required="required"
         ></v-text-field>
       </v-flex>
     </v-layout>
@@ -53,6 +53,10 @@ export default {
     model: {
       type: String,
       default: ''
+    },
+    store: {
+      type: String,
+      default: ''
     }
   },
   data () {
@@ -70,10 +74,14 @@ export default {
       if (this.form.year && this.form.year.length === 4 && this.form.month && this.form.day) {
         let date = new Date(this.form.year, this.form.month - 1, this.form.day);
         this.$store.commit('setDate', this.model.length ? { [this.model]: date } : date);
-        this.$store.commit('usuario/updateField', { path: 'form.fecha_nacimiento', value: date });
+        if (this.model.length) {
+          this.$store.commit(`${this.store}updateField`, { path: this.model, value: date });
+        }
       } else {
         this.$store.commit('setDate', this.model.length ? { [this.model]: null } : null);
-        this.$store.commit('usuario/updateField', { path: 'form.fecha_nacimiento', value: null });
+        if (this.model.length) {
+          this.$store.commit(`${this.store}updateField`, { path: this.model, value: null });
+        }
       }
     }
   },

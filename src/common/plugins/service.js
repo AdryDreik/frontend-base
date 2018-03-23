@@ -221,7 +221,12 @@ export default {
       if (config && typeof config.filterResponse === 'function') {
         return config.filterResponse(response, Message);
       }
-      return response;
+      if (data.error) {
+        Message.error(data.error);
+        return null;
+      } else {
+        return data;
+      }
     }
 
     function handlingErrors (error) {

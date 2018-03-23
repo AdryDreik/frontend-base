@@ -27,7 +27,7 @@ export default {
             roles.push({ value: rol.id, text: rol.nombre + ' - ' + rol.descripcion });
           });
           this.roles = roles;
-          if (filter && this.filters[filter] && this.filters[filter].items) {
+          if ((filter || filter === 0) && this.filters[filter] && this.filters[filter].items) {
             this.filters[filter].items = this.roles;
           }
         }
