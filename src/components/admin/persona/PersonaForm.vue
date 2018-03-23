@@ -1,11 +1,11 @@
 <template>
   <section>
     <v-layout row wrap>
-      <persona-segip></persona-segip>
+      <persona-segip store="usuario"></persona-segip>
       <v-flex xs4>
         <v-text-field
           label="Nombre(s)"
-          v-model="form.nombres"
+          v-model="nombres"
           maxlength="100"
           :rules="$validate(['required'])"
           required
@@ -15,7 +15,7 @@
       <v-flex xs4>
         <v-text-field
           label="Primer apellido"
-          v-model="form.primerApellido"
+          v-model="primer_apellido"
           maxlength="100"
           ></v-text-field>
       </v-flex>
@@ -23,7 +23,7 @@
       <v-flex xs4>
         <v-text-field
           label="Segundo apellido"
-          v-model="form.segundoApellido"
+          v-model="segundo_apellido"
           maxlength="100"
           ></v-text-field>
       </v-flex>
@@ -31,7 +31,7 @@
       <v-flex xs4>
         <v-select
           :items="nacionalidades"
-          v-model="form.nacionalidad"
+          v-model="nacionalidad"
           label="Nacionalidad"
           item-text="text"
           item-value="id"
@@ -43,7 +43,7 @@
       <v-flex xs4>
         <v-select
           :items="paises"
-          v-model="form.pais_nacimiento"
+          v-model="pais_nacimiento"
           label="País de nacimiento"
           item-text="text"
           item-value="id"
@@ -53,7 +53,7 @@
       </v-flex>
 
       <v-radio-group
-        v-model="form.genero"
+        v-model="genero"
         row
         class="pl-4"
         :rules="$validate(['required'])"
@@ -73,7 +73,7 @@
         <v-text-field
           label="Móvil"
           prepend-icon="smartphone"
-          v-model="form.movil"
+          v-model="movil"
           maxlength="30"
           ></v-text-field>
       </v-flex>
@@ -82,7 +82,7 @@
         <v-text-field
           label="Teléfono"
           prepend-icon="phone"
-          v-model="form.telefono"
+          v-model="telefono"
           maxlength="30"
           ></v-text-field>
       </v-flex>
@@ -94,14 +94,21 @@
 import PersonaSegip from '@/components/admin/persona/PersonaSegip';
 import validate from '@/common/mixins/validate';
 
+import { createHelpers } from 'vuex-map-fields';
+
+const { mapFields } = createHelpers({
+  getterType: 'usuario/getField',
+  mutationType: 'usuario/updateField'
+});
+
 export default {
   mixins: [ validate ],
   data () {
     return {
       form: {
         nombres: '',
-        primerApellido: '',
-        segundoApellido: '',
+        primer_apellido: '',
+        segundo_apellido: '',
         telefono: '',
         movil: '',
         nacionalidad: '',
@@ -115,6 +122,18 @@ export default {
         { id: 'BOLIVIA', text: 'BOLIVIANA' }
       ]
     };
+  },
+  computed: {
+    ...mapFields([
+      'form.nombres',
+      'form.primer_apellido',
+      'form.segundo_apellido',
+      'form.telefono',
+      'form.movil',
+      'form.nacionalidad',
+      'form.pais_nacimiento',
+      'form.genero'
+    ])
   },
   components: {
     PersonaSegip

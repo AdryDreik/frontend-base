@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 import Vue from 'vue';
 
 import layout from './modules/layout';
+import usuario from './modules/usuario';
 
 import modal from '@/common/plugins/modal/mixins/modal';
 
@@ -30,6 +31,7 @@ export default new Vuex.Store({
       text: '',
       callback: null
     },
+    form: {},
     confirm: {
       show: false,
       text: '',
@@ -57,6 +59,9 @@ export default new Vuex.Store({
     },
     setPermissions (state, value) {
       state.permissions = value;
+    },
+    setForm (state, value) {
+      state.form = value;
     },
     openModal (state, id = '') {
       state[`modal${id}`] = true;
@@ -111,6 +116,7 @@ export default new Vuex.Store({
     }
   },
   modules: {
-    layout
+    layout,
+    usuario
   }
 });

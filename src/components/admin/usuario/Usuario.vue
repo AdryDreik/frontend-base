@@ -9,7 +9,7 @@
           :filters="filters"
           :graphql="graphql"
           :data-graphql="dataGraphql"
-          :widthModal="800"
+          :widthModal="840"
         >
           <template slot="buttons">
             <v-tooltip bottom v-if="$store.state.permissions['usuarios:create']">
@@ -37,7 +37,7 @@
               lazy-validation>
               <v-alert color="info"
                 value="true"
-                v-if="form.usuario == usuario && form.id">
+                v-if="form.usuario == username && form.id">
                 Puede cambiar su contraseña yendo a:
                 <router-link to="/account" class="white--text">
                   <strong><v-icon dark class="icon-small">person</v-icon> {{ $t('app.account') }}</strong>
@@ -51,7 +51,7 @@
                       <v-text-field
                         label="Nombre de usuario"
                         prepend-icon="person"
-                        v-model="form.usuario"
+                        v-model="usuario"
                         maxlength="50"
                         autocomplete="off"
                         :rules="$validate(['required'])"
@@ -62,9 +62,9 @@
 
                     <v-flex xs6>
                       <v-text-field
-                        v-if="!form.id"
+                        v-if="!id"
                         label="Contraseña"
-                        v-model="form.contrasena"
+                        v-model="contrasena"
                         :prepend-icon="getIcon"
                         :prepend-icon-cb="changeIcon"
                         :type="hidePass ? 'password' : 'text'"
@@ -78,7 +78,7 @@
                     <v-flex xs6>
                       <v-text-field
                         label="Correo electrónico"
-                        v-model="form.email"
+                        v-model="email"
                         maxlength="100"
                         prepend-icon="email"
                         :rules="$validate(['email'])"
@@ -88,7 +88,7 @@
                     <v-flex xs6>
                       <v-text-field
                         label="Cargo"
-                        v-model="form.cargo"
+                        v-model="cargo"
                         maxlength="100"
                         ></v-text-field>
                     </v-flex>
@@ -96,7 +96,7 @@
                     <v-flex xs7 v-if="$store.state.user.id_rol != 3">
                       <v-select
                         :items="entidades"
-                        v-model="form.id_entidad"
+                        v-model="id_entidad"
                         label="Entidad"
                         item-text="text"
                         item-value="value"
@@ -107,10 +107,10 @@
                         ></v-select>
                     </v-flex>
 
-                    <v-flex xs5 v-if="!(form.usuario == usuario && form.id)">
+                    <v-flex xs5 v-if="!(usuario == username && id)">
                       <v-select
                         :items="roles"
-                        v-model="form.id_rol"
+                        v-model="id_rol"
                         label="Rol"
                         item-text="text"
                         item-value="id"
@@ -145,7 +145,7 @@
               </v-tooltip>
               <v-tooltip
                 bottom
-                v-if="$store.state.permissions['usuarios:delete'] && usuario !== items.item.usuario">
+                v-if="$store.state.permissions['usuarios:delete'] && username !== items.item.usuario">
                 <v-btn
                   icon
                   slot="activator"
@@ -160,21 +160,21 @@
                 <v-switch
                   v-model="items.item.active"
                   value="ACTIVE"
-                  v-if="usuario !== items.item.usuario"
+                  v-if="username !== items.item.usuario"
                   @change="changeActive(items.item, items.item.id, 'usuario', 'EditUsuario')"
                   slot="activator"
                   color="success"></v-switch>
                 <span>Activar/desactivar registro</span>
               </v-tooltip>
               <v-icon
-                v-if="!$store.state.permissions['usuarios:update'] && usuario !== items.item.usuario"
+                v-if="!$store.state.permissions['usuarios:update'] && username !== items.item.usuario"
                 :color="items.item.active === 'ACTIVE' ? 'success' : 'error'">
                 {{ items.item.active === 'ACTIVE' ? 'check' : 'close' }}
               </v-icon>
               <v-tooltip bottom>
                 <router-link
                   to="/account"
-                  v-if="usuario === items.item.usuario"
+                  v-if="username === items.item.usuario"
                   slot="activator">
                   <v-icon>person</v-icon>
                 </router-link>
@@ -209,11 +209,18 @@ import validate from '@/common/mixins/validate';
 import usuario from './mixins/usuario';
 import PersonaForm from '@/components/admin/persona/PersonaForm';
 
+import { createHelpers } from 'vuex-map-fields';
+
+const { mapFields } = createHelpers({
+  getterType: 'usuario/getField',
+  mutationType: 'usuario/updateField'
+});
+
 export default {
   mixins: [ crud, validate, Auth, usuario ],
   created () {
     this.user = this.$storage.getUser();
-    this.usuario = this.user.usuario;
+    this.username = this.user.usuario;
     this.entidades = [];
     this.getEntidades(0);
     this.roles = [];
@@ -248,11 +255,11 @@ export default {
         rol_nombre
       `,
       form: {
-        'usuario': '',
-        'contrasena': '',
-        'email': '',
-        'id_entidad': '',
-        'id_rol': ''
+        usuario: '',
+        contrasena: '',
+        email: '',
+        id_entidad: '',
+        id_rol: ''
       },
       filters: [
         {
@@ -300,9 +307,24 @@ export default {
         }
       ],
       hidePass: true,
-      usuario: null,
+      username: null,
       valid: true
     };
+  },
+  computed: {
+    getIcon () {
+      return this.form.contrasena.length === 0 ? 'lock' : this.hidePass ? 'visibility' : 'visibility_off';
+    },
+    ...mapFields([
+      'form.id',
+      'form.usuario',
+      'form.contrasena',
+      'form.email',
+      'form.cargo',
+      'form.id_entidad',
+      'form.id_rol',
+      'form.id_persona'
+    ])
   },
   methods: {
     changeIcon () {
@@ -331,6 +353,7 @@ export default {
       if (this.$store.state.user.id_rol === 5) {
         this.form.id_entidad = this.$store.state.user.id_entidad;
       }
+      console.log('form', this.$refs.form);
       if (this.$refs.form.validate()) {
         let data = Object.assign({}, this.form);
         if (data.id_rol.value) {
@@ -357,7 +380,7 @@ export default {
             }
           }).then(response => {
             if (response) {
-              if (this.usuario === this.form.usuario) {
+              if (this.username === this.form.usuario) {
                 this.$message.warning('Sus datos fueron actualizados, debe ingresar de nuevo al sistema.');
                 this.logout();
               } else {
@@ -393,11 +416,6 @@ export default {
   components: {
     CrudTable,
     PersonaForm
-  },
-  computed: {
-    getIcon () {
-      return this.form.contrasena.length === 0 ? 'lock' : this.hidePass ? 'visibility' : 'visibility_off';
-    }
   }
 };
 </script>

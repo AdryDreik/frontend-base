@@ -145,7 +145,6 @@ export default {
   mixins: [ crud, validate ],
   created () {
     this.user = this.$storage.getUser();
-    this.idParametro = this.user.id_parametro;
   },
   data () {
     return {
@@ -185,7 +184,6 @@ export default {
           typeG: 'String'
         }
       ],
-      idParametro: null,
       valid: true
     };
   },

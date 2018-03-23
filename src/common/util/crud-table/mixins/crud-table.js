@@ -121,6 +121,13 @@ export default {
         }
       }
       return null;
+    },
+
+    $update (key, event) {
+      this.$store.commit('update', {
+        path: [key],
+        value: event.target.value
+      });
     }
   }
 };

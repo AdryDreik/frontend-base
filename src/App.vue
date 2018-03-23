@@ -28,10 +28,11 @@ import AppMessages from '@/common/plugins/message/AppMessages';
 import AppNotification from '@/common/layout/AppNotification';
 import AppAlert from '@/common/plugins/modal/AppAlert';
 import AppConfirm from '@/common/plugins/modal/AppConfirm';
-
 import Auth from '@/components/admin/auth/mixins/auth';
-
 import { mapState } from 'vuex';
+
+// Páginas que no necesitan autenticación/token/sesión
+const PageNoLogin = ['login'];
 
 export default {
   name: 'App',
@@ -50,7 +51,9 @@ export default {
 
       this.timerSession();
     } else {
-      this.logout();
+      if (PageNoLogin.indexOf(this.$route.path.substring(1)) === -1) {
+        this.logout();
+      }
     }
 
     // loading bar config
@@ -88,7 +91,7 @@ export default {
   },
   watch: {
     '$route' (to, from) {
-      if (!this.$storage.existUser()) {
+      if (!this.$storage.existUser() && PageNoLogin.indexOf(to.path.substring(1)) === -1) {
         this.logout();
       }
       if (to.path !== '/login' && from.path !== '/login') {

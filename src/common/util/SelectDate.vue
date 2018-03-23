@@ -70,8 +70,10 @@ export default {
       if (this.form.year && this.form.year.length === 4 && this.form.month && this.form.day) {
         let date = new Date(this.form.year, this.form.month - 1, this.form.day);
         this.$store.commit('setDate', this.model.length ? { [this.model]: date } : date);
+        this.$store.commit('usuario/updateField', { path: 'form.fecha_nacimiento', value: date });
       } else {
         this.$store.commit('setDate', this.model.length ? { [this.model]: null } : null);
+        this.$store.commit('usuario/updateField', { path: 'form.fecha_nacimiento', value: null });
       }
     }
   },

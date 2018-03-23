@@ -144,5 +144,21 @@ export default {
       fecha: 'Fecha de creación',
       usuario: 'Usuario'
     }
+  },
+  servicioIop: {
+    title: 'Interoperabilidad',
+    add: 'Agregar nuevo servicio',
+    crud: {
+      codigo: 'Código',
+      metodo: 'Método',
+      descripcion: 'Descripción',
+      entidad: 'Entidad',
+      url: 'Url',
+      token: 'Token',
+      tipo: 'Tipo',
+      estado: 'Estado',
+      editServicio: 'Editar Servicio Iop',
+      addServicio: 'Agregar Servicio Iop'
+    }
   }
 };

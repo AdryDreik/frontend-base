@@ -16,6 +16,13 @@
         <v-icon>settings_applications</v-icon> {{ $t('parametro.title') }}
       </v-tab>
       <v-tab
+        key="serviciosIop"
+        href="#serviciosIop"
+        v-if="$store.state.permissions['serviciosIop:read']"
+        ripple>
+        <v-icon>cloud_circle</v-icon> {{ $t('servicioIop.title') }}
+      </v-tab>
+      <v-tab
         key="roles"
         href="#roles"
         v-if="$store.state.permissions['roles:read']"
@@ -27,6 +34,13 @@
         id="parametros">
         <v-card flat>
           <parametro v-if="$store.state.permissions['parametros:read'] && active == 'parametros'"></parametro>
+        </v-card>
+      </v-tab-item>
+      <v-tab-item
+        key="serviciosIop"
+        id="serviciosIop">
+        <v-card flat>
+          <servicio-iop v-if="$store.state.permissions['serviciosIop:read'] && active == 'serviciosIop'"></servicio-iop>
         </v-card>
       </v-tab-item>
       <v-tab-item
@@ -43,6 +57,7 @@
 <script>
 import Rol from './Rol';
 import Parametro from './Parametro';
+import ServicioIop from './ServicioIop';
 
 export default {
   data () {
@@ -52,7 +67,8 @@ export default {
   },
   components: {
     Rol,
-    Parametro
+    Parametro,
+    ServicioIop
   },
   watch: {
     active: function (val) {
