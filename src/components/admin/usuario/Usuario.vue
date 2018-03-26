@@ -138,7 +138,7 @@
                 <v-btn
                   icon
                   slot="activator"
-                  @click.native="editItem(items.item.id, 'usuario', dataGraphql)">
+                  @click.native="editItem(items.item.id, 'usuario', dataGraphqlAll)">
                   <v-icon>edit</v-icon>
                 </v-btn>
                 <span>Editar registro</span>
@@ -254,6 +254,31 @@ export default {
         entidad_nombre
         rol_nombre
       `,
+      dataGraphqlAll: `
+        id
+        usuario
+        email
+        cargo
+        estado
+        id_entidad
+        id_rol
+        id_persona
+        persona_nombres
+        persona_primer_apellido
+        persona_segundo_apellido
+        persona_tipo_documento
+        persona_tipo_documento_otro
+        persona_nro_documento
+        persona_fecha_nacimiento
+        persona_movil
+        persona_nacionalidad
+        persona_pais_nacimiento
+        persona_genero
+        persona_telefono
+        persona_estado
+        rol_nombre
+        entidad_nombre
+      `,
       form: {
         usuario: '',
         contrasena: '',
@@ -282,12 +307,12 @@ export default {
           type: 'text',
           typeG: 'String'
         },
-        {
-          field: 'nombre_completo',
-          label: this.$t('user.crud.fullname'),
-          type: 'text',
-          typeG: 'String'
-        },
+        // {
+        //   field: 'nombre_completo',
+        //   label: this.$t('user.crud.fullname'),
+        //   type: 'text',
+        //   typeG: 'String'
+        // },
         {
           field: 'email',
           label: this.$t('user.crud.email'),
@@ -313,8 +338,12 @@ export default {
   },
   computed: {
     getIcon () {
-      return this.form.contrasena.length === 0 ? 'lock' : this.hidePass ? 'visibility' : 'visibility_off';
+      if (this.contrasena) {
+        return this.contrasena.length === 0 ? 'lock' : this.hidePass ? 'visibility' : 'visibility_off';
+      }
+      return 'lock';
     },
+    // Cargando datos del usuario del store
     ...mapFields([
       'form.id',
       'form.usuario',
@@ -328,43 +357,58 @@ export default {
   },
   methods: {
     changeIcon () {
-      if (this.form.contrasena.length) {
+      if (this.contrasena && this.contrasena.length) {
         this.hidePass = !this.hidePass;
       }
     },
     openModal (data = {}) {
       this.$refs.form.reset();
       if (data.id) {
-        this.form = data;
-        this.form.id_rol = this.getValue(this.form.id_rol, this.roles);
-        this.form.id_entidad = this.getValue(this.form.id_entidad, this.entidades);
+        this.$store.commit('usuario/setForm', {
+          id: data.id,
+          usuario: data.usuario,
+          email: data.email,
+          cargo: data.cargo,
+          estado: data.estado,
+          id_entidad: data.id_entidad + '',
+          id_rol: data.id_rol + '',
+          id_persona: data.id_persona,
+          tipo_documento: data.persona_tipo_documento,
+          tipo_documento_otro: data.persona_tipo_documento_otro,
+          nro_documento: data.persona_nro_documento,
+          fecha_nacimiento: data.persona_fecha_nacimiento,
+          nombres: data.persona_nombres,
+          primer_apellido: data.persona_primer_apellido,
+          segundo_apellido: data.persona_segundo_apellido,
+          nombre_completo: data.persona_nombre_completo,
+          telefono: data.persona_telefono,
+          movil: data.persona_movil,
+          nacionalidad: data.persona_nacionalidad,
+          pais_nacimiento: data.persona_pais_nacimiento,
+          genero: data.persona_genero,
+          estado_persona: data.persona_estado,
+          persona: true
+        });
+        this.$store.commit('setAction', {
+          action: 'setDateValue',
+          value: data.persona_fecha_nacimiento
+        });
       } else {
-        this.form = {
-          'usuario': '',
-          'contrasena': '',
-          'email': '',
-          'id_entidad': '',
-          'id_rol': ''
-        };
+        this.$store.commit('usuario/cleanForm');
       }
       this.$store.commit('openModal');
     },
     save () {
-      if (this.$store.state.user.id_rol === 5) {
-        this.form.id_entidad = this.$store.state.user.id_entidad;
+      if (this.$store.state.user.id_rol === 3) {
+        this.$store.commit('usuario/setForm', { id_entidad: this.id_entidad });
       }
       if (this.$refs.form.validate()) {
-        let data = Object.assign({}, this.form);
-        if (data.id_rol.value) {
-          data.id_rol = data.id_rol.value;
-        }
-        if (data.id_entidad.value) {
-          data.id_entidad = data.id_entidad.value;
-        }
+        let data = Object.assign({}, this.$store.state.usuario.form);
+        delete data.persona;
         if (data.id) {
+          const id = data.id;
           delete data.id;
-          delete data.entidad_nombre;
-          delete data.rol_nombre;
+          delete data.contrasena;
           this.$service.graphql({
             query: `
               mutation edit($id: Int!, $usuario: EditUsuario!) {
@@ -374,22 +418,27 @@ export default {
               }
             `,
             variables: {
-              id: this.form.id,
+              id,
               usuario: data
             }
           }).then(response => {
             if (response) {
-              if (this.username === this.form.usuario) {
+              if (this.username === this.usuario) {
                 this.$message.warning('Sus datos fueron actualizados, debe ingresar de nuevo al sistema.');
                 this.logout();
               } else {
                 this.$store.commit('closeModal');
                 this.updateList();
                 this.$message.success('Se actualizó el registro correctamente');
+                this.$store.commit('usuario/cleanForm');
               }
             }
           });
         } else {
+          delete data.id;
+          delete data.id_persona;
+          delete data.estado;
+          delete data.estado_persona;
           this.$service.graphql({
             query: `
               mutation add($usuario: NewUsuario!) {
@@ -406,6 +455,7 @@ export default {
               this.$store.commit('closeModal');
               this.updateList();
               this.$message.success();
+              this.$store.commit('usuario/cleanForm');
             }
           });
         }

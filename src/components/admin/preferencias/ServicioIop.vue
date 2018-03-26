@@ -205,6 +205,7 @@ export default {
       url: 'serviciosIop',
       headers: [
         { text: this.$t('common.actions'), sortable: false },
+        { text: this.$t('common.active'), sortable: false },
         { text: this.$t('servicioIop.crud.codigo'), value: 'codigo' },
         { text: this.$t('servicioIop.crud.entidad'), value: 'entidad' },
         { text: this.$t('servicioIop.crud.metodo'), value: 'metodo' },
