@@ -77,7 +77,7 @@ export default {
         this.$service.patch(`system/cambiar_pass`, this.form)
         .then(response => {
           if (response) {
-            this.$message.success('Contraseña actualizada correctamente');
+            this.$message.success(response.message);
             this.$store.commit('closeModal');
           }
         });

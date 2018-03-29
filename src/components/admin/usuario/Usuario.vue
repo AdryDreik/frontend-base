@@ -161,7 +161,7 @@
                   v-model="items.item.active"
                   value="ACTIVE"
                   v-if="username !== items.item.usuario"
-                  @change="changeActive(items.item, items.item.id, 'usuario', 'EditUsuario')"
+                  @change="changeActive(items.item, items.item.id, 'usuario', 'EditUsuario', null, 'Update')"
                   slot="activator"
                   color="success"></v-switch>
                 <span>Activar/desactivar registro</span>

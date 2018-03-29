@@ -32,23 +32,28 @@
       <v-card class="dialog-token">
         <v-card-title class="headline">
           <v-icon>cancel</v-icon> Desactivar mi cuenta
+          <v-spacer></v-spacer>
           <v-btn icon @click.native="modalDeactivate = false">
             <v-icon>close</v-icon>
           </v-btn>
         </v-card-title>
-        <form @submit.prevent="deactivate">
+        <v-form
+          @submit.prevent="deactivate"
+          ref="form2"
+          lazy-validation>
           <v-card-text>
             <v-alert color="warning" icon="warning" value="true">Una vez desactivada su cuenta si desea volver a habilitarla deberá contactarse con el administrador del sistema.</v-alert>
             <v-alert color="info" value="true" icon="info" class="mb-4">Ingrese su contraseña para confirmar la desactivación de su cuenta.</v-alert>
             <v-text-field
               name="password"
               :label="$t('login.password')"
-              id="password"
               append-icon="lock"
               :append-icon="getIcon"
               :append-icon-cb="changeIcon"
               :type="hidePass ? 'password' : 'text'"
               v-model="form.password"
+              :rules="$validate(['required'])"
+              required
               maxlength="100"
             ></v-text-field>
           </v-card-text>
@@ -57,7 +62,7 @@
             <v-btn @click.native="modalDeactivate = false"><v-icon>cancel</v-icon> {{ $t('common.cancel') }}</v-btn>
             <v-btn color="error" type="submit"><v-icon dark>vpn_key</v-icon> Desactivar</v-btn>
           </v-card-actions>
-        </form>
+        </v-form>
       </v-card>
     </v-dialog>
 
@@ -71,10 +76,11 @@
 import Auth from '@/components/admin/auth/mixins/auth';
 import { mapState } from 'vuex';
 import AccountPass from './AccountPass';
+import validate from '@/common/mixins/validate';
 import Layout from '@/common/layout/mixins/layout';
 
 export default {
-  mixins: [ Auth, Layout ],
+  mixins: [ Auth, Layout, validate ],
   mounted () {
     this.setActive('account');
   },
@@ -111,16 +117,18 @@ export default {
       this.modalDeactivate = true;
     },
     deactivate () {
-      this.$service.patch(`system/desactivar_cuenta/${this.$store.state.user.id}`, { password: this.form.password })
-      .then(resp => {
-        if (resp.finalizado) {
-          this.$message.success(resp.mensaje);
-          this.$store.commit('closeModal');
-          this.logout();
-        } else {
-          this.$message.error(resp.mensaje);
-        }
-      });
+      if (this.$refs.form2.validate()) {
+        this.$confirm('¿Está seguro que quiere desactivar su cuenta? Una vez desactivada tendrá que contactarse con el administrador del sistema para poder activar su cuenta otra vez.', () => {
+          this.$service.patch(`system/desactivar_cuenta`, { password: this.form.password })
+          .then(response => {
+            if (response) {
+              this.$message.success(response.message);
+              this.$store.commit('closeModal');
+              this.logout();
+            }
+          });
+        });
+      }
     },
     changeIcon () {
       if (this.form.password.length) {
