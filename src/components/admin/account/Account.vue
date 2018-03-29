@@ -2,7 +2,7 @@
   <section>
     <h3 class="primary--text"><v-icon color="primary">person_outline</v-icon> {{$t('app.account') }}</h3>
     <v-card class="success white--text account">
-      <v-container fluid grid-list-lg class="bg-white">
+      <v-container fluid grid-list-lg>
         <v-layout row>
           <v-flex xs8>
             <div>
@@ -154,11 +154,13 @@ export default {
 
   .sidenav-user__photo {
     background-color: $info;
-    height: 120px;
-    width: 120px;
-    font-size: 5rem;
-    line-height: 112px;
+    height: 160px;
+    width: 160px;
+    font-size: 7rem;
+    line-height: 152px;
     margin: 0;
+    border-radius: 50%;
+    text-align: center;
   }
 
   .account-info {
