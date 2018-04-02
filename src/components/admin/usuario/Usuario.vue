@@ -234,7 +234,7 @@ export default {
         { text: this.$t('common.actions'), sortable: false },
         { text: this.$t('common.active'), sortable: false },
         { text: this.$t('user.crud.user'), value: 'usuario' },
-        { text: this.$t('user.crud.fullname'), value: 'primer_apellido' },
+        { text: this.$t('user.crud.fullname'), value: 'nombre_completo' },
         { text: this.$t('user.crud.email'), value: 'email' },
         { text: this.$t('user.crud.entity'), value: 'id_entidad' },
         { text: this.$t('user.crud.role'), value: 'id_rol' },
@@ -307,12 +307,12 @@ export default {
           type: 'text',
           typeG: 'String'
         },
-        // {
-        //   field: 'nombre_completo',
-        //   label: this.$t('user.crud.fullname'),
-        //   type: 'text',
-        //   typeG: 'String'
-        // },
+        {
+          field: 'nombre_completo',
+          label: this.$t('user.crud.fullname'),
+          type: 'text',
+          typeG: 'String'
+        },
         {
           field: 'email',
           label: this.$t('user.crud.email'),
