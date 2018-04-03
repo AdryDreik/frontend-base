@@ -16,7 +16,7 @@ export default {
     clickEvent (url) {
       url = this.$util.trimUrl(url);
       let sidenav = document.getElementById('sidenav-menu');
-      let element = sidenav.querySelector(`a[data-url="entidades"]`);
+      let element = sidenav.querySelector(`a[data-url="${url}"]`);
       if (element) {
         element.classList.add('active');
         element = element.parentNode.parentNode.previousElementSibling;
