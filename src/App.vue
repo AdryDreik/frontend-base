@@ -16,6 +16,7 @@
     <app-alert></app-alert>
     <app-confirm></app-confirm>
     <vue-progress-bar></vue-progress-bar>
+    <app-loading></app-loading>
   </v-app>
 </template>
 
@@ -24,6 +25,7 @@ import AppSidenav from '@/common/layout/AppSidenav';
 import AppNavbar from '@/common/layout/AppNavbar';
 import AppFooter from '@/common/layout/AppFooter';
 import AppBreadcrumbs from '@/common/layout/AppBreadcrumbs';
+import AppLoading from '@/common/plugins/loading/AppLoading';
 import AppMessages from '@/common/plugins/message/AppMessages';
 import AppNotification from '@/common/layout/AppNotification';
 import AppAlert from '@/common/plugins/modal/AppAlert';
@@ -82,6 +84,7 @@ export default {
     AppFooter,
     AppBreadcrumbs,
     AppMessages,
+    AppLoading,
     AppNotification,
     AppAlert,
     AppConfirm

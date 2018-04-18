@@ -30,7 +30,7 @@ export default {
         return {
           day: date.getUTCDate(),
           month: date.getUTCMonth() + 1,
-          year: date.getFullYear()
+          year: date.getUTCFullYear()
         };
       },
 

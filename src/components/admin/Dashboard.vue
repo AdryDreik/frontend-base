@@ -14,6 +14,13 @@
         <h4>FileUploader</h4>
         <file-upload></file-upload>
 
+        <h4>Select de fecha</h4>
+        <select-date
+          model="fecha_test"
+          ></select-date>
+
+        <p>Fecha: {{ fecha }}</p>
+
         <h4>Notificaciones</h4>
         <v-btn @click.native="showMessage('success')" color="success"><v-icon>check</v-icon> Message success</v-btn>
         <v-btn @click.native="showMessage('warning')" color="warning"><v-icon>warning</v-icon> Message warning</v-btn>
@@ -23,6 +30,10 @@
         <h4>Modal</h4>
         <v-btn @click.native="showAlert()">Alert</v-btn>
         <v-btn @click.native="showConfirm()">Confirm</v-btn>
+
+        <h4>Loading</h4>
+        <v-btn @click.native="showLoading()">Mostrar</v-btn>
+        <v-btn @click.native="hideLoading()">Ocultar</v-btn>
 
         <h4>i18n</h4>
         <p>
@@ -42,12 +53,24 @@
 
 <script>
   import FileUpload from '@/common/util/FileUpload.vue';
+  import SelectDate from '@/common/util/SelectDate.vue';
   import Demofi from '@/common/util/Demofi.vue';
 
   export default {
     components: {
       FileUpload,
-      Demofi
+      Demofi,
+      SelectDate
+    },
+    data () {
+      return {
+        fecha: 'vacio'
+      };
+    },
+    watch: {
+      '$store.state.date.fecha_test': function (val) {
+        this.fecha = val;
+      }
     },
     methods: {
       showMessage (type) {
@@ -65,6 +88,14 @@
         }, function () {
           console.log('cancel!!');
         });
+      },
+      showLoading () {
+        this.$loading.show('Este es mi mensaje personalizado');
+
+        setTimeout(() => (this.$loading.hide()), 2000);
+      },
+      hideLoading () {
+        this.$loading.hide();
       }
     }
   };

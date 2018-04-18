@@ -35,9 +35,10 @@ export default {
       });
     },
 
-    logout (store, router) {
+    logout (store, router, loading) {
       store = store || this.$store;
       router = router || this.$router;
+      loading = loading || this.$loading;
 
       if (store.state.sessionInterval) {
         window.clearInterval(store.state.sessionInterval);
@@ -49,12 +50,13 @@ export default {
       this.$storage.remove('token');
       this.$storage.remove('sidenav');
       this.$storage.remove('permissions');
+      loading.hide();
 
       store.commit('setDefault');
 
       // Debemos resetear todos los formularios que usamos con vuex-map-fields
       store.commit('usuario/cleanForm');
-      router.push('login');
+      router.push('/login');
     },
 
     timerSession () {

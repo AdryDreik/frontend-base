@@ -1,6 +1,6 @@
 <template>
-  <div class="select-date">
-    <label v-if="label.length">{{ label }}</label>
+  <div class="select-date" :class="{ 'select-date-label': label.length }">
+    <label v-if="label.length" class="select-date-title">{{ label }}</label>
     <v-layout row wrap>
       <v-flex xs4>
         <v-text-field
@@ -64,6 +64,19 @@ export default {
     store: {
       type: String,
       default: ''
+    },
+    maxYear: {
+      type: Number,
+      default: 2100
+    },
+    value: {
+      type: Date,
+      default: null
+    }
+  },
+  mounted () {
+    if (this.$datetime.isDate(this.value)) {
+      this.setValueDefault(this.value);
     }
   },
   data () {
@@ -87,10 +100,22 @@ export default {
         this.setValue();
       }
     },
-    setValue (value = null) {
-      if (this.model.length) {
+    setValue (value = null, key) {
+      if (this.model.length && this.store.length) {
         this.$store.commit(`${this.store}updateField`, { path: this.model, value });
       }
+      if (key) {
+        this.$store.commit('setDate', { [key]: value });
+      }
+    },
+    setValueDefault (value) {
+      const { day, month, year } = this.$datetime.getDate(value);
+      this.form.day = day;
+      this.form.month = month;
+      this.form.year = year;
+      setTimeout(() => {
+        this.$store.commit('setDate', this.model.length ? { [this.model]: value } : value);
+      });
     }
   },
   watch: {
@@ -112,7 +137,7 @@ export default {
     },
     'form.year': function (val) {
       if (val) {
-        if (val.length === 4 && (val > this.$datetime.now('YYYY') || val < 1900)) {
+        if (val.length === 4 && (val > this.maxYear || val < 1900)) {
           this.form.year = '';
         }
         this.setDate();
@@ -129,12 +154,13 @@ export default {
     },
     '$store.state.action': function (val) {
       if (val.action === 'setDateValue') {
-        this.setValue(val.value);
-        console.log('date!', val.value, typeof val.value, new Date(val.value));
         const { day, month, year } = this.$datetime.getDate(val.value);
         this.form.day = day;
         this.form.month = month;
         this.form.year = year;
+        setTimeout(() => {
+          this.setValue(val.value, val.key);
+        }, 500);
       }
     }
   }
@@ -142,9 +168,15 @@ export default {
 </script>
 
 <style lang="scss">
-  .select-date {
-    label {
-      color: rgba(0,0,0,0.54);
+  .select-date.select-date-label {
+    position: relative;
+    margin-top: -4px;
+
+    .select-date-title {
+      position: absolute;
+      color: rgba(0,0,0,0.5);
+      font-size: 0.9rem;
+      top: -8px;
     }
   }
 </style>

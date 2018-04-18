@@ -16,6 +16,7 @@ import Storage from '@/common/plugins/storage';
 import Datetime from '@/common/plugins/datetime';
 import Filter from '@/common/plugins/filter';
 import Message from '@/common/plugins/message/message';
+import Loading from '@/common/plugins/loading/loading';
 import Service from '@/common/plugins/service';
 import Modal from '@/common/plugins/modal/modal';
 import messages from '@/common/lang/';
@@ -47,6 +48,7 @@ import {
   VBreadcrumbs,
   VAlert,
   VTabs,
+  VProgressCircular,
   transitions
 } from 'vuetify';
 import '../node_modules/vuetify/src/stylus/app.styl';
@@ -79,6 +81,7 @@ Vue.use(Vuetify, {
     VBreadcrumbs,
     VAlert,
     VTabs,
+    VProgressCircular,
     transitions
   },
   theme: {
@@ -97,6 +100,7 @@ Vue.use(EventBus);
 Vue.use(Util);
 Vue.use(Storage, { appName: 'base' });
 Vue.use(Message, { timeout: 6000 });
+Vue.use(Loading);
 Vue.use(Service, {
   apiUrl: process.env.API_URL,
   graphqlUrl: process.env.GRAPHQL_URL,

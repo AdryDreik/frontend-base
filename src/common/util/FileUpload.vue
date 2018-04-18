@@ -5,6 +5,7 @@
       id="dropzone"
       @vdropzone-success="vdropzoneSuccess"
       @vdropzone-error="vdropzoneError"
+      @vdropzone-sending="sendingEvent"
       :options="dropzoneOptions">
     </vue-dropzone>
   </div>
@@ -30,6 +31,18 @@ export default {
     types: {
       type: String,
       default: 'application/pdf'
+    },
+    onSuccess: {
+      type: Function,
+      default: null
+    },
+    onError: {
+      type: Function,
+      default: null
+    },
+    form: {
+      type: Object,
+      default: null
     }
   },
   data () {
@@ -63,12 +76,22 @@ export default {
   methods: {
     vdropzoneSuccess (file, response) {
       console.log('Archivo subido', file, response);
-      if (response && response.data && response.data.id_archivo) {
-        this.$store.commit('setArchivo', response.data.id_archivo);
+      if (typeof this.onSuccess === 'function') {
+        this.onSuccess(file, response);
       }
     },
     vdropzoneError (file, message, xhr) {
-      this.$message.error(message);
+      this.$message.error(message.error || message);
+      if (typeof this.onError === 'function') {
+        this.onError(file, message, xhr);
+      }
+    },
+    sendingEvent (file, xhr, formData) {
+      if (this.form) {
+        for (let key in this.form) {
+          formData.append(key, this.form[key]);
+        }
+      }
     }
   }
 };
