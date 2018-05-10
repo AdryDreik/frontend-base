@@ -40,11 +40,6 @@ export default {
       router = router || this.$router;
       loading = loading || this.$loading;
 
-      if (store.state.sessionInterval) {
-        window.clearInterval(store.state.sessionInterval);
-        store.state.sessionInterval = null;
-      }
-
       this.$storage.removeUser();
       this.$storage.remove('menu');
       this.$storage.remove('token');
@@ -56,19 +51,20 @@ export default {
 
       // Debemos resetear todos los formularios que usamos con vuex-map-fields
       store.commit('usuario/cleanForm');
+      store.commit('DESTROY_INTERVAL');
       router.push('/login');
     },
 
     timerSession () {
       // Definiendo el tiempo en el que dura una sesión sin actividad
       this.$store.commit('SET_TIME', process.env.TIME_SESSION_EXPIRED * 60);
-      this.$store.state.sessionInterval = window.setInterval(() => {
+      this.$store.commit('INIT_INTERVAL', window.setInterval(() => {
         this.$store.commit('TIME_DECREASE');
         if (this.$store.state.time <= 0) {
           this.$message.warning('Su sesión ha sido cerrada automáticamente después de ' + process.env.TIME_SESSION_EXPIRED + ' minutos de inactividad.', '¡Sesión cerrada!', { timeout: 30000 });
           this.logout();
         }
-      }, 15000);
+      }, 15000));
     },
 
     reload () {

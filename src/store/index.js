@@ -121,6 +121,15 @@ export default new Vuex.Store({
     },
     TIME_DECREASE (state) {
       state.time -= 15;
+    },
+    DESTROY_INTERVAL (state) {
+      if (state.sessionInterval) {
+        window.clearInterval(state.sessionInterval);
+      }
+      state.sessionInterval = null;
+    },
+    INIT_INTERVAL (state, interval) {
+      state.sessionInterval = interval;
     }
   },
   modules: {

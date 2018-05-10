@@ -305,7 +305,7 @@ export default {
         }
         if (error.response.status === 403) {
           store.state.state403 = true;
-          router.push('403');
+          router.push('/403');
         }
         if (error.response.status === 500) {
           let data = error.response.data;
@@ -322,7 +322,7 @@ export default {
             }
           }
           store.state.message = message;
-          router.push('500');
+          router.push('/500');
         }
       }
       return Promise.reject(error);
