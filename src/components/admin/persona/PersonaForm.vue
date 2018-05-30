@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-layout row wrap>
-      <persona-segip store="usuario/"></persona-segip>
+      <persona-segip :store="store" :enabled-fecha="enabledFecha"></persona-segip>
       <v-flex xs4>
         <v-text-field
           label="Nombre(s)"
@@ -40,6 +40,7 @@
           item-value="value"
           :rules="$validate(['required'])"
           required
+          autocomplete
           ></v-select>
       </v-flex>
 
@@ -52,6 +53,7 @@
           item-value="id"
           :rules="$validate(['required'])"
           required
+          autocomplete
           ></v-select>
       </v-flex> -->
 
@@ -97,24 +99,36 @@
 <script>
 import PersonaSegip from '@/components/admin/persona/PersonaSegip';
 import validate from '@/common/mixins/validate';
+import paises from '@/common/mixins/paises';
 import { mapFields } from 'vuex-map-fields';
 
 export default {
-  mixins: [ validate ],
+  mixins: [ validate, paises ],
   props: {
     store: {
       type: String,
       default: ''
+    },
+    enabledFecha: {
+      type: Boolean,
+      default: false
     }
+  },
+  created () {
+    let items = this.getPaises();
+    let paises = [];
+    let nacionalidades = [];
+    items.map(item => {
+      paises.push({ value: item.pais, text: item.pais });
+      nacionalidades.push({ value: item.nacionalidad, text: item.nacionalidad });
+    });
+    this.paises = paises;
+    this.nacionalidades = nacionalidades;
   },
   data () {
     return {
-      paises: [
-        { value: 'BOLIVIA', text: 'BOLIVIA' }
-      ],
-      nacionalidades: [
-        { value: 'BOLIVIA', text: 'BOLIVIANA' }
-      ]
+      paises: [],
+      nacionalidades: []
     };
   },
   beforeCreate () {

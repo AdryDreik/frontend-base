@@ -24,25 +24,24 @@
           :disabled="!!persona"
           ></v-text-field>
       </v-flex>
-      <v-flex :class="enabledFecha ? 'xs5' : 'xs3'">
+      <v-flex xs3>
         <select-date
           label="Fecha de nacimiento"
-          model="form.fecha_nacimiento"
-          :store="store"
-          :required="!enabledFecha"
-          :disabled="enabledFecha ? false: !!persona"
+          model="fecha_nacimiento"
+          v-if="fecha_nacimiento"
+          :required="true"
+          :value="fecha_nacimiento"
+          :disabled="!!persona"
           :max-year="parseInt(this.$datetime.now('YYYY'))"
         >
         </select-date>
       </v-flex>
-      <v-flex xs2 v-if="!enabledFecha">
+      <v-flex xs2>
         <v-btn
           v-if="persona"
           @click="cambiar"><v-icon>compare_arrows</v-icon> Cambiar</v-btn>
         <v-btn
-          color="info"
-          v-if="!persona"
-          :disabled="$filter.empty(tipo_documento) || $filter.empty(nro_documento) || $filter.empty(fecha_nacimiento)"
+          :disabled="$filter.empty(tipo_documento) || $filter.empty(nro_documento) || $filter.empty($store.state.date.fecha_eleccion)"
           @click="buscarPersona"><v-icon>search</v-icon> Buscar</v-btn>
       </v-flex>
     </v-layout>
@@ -57,13 +56,19 @@ import { mapFields } from 'vuex-map-fields';
 export default {
   mixins: [ validate ],
   props: {
-    store: {
-      type: String,
-      default: ''
-    },
-    enabledFecha: {
-      type: Boolean,
-      default: false
+    persona: {
+      type: Object,
+      default: null
+    }
+  },
+  mounted () {
+    if (this.persona) {
+      this.tipo_documento = this.persona.tipo_documento;
+      this.nro_documento = this.persona.nro_documento;
+      this.fecha_nacimiento = null;
+      this.$nextTick(() => {
+        this.fecha_nacimiento = this.persona.fecha_nacimiento;
+      });
     }
   },
   data () {
@@ -71,29 +76,27 @@ export default {
       tiposDoc: [
         { value: 'CI', text: 'CÉDULA DE IDENTIDAD' },
         { value: 'PASAPORTE', text: 'PASAPORTE' }
-      ]
+      ],
+      primer_apellido: '',
+      segundo_apellido: '',
+      nombres: '',
+      nacionalidad: '',
+      tipo_documento: '',
+      tipo_documento_otro: '',
+      nro_documento: '',
+      fecha_nacimiento: null,
+      persona: null
     };
   },
-  beforeCreate () {
-    // Creando campos del formulario en el store definido en props
-    let store = this.$options.propsData.store || '';
-    this.$options.computed = {
-      ...mapFields([
-        'form.tipo_documento',
-        'form.tipo_documento_otro',
-        'form.nro_documento',
-        'form.persona',
-        'form.fecha_nacimiento'
-      ], `${store}getField`, `${store}updateField`)
-    };
-  },
+
   methods: {
     buscarPersona () {
-      this.$service.get(`system/persona-segip/${this.nro_documento}?fechaNacimiento=${this.$datetime.format(this.fecha_nacimiento)}`)
+      this.$service.get(`system/persona-segip/${this.nro_documento}?fechaNacimiento=${this.$datetime.format(this.$store.state.date.fecha_nacimiento)}`)
       .then(response => {
         if (response && response.persona) {
           const persona = response.persona;
-          this.$store.commit(`${this.store}setForm`, {
+
+          this.$bus.$emit('setPersona', {
             primer_apellido: persona.paterno,
             segundo_apellido: persona.materno,
             nombres: persona.nombres,
@@ -104,18 +107,16 @@ export default {
       });
     },
     cambiar () {
-      this.$store.commit(`${this.store}setForm`, {
-        primer_apellido: '',
-        segundo_apellido: '',
-        nombres: '',
-        nacionalidad: '',
-        tipo_documento: '',
-        tipo_documento_otro: '',
-        nro_documento: '',
-        fecha_nacimiento: '',
-        persona: null
-      });
-      this.$store.commit('cleanDate', 'form.fecha_nacimiento');
+      this.primer_apellido = '';
+      this.segundo_apellido = '';
+      this.nombres = '';
+      this.nacionalidad = '';
+      this.tipo_documento = '';
+      this.tipo_documento_otro = '';
+      this.nro_documento = '';
+      this.fecha_nacimiento = '';
+      this.persona = '';
+      this.$store.commit('cleanDate', 'fecha_nacimiento');
     }
   },
   components: {

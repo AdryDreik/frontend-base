@@ -42,6 +42,12 @@
         </v-flex>
         <!-- END Section label -->
 
+        <!-- Section details -->
+        <v-flex xs12>
+          <slot name="details"></slot>
+        </v-flex>
+        <!-- END Section details -->
+
         <!-- Section Filter -->
         <v-flex xs12 v-if="filter">
           <slot name="filters" :search="search">
@@ -60,6 +66,7 @@
               <v-icon color="primary">search</v-icon>
               <div
                 v-for="filter in filters"
+                :key="filter.field"
                 class="filter-item"
                 v-show="filter.type != 'hidden'">
                 <v-text-field
@@ -76,6 +83,7 @@
                   item-text="text"
                   item-value="value"
                   hide-details
+                  autocomplete
                   ></v-select>
                 <v-switch
                   v-if="filter.type == 'boolean'"
@@ -174,6 +182,10 @@ export default {
     showFilter: {
       type: Boolean,
       default: false
+    },
+    successList: {
+      type: Function,
+      default: null
     }
   },
   data () {
@@ -205,6 +217,8 @@ export default {
     this.$bus.$on('updateList', () => {
       this.getData();
     });
+
+    // this.setFilterValues();
   },
   computed: {
     ...mapState(['modal']),
@@ -248,13 +262,24 @@ export default {
       this.filters.map(el => {
         if (el.typeG) {
           if (el.type === 'hidden') {
-            values.push(`${el.field}: ${el.value}`);
+            if (el.typeG === 'String') {
+              values.push(`${el.field}: "${el.value}"`);
+            } else {
+              values.push(`${el.field}: ${el.value}`);
+            }
           } else {
             values.push(`${el.field}: $${el.field}`);
           }
         }
       });
       return values.join(',\n');
+    },
+    setFilterValues () {
+      this.filters.map(el => {
+        if (el.value && el.value.length) {
+          this.search[el.field] = el.value;
+        }
+      });
     },
     getData () {
       this.loading = true;
@@ -318,6 +343,10 @@ export default {
             this.totalItems = response[this.url].count;
             this.loading = false;
             this.load = true;
+
+            if (typeof this.successList === 'function') {
+              this.successList();
+            }
           }
         });
       } else {
