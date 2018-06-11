@@ -15,6 +15,12 @@
       </v-btn>
       <span>Pantalla completa</span>
     </v-tooltip>
+    <v-tooltip bottom>
+      <v-btn icon @click="reload" slot="activator">
+        <v-icon>refresh</v-icon>
+      </v-btn>
+      <span>Actualizar la página</span>
+    </v-tooltip>
     <v-btn icon @click.stop="$store.commit('layout/toggleRightDrawer')">
       <v-icon>notifications</v-icon>
     </v-btn>

@@ -66,7 +66,6 @@
               <v-icon color="primary">search</v-icon>
               <div
                 v-for="filter in filters"
-                :key="filter.field"
                 class="filter-item"
                 v-show="filter.type != 'hidden'">
                 <v-text-field

@@ -389,10 +389,7 @@ export default {
           estado_persona: data.persona_estado,
           persona: true
         });
-        this.$store.commit('setAction', {
-          action: 'setDateValue',
-          value: data.persona_fecha_nacimiento
-        });
+        this.$datetime.setDate('form.fecha_nacimiento', data.persona_fecha_nacimiento);
       } else {
         this.$store.commit('usuario/cleanForm');
       }

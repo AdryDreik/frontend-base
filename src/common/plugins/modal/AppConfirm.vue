@@ -2,7 +2,7 @@
   <v-dialog v-model="show" persistent content-class="dialog--alert" max-width="360">
     <v-card>
       <v-card-title class="headline"><v-icon>warning</v-icon> Confirmar</v-card-title>
-      <v-card-text v-html="text"></v-card-text>
+      <v-card-text v-html="text" class="pt-0"></v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn @click.native="cancel()" id="md-btn-confirm-selected-cancel">{{ textCancel }}</v-btn>

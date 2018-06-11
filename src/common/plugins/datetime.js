@@ -1,6 +1,9 @@
 'use strict';
 
+import store from '@/store';
+
 export default {
+  store,
   install: Vue => {
     let instance = new Vue();
     const Util = instance.$util;
@@ -8,12 +11,27 @@ export default {
     const DatetimeService = {
       formatDate: 'dd/MM/YYYY',
       months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
       days: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
       dayslong: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
 
-      date (date, separator) {
-        date = date.split(separator || '-');
-        return new Date(date[0], date[1] - 1, date[2]);
+      date (date, separator, format) {
+        return this.convert(date, separator, format);
+      },
+
+      convert (date, separator = '/', format) {
+        if (date) {
+          format = format || this.formatDate;
+          date = date.split(separator);
+          if (format === 'dd/MM/YYYY') {
+            return new Date(date[2], date[1] - 1, date[0]);
+          } else if (format === 'MM/dd/YYYY') {
+            return new Date(date[2], date[0] - 1, date[1]);
+          } else {
+            return new Date(date[0], date[1] - 1, date[2]);
+          }
+        }
+        return date;
       },
 
       parse (date, separator) {
@@ -114,15 +132,39 @@ export default {
       },
 
       addDays (date, days) {
-        return this.milliseconds(date) + (days || 0) * 24 * 60 * 60 * 1000;
+        if (typeof date === 'number') {
+          return date + (days || 0) * 24 * 60 * 60 * 1000;
+        } else {
+          return this.milliseconds(date) + (days || 0) * 24 * 60 * 60 * 1000;
+        }
       },
 
       subtractDays (date, days) {
-        return this.milliseconds(date) - (days || 0) * 24 * 60 * 60 * 1000;
+        if (typeof date === 'number') {
+          return date - (days || 0) * 24 * 60 * 60 * 1000;
+        } else {
+          return this.milliseconds(date) - (days || 0) * 24 * 60 * 60 * 1000;
+        }
       },
 
       diff (date2, date1) {
         return this.milliseconds(date2) - this.milliseconds(date1);
+      },
+
+      diffTime (hourIni, horaEnd) {
+        let h1 = hourIni.split(':');
+        let h2 = horaEnd.split(':');
+
+        h1 = parseInt(h1[0]) * 60 + parseInt(h1[1]);
+
+        if (h2[1].split('+').length > 1) {
+          let add = h2[1].split('+');
+          h2 = (parseInt(h2[0]) * 60 + parseInt(add[0])) + 60 * 24 * parseInt(add[1]);
+        } else {
+          h2 = parseInt(h2[0]) * 60 + parseInt(h2[1]);
+        }
+
+        return h2 - h1;
       },
 
       milliseconds (date) {
@@ -130,17 +172,6 @@ export default {
           date = this.convert(date);
         }
         return date.getTime();
-      },
-
-      convert (date) {
-        date = date.split('/');
-        if (this.formatDate === 'dd/MM/YYYY') {
-          return new Date(date[2], date[1] - 1, date[0]);
-        } else if (this.formatDate === 'MM/dd/YYYY') {
-          return new Date(date[2], date[0] - 1, date[1]);
-        } else {
-          return new Date(date[0], date[1] - 1, date[2]);
-        }
       },
 
       setFormatDate (format) {
@@ -219,11 +250,13 @@ export default {
       },
 
       format (date, format) {
-        let d = new Date(date);
-        if (this.isDate(d)) {
-          return this.replace(d, format || this.formatDate);
+        if (date) {
+          let d = new Date(date);
+          if (this.isDate(d)) {
+            return this.replace(d, format || this.formatDate);
+          }
+          return date;
         }
-        return date;
       },
 
       standar (date, format) {
@@ -274,14 +307,14 @@ export default {
         return Util.replace(format,
           ['dddd', 'ddd', 'dd', monthLiteral ? 'MMM' : 'MM', 'YYYY', 'HH', 'mm', 'ss'],
           [
-            this.dayslong[date.getDay()],
-            this.days[date.getDay()],
-            (date.getDate() < 10 ? '0' : '') + date.getDate(),
-            monthLiteral ? this.months[date.getMonth()] : ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)),
-            date.getFullYear(),
-            (date.getHours() < 10 ? '0' : '') + date.getHours(),
-            (date.getMinutes() < 10 ? '0' : '') + date.getMinutes(),
-            (date.getSeconds() < 10 ? '0' : '') + date.getSeconds()
+            this.dayslong[date.getUTCDay()],
+            this.days[date.getUTCDay()],
+            (date.getUTCDate() < 10 ? '0' : '') + date.getUTCDate(),
+            monthLiteral ? this.months[date.getUTCMonth()] : ((date.getUTCMonth() + 1 < 10 ? '0' : '') + (date.getUTCMonth() + 1)),
+            date.getUTCFullYear(),
+            (date.getUTCHours() < 10 ? '0' : '') + date.getUTCHours(),
+            (date.getUTCMinutes() < 10 ? '0' : '') + date.getUTCMinutes(),
+            (date.getUTCSeconds() < 10 ? '0' : '') + date.getUTCSeconds()
           ]
         );
       },
@@ -357,6 +390,14 @@ export default {
 
       parseDate (date) {
         return [date.getDate(), date.getMonth() + 1, date.getFullYear()].join('/');
+      },
+
+      setDate (key, value) {
+        store.commit('setAction', {
+          action: 'setDateValue',
+          value,
+          key
+        });
       }
     };
 

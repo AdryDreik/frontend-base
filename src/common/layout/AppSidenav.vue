@@ -12,7 +12,7 @@
     mini-variant-width="68"
   >
     <div class="app-logo">
-      <h1 class="app-title"><v-icon color="white">whatshot</v-icon><span>{{ $t('app.title') }}</span></h1>
+      <h1 class="app-title"><v-icon color="white">pets</v-icon><span>{{ $t('app.title') }}</span></h1>
     </div>
     <v-list id="sidenav-menu">
       <v-list-group
@@ -96,7 +96,7 @@ export default {
 
         this.setActive(url);
 
-        this.$router.push(url || '/');
+        this.$router.push('/' + (url || ''));
       }
     },
     getLabel (item) {
@@ -118,7 +118,7 @@ export default {
 
 $bgSidenav: darken($primary, 5%);
 
-.app-sidenav {
+.theme--light .app-sidenav {
   background-color: $bgSidenav !important;
 
   .list {

@@ -1,7 +1,7 @@
 <template>
   <section>
     <v-layout row wrap>
-      <persona-segip :store="store" :enabled-fecha="enabledFecha"></persona-segip>
+      <persona-segip :store="store" :enabled-fecha="enabledFecha" :db="db"></persona-segip>
       <v-flex xs4>
         <v-text-field
           label="Nombre(s)"
@@ -9,7 +9,7 @@
           maxlength="100"
           :rules="$validate(['required'])"
           required
-          :disabled="tipo_documento == 'CI'"
+          :disabled="tipo_documento == 'CI' || enabledFecha"
           ></v-text-field>
       </v-flex>
 
@@ -18,7 +18,7 @@
           label="Primer apellido"
           v-model="primer_apellido"
           maxlength="100"
-          :disabled="tipo_documento == 'CI'"
+          :disabled="tipo_documento == 'CI' || enabledFecha"
           ></v-text-field>
       </v-flex>
 
@@ -27,7 +27,7 @@
           label="Segundo apellido"
           v-model="segundo_apellido"
           maxlength="100"
-          :disabled="tipo_documento == 'CI'"
+          :disabled="tipo_documento == 'CI' || enabledFecha"
           ></v-text-field>
       </v-flex>
 
@@ -110,6 +110,10 @@ export default {
       default: ''
     },
     enabledFecha: {
+      type: Boolean,
+      default: false
+    },
+    db: {
       type: Boolean,
       default: false
     }

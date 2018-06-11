@@ -42,7 +42,7 @@
         <v-btn
           color="info"
           v-if="!persona"
-          :disabled="$filter.empty(tipo_documento) || $filter.empty(nro_documento) || $filter.empty(fecha_nacimiento)"
+          :disabled="$filter.empty(tipo_documento) || $filter.empty(nro_documento) || $filter.empty(fecha_nacimiento) || loading"
           @click="buscarPersona"><v-icon>search</v-icon> Buscar</v-btn>
       </v-flex>
     </v-layout>
@@ -64,6 +64,10 @@ export default {
     enabledFecha: {
       type: Boolean,
       default: false
+    },
+    db: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -71,7 +75,8 @@ export default {
       tiposDoc: [
         { value: 'CI', text: 'CÉDULA DE IDENTIDAD' },
         { value: 'PASAPORTE', text: 'PASAPORTE' }
-      ]
+      ],
+      loading: false
     };
   },
   beforeCreate () {
@@ -89,8 +94,16 @@ export default {
   },
   methods: {
     buscarPersona () {
-      this.$service.get(`system/persona-segip/${this.nro_documento}?fechaNacimiento=${this.$datetime.format(this.fecha_nacimiento)}`)
+      this.$loading.show('Buscando persona');
+      this.loading = true;
+      let url = `system/persona-segip/${this.nro_documento}?fechaNacimiento=${this.$datetime.format(this.fecha_nacimiento)}`;
+      if (this.db) {
+        url += `&tipoDoc=${this.tipo_documento}`;
+        url += '&db=true';
+      }
+      this.$service.get(url)
       .then(response => {
+        this.loading = false;
         if (response && response.persona) {
           const persona = response.persona;
           this.$store.commit(`${this.store}setForm`, {
@@ -98,6 +111,10 @@ export default {
             segundo_apellido: persona.materno,
             nombres: persona.nombres,
             nacionalidad: persona.nacionalidad,
+            telefono: persona.telefono,
+            movil: persona.movil,
+            genero: persona.genero,
+            id_persona: persona.id_persona,
             persona: persona
           });
         }
@@ -113,6 +130,9 @@ export default {
         tipo_documento_otro: '',
         nro_documento: '',
         fecha_nacimiento: '',
+        telefono: '',
+        movil: '',
+        genero: '',
         persona: null
       });
       this.$store.commit('cleanDate', 'form.fecha_nacimiento');

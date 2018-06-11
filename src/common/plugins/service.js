@@ -8,7 +8,7 @@ import Auth from '@/components/admin/auth/mixins/auth';
 import store from '@/store';
 import router from '@/router';
 
-const protocol = window.location.protocol.replace(':', '');
+const protocol = location.protocol.replace(':', '');
 const PATERN_HOST = protocol === 'https' ? /(https:\/\/|www\.)\S+/i : /(http:\/\/|www\.)\S+/i;
 
 export default {
@@ -23,7 +23,7 @@ export default {
 
     // Plugins
     let instance = new Vue({
-      mixins: [Auth]
+      mixins: [ Auth ]
     });
     const Util = instance.$util;
     const Message = instance.$message;
@@ -82,29 +82,29 @@ export default {
       file (url, type, data = {}) {
         url = getUrl(url);
         return axios.post(url, data, { responseType: 'arraybuffer' })
-          .then(response => {
-            if (response.data) {
-              let file = new window.Blob([response.data], { type: type });
-              let fileURL = window.URL.createObjectURL(file);
-              // return $sce.trustAsResourceUrl(fileURL);
-              return fileURL;
-            }
-            return null;
-          }).catch(error => handlingErrors(error));
+        .then(response => {
+          if (response.data) {
+            let file = new window.Blob([response.data], { type: type });
+            let fileURL = window.URL.createObjectURL(file);
+            // return $sce.trustAsResourceUrl(fileURL);
+            return fileURL;
+          }
+          return null;
+        }).catch(error => handlingErrors(error));
       },
 
       pdf (url, data = {}, onlyUrl) {
         url = getUrl(url, data);
         return axios.post(url, data, { responseType: 'arraybuffer' })
-          .then(response => {
-            if (response.data) {
-              let file = new window.Blob([response.data], { type: 'application/pdf' });
-              let fileURL = window.URL.createObjectURL(file);
-              // return onlyUrl ? fileURL : $sce.trustAsResourceUrl(fileURL);
-              return fileURL;
-            }
-            return null;
-          }).catch(error => handlingErrors(error));
+        .then(response => {
+          if (response.data) {
+            let file = new window.Blob([response.data], { type: 'application/pdf' });
+            let fileURL = window.URL.createObjectURL(file);
+            // return onlyUrl ? fileURL : $sce.trustAsResourceUrl(fileURL);
+            return fileURL;
+          }
+          return null;
+        }).catch(error => handlingErrors(error));
       },
 
       graphql (data) {
@@ -116,28 +116,28 @@ export default {
 
         // Set token in headers
         if (Storage.exist('token')) {
-          setting.headers = { 'Authorization': `${authToken} ${Storage.get('token')}` };
+          setting.headers = {'Authorization': `${authToken} ${Storage.get('token')}`};
         }
         instance.$Progress.start();
         return axios(setting)
-          .then(response => {
-            instance.$Progress.finish();
-            Loading.hide();
-            console.log('Respuesta Graphql', response.data);
-            if (response.data.errors) {
-              parseErrorGraphql(response.data);
-            } else {
-              return response.data.data;
-            }
-          })
-          .catch(error => {
-            instance.$Progress.finish();
-            Loading.hide();
-            if (error.response && error.response.data) {
-              let data = error.response.data;
-              parseErrorGraphql(data);
-            }
-          });
+        .then(response => {
+          instance.$Progress.finish();
+          Loading.hide();
+          console.log('Respuesta Graphql', response.data);
+          if (response.data.errors) {
+            parseErrorGraphql(response.data);
+          } else {
+            return response.data.data;
+          }
+        })
+        .catch(error => {
+          instance.$Progress.finish();
+          Loading.hide();
+          if (error.response && error.response.data) {
+            let data = error.response.data;
+            parseErrorGraphql(data);
+          }
+        });
       }
     };
 
@@ -188,12 +188,12 @@ export default {
 
       // Set token in headers
       if (Storage.exist('token')) {
-        setting.headers = { 'Authorization': `${authToken} ${Storage.get('token')}` };
+        setting.headers = {'Authorization': `${authToken} ${Storage.get('token')}`};
       }
 
       return axios(setting)
-        .then(response => filterResponse(response.data))
-        .catch(error => handlingErrors(error));
+      .then(response => filterResponse(response.data))
+      .catch(error => handlingErrors(error));
     }
 
     function getUrl (url, id) {
@@ -228,6 +228,9 @@ export default {
       if (data.error) {
         Message.error(data.error);
         return null;
+      } else if (data.warning) {
+        Message.warning(data.warning);
+        return null;
       } else {
         return data;
       }
@@ -235,7 +238,6 @@ export default {
 
     function handlingErrors (error) {
       instance.$Progress.fail();
-      // console.log('error', error);
       if (error.response) {
         let status = error.response.status;
         let data = error.response.data;
@@ -296,6 +298,7 @@ export default {
     axios.interceptors.response.use(function (response) {
       return response;
     }, function (error) {
+      Loading.hide();
       if (error.response) {
         if (error.response.status === 401) {
           if (window.location.hash !== '#/login') {
@@ -304,7 +307,7 @@ export default {
           }
         }
         if (error.response.status === 403) {
-          store.state.state403 = true;
+          store.commit('setState403', true);
           router.push('/403');
         }
         if (error.response.status === 500) {

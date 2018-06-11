@@ -106,7 +106,6 @@ export default {
 
     updateList (id = 'btn-refresh-list') {
       if (document.getElementById(id)) {
-        console.log('Update list', document.getElementById(id));
         document.getElementById(id).dispatchEvent(new window.Event('click'));
       }
     },

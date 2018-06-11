@@ -7,7 +7,7 @@ export default {
   validate,
   menu,
   app: {
-    title: 'Base frontend',
+    title: 'Base frotend',
     account: 'Mi cuenta',
     settings: 'Configuración',
     logOut: 'Cerrar sesión'
@@ -55,9 +55,7 @@ export default {
       address: 'Dirección',
       email: 'Correo electrónico de atención al cliente',
       phones: 'Teléfono(s)',
-      web: 'Página web de la entidad',
-      user_ppte: 'Usuario en el sistema PPTE',
-      pass_ppte: 'Contraseña en el sistema PPTE'
+      web: 'Página web de la entidad'
     }
   },
   account: {
@@ -159,6 +157,98 @@ export default {
       estado: 'Estado',
       editServicio: 'Editar Servicio Iop',
       addServicio: 'Agregar Servicio Iop'
+    }
+  },
+  // Itinerarios
+  operador: {
+    title: 'Operadores aéreos',
+    add: 'Agregar nuevo operador',
+    edit: 'Editar operador',
+    crud: {
+      edit: 'Editar',
+      nit: 'Nit',
+      sigla: 'Sigla',
+      razon_social: 'Razón social',
+      matricula_comercio: 'Matrícula de comercio',
+      codigo: 'Código',
+      departamento: 'Departamento',
+      provincia: 'Provincia',
+      municipio: 'Municipio',
+      direccion: 'Dirección',
+      telefonos: 'Teléfonos',
+      tipo: 'Tipo',
+      licencia: 'Licencia',
+      fecha_vigencia: 'Fecha de vigencia',
+      descripcion: 'Descripción',
+      estado: 'Estado'
+    }
+  },
+  aeropuerto: {
+    title: 'Aeropuertos',
+    add: 'Agregar nuevo aeropuerto',
+    edit: 'Editar aeropuerto',
+    crud: {
+      codigo_icao: 'Código ICAO',
+      codigo_iata: 'Código IATA',
+      nombre: 'Nombre',
+      ciudad: 'Ciudad',
+      pais: 'País',
+      lat_grados: 'Latitud grados',
+      lat_minutos: 'Latitud minutos',
+      lat_segundos: 'Latitud segundos',
+      lat_dir: 'Latitud dir',
+      lon_grados: 'Longitud grados',
+      lon_minutos: 'Longitud minutos',
+      lon_segundos: 'Longitud segundos',
+      lon_dir: 'Longitud dir',
+      altitud: 'Altitud',
+      lat_decimal: 'Latitud decimal',
+      lon_decimal: 'Longitud decimal',
+      municipio: 'Municipio',
+      departamento: 'Departamento',
+      categoria: 'Categoría',
+      estado: 'Estado'
+    }
+  },
+  aeronave: {
+    title: 'Aeronaves',
+    add: 'Agregar nueva aeronave',
+    edit: 'Editar aeronave',
+    crud: {
+      correlativo: 'Correlativo',
+      matricula: 'Matrícula',
+      serie: 'Serie',
+      marca: 'Marca',
+      modelo: 'Modelo',
+      fecha_inscripcion: 'Fecha de inscripción',
+      propietario: 'Propietario',
+      ciudad: 'Ciudad',
+      observaciones: 'Observaciones',
+      fecha_actualizacion: 'Fecha de actualización',
+      capacidad_pasajeros: 'Capacidad de pasajeros',
+      capacidad_carga: 'Capacidad de carga',
+      capacidad_equipaje: 'Capacidad de equipaje',
+      ads_b: 'ADS-B',
+      descripcion: 'Descripción',
+      estado: 'Estado',
+      id_operador: 'Operador',
+      operador_nit: 'NIT del operador',
+      operador_sigla: 'Operador aéreo',
+      operador_razon_social: 'Razón social deĺ operador'
+    }
+  },
+  solicitud: {
+    title: 'Solicitudes de itinerarios',
+    add: 'Agregar nueva solicitud',
+    edit: 'Editar solicitud',
+    crud: {
+      codigo: 'Código DGAC',
+      fecha_inicio: 'Fecha de inicio',
+      fecha_fin: 'Fecha final',
+      observacion: 'Observación',
+      tipo: 'Tipo de itinerario',
+      estado: 'Estado',
+      id_operador: 'Operador aéreo'
     }
   }
 };
