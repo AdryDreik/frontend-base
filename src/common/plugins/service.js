@@ -123,7 +123,6 @@ export default {
           .then(response => {
             instance.$Progress.finish();
             Loading.hide();
-            console.log('Respuesta Graphql', response.data);
             if (response.data.errors) {
               parseErrorGraphql(response.data);
             } else {
@@ -228,6 +227,9 @@ export default {
       if (data.error) {
         Message.error(data.error);
         return null;
+      } else if (data.warning) {
+        Message.warning(data.warning);
+        return null;
       } else {
         return data;
       }
@@ -235,7 +237,6 @@ export default {
 
     function handlingErrors (error) {
       instance.$Progress.fail();
-      // console.log('error', error);
       if (error.response) {
         let status = error.response.status;
         let data = error.response.data;
@@ -296,6 +297,7 @@ export default {
     axios.interceptors.response.use(function (response) {
       return response;
     }, function (error) {
+      Loading.hide();
       if (error.response) {
         if (error.response.status === 401) {
           if (window.location.hash !== '#/login') {
@@ -304,7 +306,7 @@ export default {
           }
         }
         if (error.response.status === 403) {
-          store.state.state403 = true;
+          store.commit('setState403', true);
           router.push('/403');
         }
         if (error.response.status === 500) {

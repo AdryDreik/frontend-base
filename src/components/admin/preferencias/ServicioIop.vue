@@ -81,14 +81,13 @@
                     maxlength="1000"
                   ></v-text-field>
 
-                  <v-text-field
+                  <v-textarea
                     :label="$t('servicioIop.crud.token')"
                     :rules="$validate(['required'])"
-                    multi-line
                     required
                     v-model="form.token"
                     maxlength="3000"
-                  ></v-text-field>
+                  ></v-textarea>
 
                   Tipo de Servicio
                   <v-radio-group

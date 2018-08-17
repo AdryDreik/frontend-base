@@ -32,7 +32,7 @@
           :required="true"
           :value="fecha_nacimiento"
           :disabled="!!persona"
-          :max-year="parseInt(this.$datetime.now('YYYY'))"
+          :max-year="parseInt(this.$datetime.now(false, 'YYYY'))"
         >
         </select-date>
       </v-flex>

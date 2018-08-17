@@ -1,5 +1,14 @@
 export default {
   methods: {
+    buscarNacionalidad (pais) {
+      const paises = this.getPaises();
+      for (let i in paises) {
+        if (paises[i].pais === pais) {
+          return paises[i].nacionalidad;
+        }
+      }
+      return pais;
+    },
     getPaises () {
       return [
         { 'nacionalidad': 'AFGANA', 'pais': 'AFGANISTÁN' },

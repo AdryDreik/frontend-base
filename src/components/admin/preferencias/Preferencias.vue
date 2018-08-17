@@ -80,7 +80,7 @@ export default {
 
 <style lang="scss">
   .tab-preferencias {
-    .tabs__wrapper {
+    .v-tabs__wrapper {
       margin: 0 !important;
     }
   }

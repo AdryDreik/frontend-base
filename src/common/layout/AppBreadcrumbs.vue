@@ -19,7 +19,7 @@ export default {
 </script>
 
 <style lang="scss">
-.breadcrumbs {
+.v-breadcrumbs {
   padding: 12px 15px;
 }
 </style>

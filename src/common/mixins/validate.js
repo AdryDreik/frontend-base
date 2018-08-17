@@ -16,6 +16,9 @@ export default {
         if (rules[i] === 'url') {
           validations.push(this.$validateUrl);
         }
+        if (rules[i] === 'time') {
+          validations.push(this.$validateTime);
+        }
       }
       return validations;
     },
@@ -23,10 +26,13 @@ export default {
       return !!v || this.$t('validate.required');
     },
     $validateEmail (v) {
-      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || this.$t('validate.email');
+      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v) || !v || this.$t('validate.email');
     },
     $validateUrl (v) {
       return /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/.test(v) || this.$t('validate.url');
+    },
+    $validateTime (v) {
+      return /^([0-1]?[0-9]|2[0-3])(:[0-5][0-9])$/g.test(v) || this.$t('validate.time');
     }
   }
 };

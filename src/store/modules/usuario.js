@@ -2,37 +2,35 @@
 
 import { getField, updateField } from 'vuex-map-fields';
 
-const form = {
-  id: '',
-  usuario: '',
-  contrasena: '',
-  email: '',
-  cargo: '',
-  estado: '',
-  id_entidad: '',
-  id_rol: '',
-  id_persona: '',
-  tipo_documento: '',
-  tipo_documento_otro: '',
-  nro_documento: '',
-  fecha_nacimiento: '',
-  nombres: '',
-  primer_apellido: '',
-  segundo_apellido: '',
-  nombre_completo: '',
-  telefono: '',
-  movil: '',
-  nacionalidad: '',
-  pais_nacimiento: '',
-  genero: '',
-  estado_persona: '',
-  persona: null
-};
-
 const layout = {
   namespaced: true,
   state: {
-    form
+    form: {
+      id: '',
+      usuario: '',
+      contrasena: '',
+      email: '',
+      cargo: '',
+      estado: '',
+      id_entidad: null,
+      id_rol: null,
+      id_persona: null,
+      tipo_documento: '',
+      tipo_documento_otro: '',
+      nro_documento: '',
+      fecha_nacimiento: '',
+      nombres: '',
+      primer_apellido: '',
+      segundo_apellido: '',
+      nombre_completo: '',
+      telefono: '',
+      movil: '',
+      nacionalidad: '',
+      pais_nacimiento: '',
+      genero: '',
+      estado_persona: '',
+      persona: null
+    }
   },
   getters: {
     getField
@@ -40,7 +38,32 @@ const layout = {
   mutations: {
     updateField,
     cleanForm (state) {
-      state.form = form;
+      state.form = {
+        id: '',
+        usuario: '',
+        contrasena: '',
+        email: '',
+        cargo: '',
+        estado: '',
+        id_entidad: null,
+        id_rol: null,
+        id_persona: null,
+        tipo_documento: '',
+        tipo_documento_otro: '',
+        nro_documento: '',
+        fecha_nacimiento: '',
+        nombres: '',
+        primer_apellido: '',
+        segundo_apellido: '',
+        nombre_completo: '',
+        telefono: '',
+        movil: '',
+        nacionalidad: '',
+        pais_nacimiento: '',
+        genero: '',
+        estado_persona: '',
+        persona: null
+      };
     },
     setForm (state, data) {
       for (let key in data) {

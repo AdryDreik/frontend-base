@@ -21,13 +21,13 @@ export default {
         this.remove('user');
       },
 
-      // LocalStorage
+      // window.LocalStorage
       set (key, value) {
-        localStorage.setItem(appName + '_' + key, JSON.stringify(value));
+        window.localStorage.setItem(appName + '_' + key, JSON.stringify(value));
       },
 
       get (key) {
-        let data = localStorage.getItem(appName + '_' + key);
+        let data = window.localStorage.getItem(appName + '_' + key);
         try {
           return JSON.parse(data);
         } catch (Exception) {
@@ -36,7 +36,7 @@ export default {
       },
 
       remove (key) {
-        localStorage.removeItem(appName + '_' + key);
+        window.localStorage.removeItem(appName + '_' + key);
       },
 
       destroy (key) {
@@ -44,25 +44,25 @@ export default {
       },
 
       exist (key) {
-        let value = localStorage.getItem(appName + '_' + key);
+        let value = window.localStorage.getItem(appName + '_' + key);
         return typeof value !== 'undefined' && value !== undefined && value !== null && value !== 'null' && value !== '[]';
       },
 
-      // SessionStorage
+      // window.SessionStorage
       setSession (key, value) {
-        sessionStorage.setItem(appName + '_' + key, JSON.stringify(value));
+        window.sessionStorage.setItem(appName + '_' + key, JSON.stringify(value));
       },
 
       getSession (key) {
-        return JSON.parse(sessionStorage.getItem(appName + '_' + key));
+        return JSON.parse(window.sessionStorage.getItem(appName + '_' + key));
       },
 
       removeSession (key) {
-        sessionStorage.removeItem(appName + '_' + key);
+        window.sessionStorage.removeItem(appName + '_' + key);
       },
 
       existSession (key) {
-        let value = sessionStorage.getItem(appName + '_' + key);
+        let value = window.sessionStorage.getItem(appName + '_' + key);
         return typeof value !== 'undefined' && value !== undefined && value !== null && value !== 'null' && value !== '[]';
       },
 
@@ -81,7 +81,7 @@ export default {
       },
 
       removeAll () {
-        localStorage.clear();
+        window.localStorage.clear();
       }
 
     };

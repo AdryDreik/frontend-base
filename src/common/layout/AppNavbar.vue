@@ -107,21 +107,21 @@ export default {
 .app-navbar {
   box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1);
 
-  .toolbar__content {
+  .v-toolbar__content {
     padding: 0 15px;
   }
 
-  .btn .icon {
+  .v-btn .v-icon {
     color: $color;
   }
 
   .menu-user {
     margin-right: 10px;
-    .toolbar__title {
+    .v-toolbar__title {
       font-size: 16px;
       color: $color;
     }
-    .icon {
+    .v-icon {
       font-size: 40px;
     }
   }
@@ -129,17 +129,17 @@ export default {
 }
 
 .btn-fullscreen {
-  .icon:last-child {
+  .v-icon:last-child {
     display: none;
   }
 }
 
 body.fullscreen {
   .btn-fullscreen {
-    .icon:first-child {
+    .v-icon:first-child {
       display: none;
     }
-    .icon:last-child {
+    .v-icon:last-child {
       display: inline-block;
     }
   }
@@ -160,8 +160,8 @@ body.fullscreen {
     font-weight: 400;
   }
 
-  .icon {
-    color: white;
+  .v-icon {
+    color: white !important;
     font-size: 1.1rem;
   }
 }

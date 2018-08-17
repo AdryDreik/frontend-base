@@ -1,15 +1,16 @@
 <template>
   <section>
-    <v-layout row wrap>
-      <persona-segip :store="store" :enabled-fecha="enabledFecha"></persona-segip>
+    <persona-segip :store="store" :db="db" :change="change"></persona-segip>
+    <v-layout row wrap v-if="persona">
       <v-flex xs4>
         <v-text-field
           label="Nombre(s)"
           v-model="nombres"
           maxlength="100"
           :rules="$validate(['required'])"
+          class="required"
           required
-          :disabled="tipo_documento == 'CI'"
+          :disabled="!persona || (persona && !!persona.nombres)"
           ></v-text-field>
       </v-flex>
 
@@ -17,8 +18,10 @@
         <v-text-field
           label="Primer apellido"
           v-model="primer_apellido"
+          :rules="$validate(['required'])"
           maxlength="100"
-          :disabled="tipo_documento == 'CI'"
+          required
+          :disabled="!persona || (persona && !!persona.paterno)"
           ></v-text-field>
       </v-flex>
 
@@ -27,21 +30,22 @@
           label="Segundo apellido"
           v-model="segundo_apellido"
           maxlength="100"
-          :disabled="tipo_documento == 'CI'"
+          :disabled="!persona || (persona && !!persona.materno)"
           ></v-text-field>
       </v-flex>
 
       <v-flex xs4>
-        <v-select
+        <v-autocomplete
           :items="nacionalidades"
           v-model="nacionalidad"
           label="Nacionalidad"
           item-text="text"
           item-value="value"
           :rules="$validate(['required'])"
+          :disabled="!persona"
           required
-          autocomplete
-          ></v-select>
+          class="required"
+          ></v-autocomplete>
       </v-flex>
 
       <!-- <v-flex xs4>
@@ -63,6 +67,7 @@
           prepend-icon="smartphone"
           v-model="movil"
           maxlength="30"
+          :disabled="!persona"
           ></v-text-field>
       </v-flex>
 
@@ -72,6 +77,7 @@
           prepend-icon="phone"
           v-model="telefono"
           maxlength="30"
+          :disabled="!persona"
           ></v-text-field>
       </v-flex>
 
@@ -80,7 +86,9 @@
           v-model="genero"
           row
           :rules="$validate(['required'])"
+          :disabled="!persona"
           required
+          class="required"
         >
           <v-radio
             label="Mujer"
@@ -109,7 +117,11 @@ export default {
       type: String,
       default: ''
     },
-    enabledFecha: {
+    change: {
+      type: Boolean,
+      default: true
+    },
+    db: {
       type: Boolean,
       default: false
     }
@@ -128,7 +140,8 @@ export default {
   data () {
     return {
       paises: [],
-      nacionalidades: []
+      nacionalidades: [],
+      valid: false
     };
   },
   beforeCreate () {
@@ -144,7 +157,8 @@ export default {
         'form.nacionalidad',
         'form.pais_nacimiento',
         'form.tipo_documento',
-        'form.genero'
+        'form.genero',
+        'form.persona'
       ], `${store}getField`, `${store}updateField`)
     };
   },

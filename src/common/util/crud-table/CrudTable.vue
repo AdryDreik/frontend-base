@@ -1,138 +1,186 @@
 <template>
-    <div class="crud-table">
-      <v-layout row wrap>
-        <v-flex xs8 class="btn-container">
-          <!-- Section buttons -->
-          <slot name="buttons"></slot>
-          <div class="btn-filter" :class="{ 'active': showFilterActive }">
-            <v-tooltip bottom>
-               <v-btn
-                 v-if="filters.length"
-                 @click.native="filtrar()"
-                 class="btn-refresh"
-                 :id="idFilter"
-                 slot="activator"><v-icon>filter_list</v-icon>
-               </v-btn>
-               <span>{{$t('common.filters')}}</span>
-             </v-tooltip>
-          </div>
+  <div class="crud-table">
+    <v-layout row wrap>
+      <v-flex xs8 class="btn-container">
+        <!-- Section buttons -->
+        <slot name="buttons"></slot>
+        <div class="btn-filter" :class="{ 'active': showFilterActive }">
           <v-tooltip bottom>
             <v-btn
-              @click.native="getData()"
+              v-if="filters.length"
+              @click.native="filtrar()"
               class="btn-refresh"
-              :id="idRefresh"
-              slot="activator"><v-icon>refresh</v-icon>
+              :id="idFilter"
+              slot="activator"><v-icon>filter_list</v-icon>
             </v-btn>
-             <span>{{$t('common.updateList')}}</span>
-           </v-tooltip>
-          <!-- END Section buttons -->
+            <span>{{$t('common.filters')}}</span>
+          </v-tooltip>
+        </div>
+        <v-tooltip bottom>
+          <v-btn
+            @click.native="getData()"
+            class="btn-refresh"
+            :id="idRefresh"
+            slot="activator"><v-icon>refresh</v-icon>
+          </v-btn>
+           <span>{{$t('common.updateList')}}</span>
+        </v-tooltip>
+        <v-chip
+          label
+          outline
+          v-if="selected.length === 0 && checkbox"
+          color="warning">
+          <strong>SELECCIONE AL MENOS UN REGISTRO</strong>
+        </v-chip>
+        <v-chip
+          label
+          outline
+          v-if="selected.length && checkbox"
+          color="info">
+          <strong>{{ selected.length }} REGISTRO{{ selected.length > 1 ? 'S' : '' }} SELECCIONADO{{ selected.length > 1 ? 'S' : '' }}</strong>
+        </v-chip>
+        <!-- END Section buttons -->
 
-          <!-- Modal Add/Edit -->
-          <v-dialog v-model="modal" persistent :max-width="widthModal">
-            <v-card class="crud-dialog">
-              <slot name="form">Agregue su formulario aquí</slot>
-            </v-card>
-          </v-dialog>
-          <!-- END Modal Add/Edit -->
-        </v-flex>
+        <!-- Modal Add/Edit -->
+        <v-dialog v-model="modal" persistent :max-width="widthModal">
+          <v-card class="crud-dialog">
+            <slot name="form">Agregue su formulario aquí</slot>
+          </v-card>
+        </v-dialog>
+        <!-- END Modal Add/Edit -->
+      </v-flex>
 
-        <!-- Section label -->
-        <v-flex xs4>
-          <slot name="labels"></slot>
-        </v-flex>
-        <!-- END Section label -->
+      <!-- Section label -->
+      <v-flex xs4>
+        <slot name="labels"></slot>
+      </v-flex>
+      <!-- END Section label -->
 
-        <!-- Section details -->
-        <v-flex xs12>
-          <slot name="details"></slot>
-        </v-flex>
-        <!-- END Section details -->
+      <!-- Section details -->
+      <v-flex xs12>
+        <slot name="details"></slot>
+      </v-flex>
+      <!-- END Section details -->
 
-        <!-- Section Filter -->
-        <v-flex xs12 v-if="filter">
-          <slot name="filters" :search="search">
-            <v-text-field
-              append-icon="search"
-              label="Buscar"
-              single-line
-              hide-details
-              v-model="search"
-              ></v-text-field>
-          </slot>
-        </v-flex>
-        <v-flex xs12 v-if="filters.length">
-          <transition name="slide-fade">
-            <div class="filter-container" v-show="showFilterActive">
-              <v-icon color="primary">search</v-icon>
-              <div
-                v-for="filter in filters"
-                :key="filter.field"
-                class="filter-item"
-                v-show="filter.type != 'hidden'">
+      <!-- Section Filter -->
+      <v-flex xs12 v-if="filter">
+        <slot name="filters" :search="search">
+          <v-text-field
+            append-icon="search"
+            label="Buscar"
+            single-line
+            hide-details
+            v-model="search"
+            ></v-text-field>
+        </slot>
+      </v-flex>
+      <v-flex xs12 v-if="filters.length">
+        <transition name="slide-fade">
+          <div class="filter-container" v-show="showFilterActive">
+            <v-icon color="primary">search</v-icon>
+            <div
+              v-for="filter in filters"
+              :key="filter.field"
+              class="filter-item"
+              v-show="filter.type != 'hidden'"
+              v-if="!filter.show || (filter.show && search[filter.show[0]] === filter.show[1])">
+              <v-text-field
+                v-if="filter.type == 'text'"
+                v-model="search[filter.field]"
+                :label="filter.label"
+                hide-details
+                ></v-text-field>
+              <v-autocomplete
+                v-if="filter.type == 'select'"
+                :items="filter.items"
+                v-model="search[filter.field]"
+                :label="filter.label"
+                item-text="text"
+                item-value="value"
+                hide-details
+                ></v-autocomplete>
+              <v-switch
+                v-if="filter.type == 'boolean'"
+                v-model="items.item.visible"
+                :value="true"
+                @change="changeVisible(items.item, items.item.id, 'modulo', 'EditModulo')"
+                slot="activator"
+                color="info"></v-switch>
+              <input
+                v-if="filter.type == 'hidden'"
+                v-model="search[filter.field]"
+                type="hidden">
+              <v-menu
+                v-if="filter.type == 'date'"
+                ref="search[filter.field + '-menu']"
+                :close-on-content-click="false"
+                v-model="search[filter.field + '-menu']"
+                :nudge-right="40"
+                lazy
+                transition="scale-transition"
+                offset-y
+                full-width
+                max-width="290px"
+                min-width="290px"
+              >
                 <v-text-field
-                  v-if="filter.type == 'text'"
-                  v-model="search[filter.field]"
-                  :label="filter.label"
-                  hide-details
-                  ></v-text-field>
-                <v-select
-                  v-if="filter.type == 'select'"
-                  :items="filter.items"
-                  v-model="search[filter.field]"
-                  :label="filter.label"
-                  item-text="text"
-                  item-value="value"
-                  hide-details
-                  autocomplete
-                  ></v-select>
-                <v-switch
-                  v-if="filter.type == 'boolean'"
-                  v-model="items.item.visible"
-                  :value="true"
-                  @change="changeVisible(items.item, items.item.id, 'modulo', 'EditModulo')"
                   slot="activator"
-                  color="info"></v-switch>
-                <input
-                  v-if="filter.type == 'hidden'"
-                  v-model="search[filter.field]"
-                  type="hidden">
-              </div>
-              <v-tooltip bottom>
-                <v-btn icon @click.native="filtrar()" slot="activator">
-                  <v-icon>close</v-icon>
-                </v-btn>
-                <span>Cerrar filtro/búsqueda</span>
-              </v-tooltip>
+                  v-model="search[filter.field + '-input']"
+                  :label="filter.label"
+                  hint="MM/DD/YYYY"
+                  persistent-hint
+                  prepend-icon="event"
+                  @blur="search[filter.field] = parseDate(search[filter.field + '-input'])"
+                ></v-text-field>
+                <v-date-picker v-model="search[filter.field]" no-title @input="search[filter.field + '-menu'] = false"></v-date-picker>
+              </v-menu>
             </div>
-          </transition>
-        </v-flex>
-        <!-- END Section Filter -->
-      </v-layout>
-      <div>
-        <v-data-table
-          :headers="getHeaders"
-          :items="items"
-          :pagination.sync="pagination"
-          :total-items="totalItems"
-          :loading="loading"
-          :rowsPerPageText="$t('common.rowsPage')"
-          noResultsText="No se encontraron registros que coincidan"
-          noDataText="No hay resultados"
-          :rowsPerPageItems="rowsPerPageItems"
-          >
-          <template slot="items" slot-scope="props">
-            <tr>
-              <slot name="items" :item="props.item">
-                Defina la lista de registros aquí
-              </slot>
-            </tr>
-          </template>
-          <template slot="pageText" slot-scope="{ pageStart, pageStop }">
-            {{ pageStart }}-{{ pageStop }} {{$t('common.of') }} {{ totalItems }}
-          </template>
-        </v-data-table>
-      </div>
+            <v-tooltip bottom>
+              <v-btn icon @click.native="filtrar()" slot="activator">
+                <v-icon>close</v-icon>
+              </v-btn>
+              <span>Cerrar filtro/búsqueda</span>
+            </v-tooltip>
+          </div>
+        </transition>
+      </v-flex>
+      <!-- END Section Filter -->
+    </v-layout>
+    <div>
+      <v-data-table
+        :headers="getHeaders"
+        :items="items"
+        :pagination.sync="pagination"
+        :total-items="totalItems"
+        :loading="loading"
+        :select-all="checkbox"
+        v-model="selected"
+        item-key="id"
+        :rowsPerPageText="$t('common.rowsPage')"
+        noResultsText="No se encontraron registros que coincidan"
+        noDataText="No hay resultados"
+        :rowsPerPageItems="rowsPerPageItems"
+        >
+        <template slot="items" slot-scope="props">
+          <tr :active="props.selected" @click="props.selected = !props.selected">
+            <td v-if="checkbox">
+              <v-checkbox
+                :input-value="props.selected"
+                primary
+                hide-details
+              ></v-checkbox>
+            </td>
+            <slot name="items" :item="props.item">
+              Defina la lista de registros aquí
+            </slot>
+          </tr>
+        </template>
+        <template slot="pageText" slot-scope="{ pageStart, pageStop }">
+          {{ pageStart }}-{{ pageStop }} {{$t('common.of') }} {{ totalItems }}
+        </template>
+      </v-data-table>
     </div>
+  </div>
 </template>
 <script>
 import { mapState } from 'vuex';
@@ -186,6 +234,10 @@ export default {
     successList: {
       type: Function,
       default: null
+    },
+    checkbox: {
+      type: Boolean,
+      default: false
     }
   },
   data () {
@@ -200,7 +252,8 @@ export default {
       load: false,
       // rowsPerPageItems: [5, 10, 25, { text: 'Todos', value: -1 }]
       rowsPerPageItems: [5, 10, 25],
-      showFilterActive: this.showFilter
+      showFilterActive: this.showFilter,
+      selected: []
     };
   },
   created () {
@@ -270,6 +323,11 @@ export default {
           } else {
             values.push(`${el.field}: $${el.field}`);
           }
+          // Creando propiedades para los campos tipo date
+          if (el.type === 'date') {
+            this.search[el.field + '-menu'] = false;
+            this.search[el.field + '-input'] = null;
+          }
         }
       });
       return values.join(',\n');
@@ -297,7 +355,9 @@ export default {
       if (Object.keys(this.search).length) {
         for (let key in this.search) {
           if (!this.$filter.empty(this.search[key])) {
-            query[key] = this.search[key];
+            if (key.indexOf('-menu') === -1) {
+              query[key] = this.search[key];
+            }
           }
           if (this.search[key] === 'false') {
             query[key] = false;
@@ -332,6 +392,7 @@ export default {
         })
         .then(response => {
           if (response) {
+            this.selected = [];
             let items = response[this.url].rows;
             items.map(el => {
               if (el.estado !== undefined) {
@@ -353,6 +414,7 @@ export default {
         this.$service.list(this.url.list || this.url, query)
         .then(response => {
           if (response) {
+            this.selected = [];
             let items = response.datos;
             items.map(el => {
               if (el.estado !== undefined) {
@@ -379,6 +441,12 @@ export default {
           this.search[key] = '';
         }
       }
+    },
+    parseDate (date) {
+      if (!date) return null;
+
+      const [month, day, year] = date.split('/');
+      return `${year}-${month.padStart(2, '0')}-${day.padStart(2, '0')}`;
     }
   },
   watch: {
@@ -397,6 +465,9 @@ export default {
         }
       },
       deep: true
+    },
+    selected: function (val) {
+      this.$store.commit('setSelected', val);
     }
   }
 };
@@ -415,7 +486,7 @@ export default {
     }
 
     td {
-      .alert {
+      .v-alert {
         padding: 2px 8px;
         text-align: center;
         font-size: 0.9rem;
@@ -427,7 +498,7 @@ export default {
     .btn-refresh {
       min-width: 52px;
 
-      .btn__content {
+      .v-btn__content {
         padding: 0;
       }
 
@@ -438,7 +509,7 @@ export default {
       position: relative;
 
       &.active {
-        .btn {
+        .v-btn {
           background-color: $filterBackground !important;
           box-shadow: none;
         }
@@ -490,13 +561,13 @@ export default {
         vertical-align: top;
       }
 
-      & > .tooltip {
+      & > .v-tooltip {
         position: absolute;
         top: -3px;
         right: 0px;
       }
 
-      & > .icon {
+      & > .v-icon {
         display: inline-block;
         margin: 14px 5px 0 0;
       }

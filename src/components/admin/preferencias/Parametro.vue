@@ -50,16 +50,15 @@
                   :disabled="$store.state.user.id_rol == 2"
                 ></v-text-field>
 
-                <v-text-field
+                <v-textarea
                   name="valor"
                   :label="$t('parametro.crud.value')"
                   id="valor"
-                  multi-line
                   :rules="$validate(['required'])"
                   required
                   v-model="form.valor"
                   maxlength="50"
-                ></v-text-field>
+                ></v-textarea>
 
                 <v-text-field
                   name="label"

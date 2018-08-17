@@ -89,7 +89,7 @@ export default {
         font-weight: 600;
       }
 
-      .btn {
+      .v-btn {
         position: absolute;
         top: -10px;
         right: -7px;

@@ -73,7 +73,7 @@ export default {
     background-image: url(../../assets/images/ay.png);
   }
 }
-.application .toolbar .btn-lang {
+.application .v-toolbar .btn-lang {
   color: rgba(0,0,0,0.87);
 }
 </style>

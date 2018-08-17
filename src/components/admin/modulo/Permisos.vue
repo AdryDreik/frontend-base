@@ -1,17 +1,19 @@
 <template>
   <v-card class="crud-dialog">
-    <v-card-title class="headline">
+    <v-card-title class="headline m-0">
       <v-icon>security</v-icon> Permisos para {{ modulo.label }}
       <v-spacer></v-spacer>
       <v-btn icon @click.native="$store.commit('closeModal', 2)">
         <v-icon>close</v-icon>
       </v-btn>
     </v-card-title>
-    <v-alert color="info" icon="info" value="true" class="alert-permiso">
+    <v-alert color="info" icon="info" value="true" class="alert-permiso m-0">
       <v-layout>
         <v-flex xs7>Habilite/deshabilite los permisos del módulo para cada rol, donde:</v-flex>
         <v-flex xs3>
           <v-switch
+            hide-details
+            class="mt-0"
             v-model="activo"
             label="Con permiso"
             @change="activo = true"
@@ -22,6 +24,8 @@
         </v-flex>
         <v-flex xs2>
           <v-switch
+            hide-details
+            class="mt-0"
             label="Sin permiso"
             text-color="white"
             color="primary">
@@ -30,7 +34,7 @@
       </v-layout>
     </v-alert>
     <v-card-text>
-      <table class="table">
+      <table class="v-table">
         <thead>
           <tr>
             <th>Rol</th>
@@ -43,7 +47,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in permisos">
+          <tr v-for="item in permisos" :key="item.id">
             <td class="title-permiso">
               <strong>{{ item.rol_nombre }}</strong><br>
               <sub><em>{{ item.rol_descripcion }}</em></sub>
@@ -52,6 +56,8 @@
               <v-switch
                 color="primary"
                 @change="setPermiso(item)"
+                hide-details
+                class="mt-0"
                 v-model="item.read">
               </v-switch>
             </td>
@@ -59,6 +65,8 @@
               <v-switch
                 color="primary"
                 @change="setPermiso(item)"
+                hide-details
+                class="mt-0"
                 v-model="item.create">
               </v-switch>
             </td>
@@ -66,6 +74,8 @@
               <v-switch
                 color="primary"
                 @change="setPermiso(item)"
+                hide-details
+                class="mt-0"
                 v-model="item.update">
               </v-switch>
             </td>
@@ -73,6 +83,8 @@
               <v-switch
                 color="primary"
                 @change="setPermiso(item)"
+                hide-details
+                class="mt-0"
                 v-model="item.delete">
               </v-switch>
             </td>
@@ -80,6 +92,8 @@
               <v-switch
                 color="primary"
                 @change="setPermiso(item)"
+                hide-details
+                class="mt-0"
                 v-model="item.csv">
               </v-switch>
             </td>
@@ -87,6 +101,8 @@
               <v-switch
                 color="primary"
                 @change="setPermiso(item)"
+                hide-details
+                class="mt-0"
                 v-model="item.firma">
               </v-switch>
             </td>
@@ -200,7 +216,7 @@ export default {
     label {
       color: white !important;
     }
-    .input-group__details {
+    .v-input-group__details {
       display: none;
     }
   }

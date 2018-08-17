@@ -25,8 +25,8 @@ import AppSidenav from '@/common/layout/AppSidenav';
 import AppNavbar from '@/common/layout/AppNavbar';
 import AppFooter from '@/common/layout/AppFooter';
 import AppBreadcrumbs from '@/common/layout/AppBreadcrumbs';
-import AppLoading from '@/common/plugins/loading/AppLoading';
 import AppMessages from '@/common/plugins/message/AppMessages';
+import AppLoading from '@/common/plugins/loading/AppLoading';
 import AppNotification from '@/common/layout/AppNotification';
 import AppAlert from '@/common/plugins/modal/AppAlert';
 import AppConfirm from '@/common/plugins/modal/AppConfirm';
@@ -40,6 +40,11 @@ export default {
   name: 'App',
   mixins: [ Auth ],
   created () {
+    const error = this.$storage.get('error');
+    if (error) {
+      this.$message.error(error);
+      this.$storage.remove('error');
+    }
     if (this.$storage.existUser()) {
       this.$store.commit('setAuth', true);
 
@@ -53,7 +58,7 @@ export default {
 
       this.timerSession();
     } else {
-      if (PageNoLogin.indexOf(this.$route.path.substring(1)) === -1) {
+      if (PageNoLogin.indexOf(this.$route.path.substring(1)) === -1 || this.$route.path === '/') {
         this.logout();
       }
     }
@@ -84,10 +89,10 @@ export default {
     AppFooter,
     AppBreadcrumbs,
     AppMessages,
-    AppLoading,
     AppNotification,
     AppAlert,
-    AppConfirm
+    AppConfirm,
+    AppLoading
   },
   computed: {
     ...mapState(['auth', 'sidenav', 'main'])

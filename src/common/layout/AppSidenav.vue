@@ -121,35 +121,35 @@ $bgSidenav: darken($primary, 5%);
 .app-sidenav {
   background-color: $bgSidenav !important;
 
-  .list {
+  .v-list {
     background-color: $bgSidenav;
     padding: 0;
   }
 
-  .list .list__tile--link.active {
+  .v-list .v-list__tile--link.active {
     background-color: rgba(0,0,0,0.12);
   }
 
-  .list__group__items--no-action .list__tile {
+  .v-list__group__items--no-action .v-list__tile {
     padding-left: 60px;
   }
 
-  .list__group__header__prepend-icon {
+  .v-list__group__header__prepend-icon {
     padding: 0 4px 0 16px;
 
-    & + div > .list__tile {
+    & + div > .v-list__tile {
       padding-left: 4px;
     }
   }
 
-  .list__tile.primary--text, .list__group {
+  .v-list__tile.primary--text, .v-list__group {
     color: lighten($primary, 40%);
 
-    .icon {
+    .v-icon {
       color: lighten($warning, 6%);
     }
 
-    .list__tile__title {
+    .v-list__tile__title {
       font-size: 16px;
     }
   }
@@ -158,7 +158,7 @@ $bgSidenav: darken($primary, 5%);
     background-color: darken($bgSidenav, 2%);
     height: 70px;
 
-    .icon {
+    .v-icon {
       font-size: 36px;
       margin: -5px 5px 0 0;
     }
@@ -173,7 +173,7 @@ $bgSidenav: darken($primary, 5%);
     }
   }
 
-  &.navigation-drawer--mini-variant {
+  &.v-navigation-drawer--mini-variant {
     .app-title {
       span {
         display: none;

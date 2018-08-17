@@ -142,10 +142,10 @@
                   </v-flex>
 
                   <v-flex xs12>
-                    <v-select
+                    <v-combobox
                       :label="$t('entity.crud.phones')"
                       chips
-                      tags
+                      multiple
                       prepend-icon="phone"
                       v-model="form.telefonos"
                     >
@@ -158,7 +158,7 @@
                           {{ data.item }}
                         </v-chip>
                       </template>
-                    </v-select>
+                    </v-combobox>
                   </v-flex>
                 </v-container>
               </v-card-text>
@@ -189,6 +189,15 @@
                   <v-icon>edit</v-icon>
                 </v-btn>
                 <span>Editar registro</span>
+              </v-tooltip>
+              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update']">
+                <v-btn
+                  icon
+                  slot="activator"
+                  @click.native="generarToken('ENTIDAD', { id_entidad: items.item.id })">
+                  <v-icon>vpn_key</v-icon>
+                </v-btn>
+                <span>Generar token para la entidad</span>
               </v-tooltip>
               <v-tooltip bottom v-if="$store.state.permissions['entidades:delete']">
                 <v-btn
@@ -335,10 +344,10 @@
               </v-flex>
 
               <v-flex xs12>
-                <v-select
+                <v-combobox
                   :label="$t('entity.crud.phones')"
                   chips
-                  tags
+                  multiple
                   prepend-icon="phone"
                   v-model="form.telefonos"
                 >
@@ -351,7 +360,7 @@
                       {{ data.item }}
                     </v-chip>
                   </template>
-                </v-select>
+                </v-combobox>
               </v-flex>
             </v-container>
           </v-card-text>
@@ -375,9 +384,10 @@
 import CrudTable from '@/common/util/crud-table/CrudTable.vue';
 import crud from '@/common/util/crud-table/mixins/crud-table';
 import validate from '@/common/mixins/validate';
+import token from '@/components/admin/modulo/mixins/token';
 
 export default {
-  mixins: [ crud, validate ],
+  mixins: [ crud, validate, token ],
   created () {
     this.user = this.$storage.getUser();
     this.idEntidad = this.user.id_entidad;

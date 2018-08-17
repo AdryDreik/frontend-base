@@ -25,17 +25,11 @@
 
           <template slot="form">
             <v-card-title class="headline">
-              <v-flex xs9>
-                <v-icon>business</v-icon> {{ form.id ? $t('module.crud.editModule') :  $t('module.crud.addModule') }}
-              </v-flex>
-              <v-flex xs3>
-                <v-chip label color="success" text-color="white" v-if="form.estado == 'ACTIVO'">
-                  {{ form.estado }}
-                </v-chip>
-                <v-chip label color="warning" text-color="white" v-if="form.estado == 'INACTIVO'">
-                  {{ form.estado }}
-                </v-chip>
-              </v-flex>
+              <v-icon>business</v-icon> {{ form.id ? $t('module.crud.editModule') :  $t('module.crud.addModule') }}
+              <v-spacer></v-spacer>
+              <v-chip label :color="form.estado == 'ACTIVO' ? 'success' : 'warning'" text-color="white" v-if="form.estado == 'ACTIVO'">
+                {{ form.estado }}
+              </v-chip>
               <v-btn icon @click.native="$store.commit('closeModal')">
                 <v-icon>close</v-icon>
               </v-btn>
@@ -118,8 +112,6 @@
                         :items="modulos"
                         v-model="form.id_modulo"
                         label="Módulo padre"
-                        item-text="text"
-                        item-value="value"
                         :rules="$validate(['required'])"
                         required
                         ></v-select>
@@ -183,6 +175,7 @@
                   v-model="items.item.active"
                   value="ACTIVE"
                   @change="changeActive(items.item, items.item.id, 'modulo', 'EditModulo', getMenu)"
+                  hide-details
                   slot="activator"
                   color="success"></v-switch>
                 <span>Activar/desactivar registro</span>
@@ -200,6 +193,7 @@
                   :value="true"
                   @change="changeVisible(items.item, items.item.id)"
                   slot="activator"
+                  hide-details
                   color="info"></v-switch>
                 <span>Poner como visible en el menú</span>
               </v-tooltip>
@@ -337,12 +331,15 @@ export default {
   methods: {
     openModal (data = {}) {
       this.$refs.form.reset();
+      this.isSection = false;
       if (data.id) {
-        this.form = data;
-        this.form.id_modulo = this.getValue(this.form.id_modulo, this.modulos);
-        if (this.form.id_modulo) {
-          this.isSection = true;
-        }
+        this.$nextTick(() => {
+          this.form = data;
+          this.form.id_modulo = this.form.id_modulo + '';
+          if (this.form.id_modulo) {
+            this.isSection = true;
+          }
+        });
       } else {
         this.form = {
           label: '',
@@ -358,14 +355,14 @@ export default {
     save () {
       if (this.$refs.form.validate()) {
         let data = Object.assign({}, this.form);
-        if (data.id_modulo && data.id_modulo.value) {
-          data.id_modulo = data.id_modulo.value;
+        if (data.id_modulo) {
           if (data.id_modulo) {
             data.icono = '';
           }
         } else {
           delete data.id_modulo;
         }
+        data.visible = !!data.visible;
 
         if (data.id) {
           delete data.id;

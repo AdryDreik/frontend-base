@@ -75,18 +75,21 @@ export default {
   },
   methods: {
     vdropzoneSuccess (file, response) {
+      this.$loading.hide();
       console.log('Archivo subido', file, response);
       if (typeof this.onSuccess === 'function') {
         this.onSuccess(file, response);
       }
     },
     vdropzoneError (file, message, xhr) {
+      this.$loading.hide();
       this.$message.error(message.error || message);
       if (typeof this.onError === 'function') {
         this.onError(file, message, xhr);
       }
     },
     sendingEvent (file, xhr, formData) {
+      this.$loading.show('Subiendo archivo, espere por favor...');
       if (this.form) {
         for (let key in this.form) {
           formData.append(key, this.form[key]);

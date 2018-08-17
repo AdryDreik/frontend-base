@@ -1,8 +1,8 @@
 <template>
   <v-dialog v-model="show" persistent content-class="dialog--confirm" max-width="360">
     <v-card>
-      <v-card-title class="headline">Alerta</v-card-title>
-      <v-card-text v-html="text"></v-card-text>
+      <v-card-title class="headline">{{ title || 'Alerta' }}</v-card-title>
+      <v-card-text v-html="text" class="pt-0"></v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="primary" @click.native="ok()">Aceptar</v-btn>
@@ -34,6 +34,7 @@ export default {
     }
   },
   computed: mapState({
+    title: store => store.alert.title,
     show: store => store.alert.show,
     text: store => store.alert.text
   })
@@ -41,7 +42,7 @@ export default {
 </script>
 
 <style lang="scss">
-  .dialog--confirm, .dialog--alert {
+  .v-dialog--confirm, .v-dialog--alert {
     z-index: 100;
   }
 </style>

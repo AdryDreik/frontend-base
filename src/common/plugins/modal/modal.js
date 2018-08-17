@@ -7,9 +7,10 @@ export default {
   store,
   install (Vue) {
     const Modal = {
-      alert (text = 'Mensaje...', callback) {
+      alert (text = 'Mensaje...', callback, title = 'Alerta') {
         let alert = store.state.alert;
         alert.show = true;
+        alert.title = title;
         alert.text = text;
 
         document.addEventListener('keydown', modal.methods.bloquear, false);

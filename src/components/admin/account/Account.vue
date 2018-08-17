@@ -47,7 +47,6 @@
             <v-text-field
               name="password"
               :label="$t('login.password')"
-              append-icon="lock"
               :append-icon="getIcon"
               :append-icon-cb="changeIcon"
               :type="hidePass ? 'password' : 'text'"
@@ -177,7 +176,7 @@ export default {
     }
   }
 
-  .card__actions {
+  .v-card__actions {
     padding: 15px;
     background-color: white;
   }

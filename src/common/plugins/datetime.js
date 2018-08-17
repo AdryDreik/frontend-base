@@ -1,6 +1,10 @@
 'use strict';
 
+import store from '@/store';
+import pad from '@/common/util/pad';
+
 export default {
+  store,
   install: Vue => {
     let instance = new Vue();
     const Util = instance.$util;
@@ -8,12 +12,27 @@ export default {
     const DatetimeService = {
       formatDate: 'dd/MM/YYYY',
       months: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+      monthsShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
       days: ['dom', 'lun', 'mar', 'mié', 'jue', 'vie', 'sáb'],
       dayslong: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
 
-      date (date, separator) {
-        date = date.split(separator || '-');
-        return new Date(date[0], date[1] - 1, date[2]);
+      date (date, separator, format) {
+        return this.convert(date, separator, format);
+      },
+
+      convert (date, separator = '/', format) {
+        if (date) {
+          format = format || this.formatDate;
+          date = date.split(separator);
+          if (format === 'dd/MM/YYYY') {
+            return new Date(date[2], date[1] - 1, date[0], 0, 0, 0);
+          } else if (format === 'MM/dd/YYYY') {
+            return new Date(date[2], date[0] - 1, date[1], 0, 0, 0);
+          } else {
+            return new Date(date[0], date[1] - 1, date[2], 0, 0, 0);
+          }
+        }
+        return date;
       },
 
       parse (date, separator) {
@@ -28,9 +47,9 @@ export default {
       getDate (date) {
         date = new Date(date);
         return {
-          day: date.getUTCDate(),
-          month: date.getUTCMonth() + 1,
-          year: date.getUTCFullYear()
+          day: date.getDate(),
+          month: date.getMonth() + 1,
+          year: date.getFullYear()
         };
       },
 
@@ -114,15 +133,39 @@ export default {
       },
 
       addDays (date, days) {
-        return this.milliseconds(date) + (days || 0) * 24 * 60 * 60 * 1000;
+        if (typeof date === 'number') {
+          return date + (days || 0) * 24 * 60 * 60 * 1000;
+        } else {
+          return this.milliseconds(date) + (days || 0) * 24 * 60 * 60 * 1000;
+        }
       },
 
       subtractDays (date, days) {
-        return this.milliseconds(date) - (days || 0) * 24 * 60 * 60 * 1000;
+        if (typeof date === 'number') {
+          return date - (days || 0) * 24 * 60 * 60 * 1000;
+        } else {
+          return this.milliseconds(date) - (days || 0) * 24 * 60 * 60 * 1000;
+        }
       },
 
       diff (date2, date1) {
         return this.milliseconds(date2) - this.milliseconds(date1);
+      },
+
+      diffTime (hourIni, horaEnd) {
+        let h1 = hourIni.split(':');
+        let h2 = horaEnd.split(':');
+
+        h1 = parseInt(h1[0]) * 60 + parseInt(h1[1]);
+
+        if (h2[1].split('+').length > 1) {
+          let add = h2[1].split('+');
+          h2 = (parseInt(h2[0]) * 60 + parseInt(add[0])) + 60 * 24 * parseInt(add[1]);
+        } else {
+          h2 = parseInt(h2[0]) * 60 + parseInt(h2[1]);
+        }
+
+        return h2 - h1;
       },
 
       milliseconds (date) {
@@ -132,23 +175,43 @@ export default {
         return date.getTime();
       },
 
-      convert (date) {
-        date = date.split('/');
-        if (this.formatDate === 'dd/MM/YYYY') {
-          return new Date(date[2], date[1] - 1, date[0]);
-        } else if (this.formatDate === 'MM/dd/YYYY') {
-          return new Date(date[2], date[0] - 1, date[1]);
-        } else {
-          return new Date(date[0], date[1] - 1, date[2]);
-        }
-      },
-
       setFormatDate (format) {
         this.formatDate = format;
       },
 
-      now (format) {
-        return this.replace(new Date(), format || this.formatDate);
+      transform (date) {
+        if (date && typeof date === 'string') {
+          date = date.split('-');
+          if (date.length === 3) {
+            return new Date(date[0], date[1] - 1, date[2], 0, 0, 0);
+          }
+        }
+        return date;
+      },
+
+      format2 (date) {
+        if (this.isDate(date)) {
+          return this.sanitizeDateString(`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`, 'date');
+        }
+        return date;
+      },
+
+      now (typeDate = false, format) {
+        const now = new Date();
+        let date = this.sanitizeDateString(`${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`, 'date');
+        if (format && format === 'SIN_FORMATO') {
+          return date;
+        }
+        if (format === 'datetime') {
+          date = date.split('-');
+          return `${[date[2], date[1], date[0]].join('/')} ${now.getHours()}:${now.getMinutes()}`;
+        }
+        date = date.split('-');
+        date = new Date(date[0], date[1] - 1, date[2], 0, 0, 0);
+        if (typeDate) {
+          return date;
+        }
+        return this.replace(date, format || this.formatDate);
       },
 
       dateLiteral (date) {
@@ -219,11 +282,13 @@ export default {
       },
 
       format (date, format) {
-        let d = new Date(date);
-        if (this.isDate(d)) {
-          return this.replace(d, format || this.formatDate);
+        if (date) {
+          let d = new Date(date);
+          if (this.isDate(d)) {
+            return this.replace(d, format || this.formatDate);
+          }
+          return date;
         }
-        return date;
       },
 
       standar (date, format) {
@@ -276,9 +341,12 @@ export default {
           [
             this.dayslong[date.getDay()],
             this.days[date.getDay()],
-            (date.getDate() < 10 ? '0' : '') + date.getDate(),
-            monthLiteral ? this.months[date.getMonth()] : ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)),
-            date.getFullYear(),
+            // (date.getDate() < 10 ? '0' : '') + date.getDate(),
+            (date.getUTCDate() < 10 ? '0' : '') + date.getUTCDate(),
+            // monthLiteral ? this.months[date.getMonth()] : ((date.getMonth() + 1 < 10 ? '0' : '') + (date.getMonth() + 1)),
+            monthLiteral ? this.months[date.getUTCMonth()] : ((date.getUTCMonth() + 1 < 10 ? '0' : '') + (date.getUTCMonth() + 1)),
+            // date.getFullYear(),
+            date.getUTCFullYear(),
             (date.getHours() < 10 ? '0' : '') + date.getHours(),
             (date.getMinutes() < 10 ? '0' : '') + date.getMinutes(),
             (date.getSeconds() < 10 ? '0' : '') + date.getSeconds()
@@ -337,7 +405,7 @@ export default {
       },
 
       betweenTwoDates (date1, date2, type, absolute) {
-        let types = {s: 1000, i: 60 * 1000, h: 60 * 60 * 1000, d: 24 * 60 * 60 * 1000};
+        let types = { s: 1000, i: 60 * 1000, h: 60 * 60 * 1000, d: 24 * 60 * 60 * 1000 };
         let diff = parseInt((this.standar(date2).getTime() - this.standar(date1).getTime()) / types[type]);
 
         if (typeof absolute !== 'undefined' && absolute !== false) {
@@ -357,6 +425,19 @@ export default {
 
       parseDate (date) {
         return [date.getDate(), date.getMonth() + 1, date.getFullYear()].join('/');
+      },
+
+      setDate (key, value) {
+        store.commit('setAction', {
+          action: 'setDateValue',
+          value,
+          key
+        });
+      },
+
+      sanitizeDateString (dateString, type = 'date') {
+        const [year, month = 1, date = 1] = dateString.split('-');
+        return `${year}-${pad(month)}-${pad(date)}`.substr(0, { date: 10, month: 7, year: 4 }[type]);
       }
     };
 

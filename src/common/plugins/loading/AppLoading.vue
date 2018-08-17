@@ -13,13 +13,17 @@ export default {
   methods: {
     show (message = 'Cargando') {
       let loading = document.getElementById('app-loading');
-      loading.style.display = 'flex';
-      loading.querySelector('span').innerHTML = message;
+      if (loading) {
+        loading.style.display = 'flex';
+        loading.querySelector('span').innerHTML = message;
+      }
     },
     hide () {
       let loading = document.getElementById('app-loading');
-      loading.style.display = 'none';
-      loading.querySelector('span').innerHTML = '';
+      if (loading) {
+        loading.style.display = 'none';
+        loading.querySelector('span').innerHTML = '';
+      }
     }
   }
 };
@@ -28,7 +32,7 @@ export default {
 <style lang="scss">
 @import '../../../assets/scss/_variables.scss';
 .app-loading {
-  background-color: rgba(darken($primary, 20%), 0.8);
+  background-color: rgba(darken($primary, 42%), 0.8);
   display: none;
   position: fixed;
   top: 0;
@@ -39,7 +43,7 @@ export default {
   justify-content: center;
   align-items: center;
 
-  .progress-circular {
+  .v-progress-circular {
     margin: 0 10px 0 0;
   }
 

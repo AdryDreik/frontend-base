@@ -1,8 +1,41 @@
 /* eslint no-useless-escape: "error" */
 
 'use strict';
+import store from '@/store';
+
+let tmplPrint = `<!DOCTYPE html>
+                  <html lang="es">
+                  <head>
+                    <meta charset="UTF-8"/>
+                    <title>Document</title>
+                    <style>{css}</style>
+                  </head>
+                  <body>
+                    {body}
+                  </body>
+                  </html>`;
 
 const Util = {
+  nano (template, data) {
+    return template.replace(/\{([\w\.]*)\}/g, function (str, key) { // eslint-disable-line
+      let keys = key.split('.');
+      let v = data[keys.shift()];
+      for (let i = 0, l = keys.length; i < l; i++) {
+        v = v[keys[i]];
+      }
+      return (typeof v !== 'undefined' && v !== null) ? v : '';
+    });
+  },
+
+  print (body, css) {
+    let popup = window.open('', 'print');
+    let html = this.nano(tmplPrint, { body, css });
+    popup.document.write(html);
+    popup.document.close();
+    popup.focus();
+    popup.print();
+    popup.close();
+  },
 
   toType (obj) {
     return ({}).toString.call(obj).match(/\s([a-zA-Z]+)/)[1].toLowerCase();
@@ -47,8 +80,8 @@ const Util = {
   },
 
   fullscreen () {
-    if (!document.fullscreenElement &&    // alternative standard method
-        !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {  // current working methods
+    if (!document.fullscreenElement && // alternative standard method
+      !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) { // current working methods
       if (document.documentElement.requestFullscreen) {
         document.documentElement.requestFullscreen();
       } else if (document.documentElement.msRequestFullscreen) {
@@ -192,10 +225,22 @@ const Util = {
         return '¿Está seguro de abandonar la página?.';
       };
     }
+  },
+
+  isRol (...roles) {
+    if (store.state.user.rol) {
+      for (let i in roles) {
+        if (store.state.user.rol === roles[i]) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 };
 
 export default {
+  store,
   install: Vue => {
     Vue.prototype.$util = Util;
   }

@@ -66,7 +66,7 @@
                         label="Contraseña"
                         v-model="contrasena"
                         :prepend-icon="getIcon"
-                        :prepend-icon-cb="changeIcon"
+                        @click:prepend="changeIcon"
                         :type="hidePass ? 'password' : 'text'"
                         maxlength="50"
                         autocomplete="off"
@@ -93,22 +93,21 @@
                         ></v-text-field>
                     </v-flex>
 
-                    <v-flex xs7 v-if="$store.state.user.id_rol != 3">
-                      <v-select
+                    <v-flex xs7>
+                      <v-autocomplete
                         :items="entidades"
                         v-model="id_entidad"
                         label="Entidad"
                         item-text="text"
                         item-value="value"
-                        autocomplete
                         noDataText="No hay resultados"
                         :rules="$validate(['required'])"
                         required
-                        ></v-select>
+                        ></v-autocomplete>
                     </v-flex>
 
                     <v-flex xs5 v-if="!(usuario == username && id)">
-                      <v-select
+                      <v-autocomplete
                         :items="roles"
                         v-model="id_rol"
                         label="Rol"
@@ -116,12 +115,14 @@
                         item-value="value"
                         :rules="$validate(['required'])"
                         required
-                        ></v-select>
+                        ></v-autocomplete>
                     </v-flex>
                   </v-layout>
                   <h4>Datos personales</h4>
-                  <persona-form store="usuario/"></persona-form>
+                  <persona-form store="usuario/" v-if="personaDatos" :db="true"></persona-form>
+
                 </v-container>
+                <log-datos :data="logDatos" v-if="logDatos"></log-datos>
               </v-card-text>
               <v-card-actions>
                 <small class="error--text text-required">* Los campos son obligatorios</small>
@@ -143,6 +144,15 @@
                 </v-btn>
                 <span>Editar registro</span>
               </v-tooltip>
+              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update']">
+                <v-btn
+                  icon
+                  slot="activator"
+                  @click.native="generarToken('USUARIO', { usuario: items.item.usuario })">
+                  <v-icon>vpn_key</v-icon>
+                </v-btn>
+                <span>Generar token para el usuario</span>
+              </v-tooltip>
               <v-tooltip
                 bottom
                 v-if="$store.state.permissions['usuarios:delete'] && username !== items.item.usuario">
@@ -162,6 +172,7 @@
                   value="ACTIVE"
                   v-if="username !== items.item.usuario"
                   @change="changeActive(items.item, items.item.id, 'usuario', 'EditUsuario', null, 'Update')"
+                  hide-details
                   slot="activator"
                   color="success"></v-switch>
                 <span>Activar/desactivar registro</span>
@@ -185,7 +196,7 @@
             <td>{{ items.item.persona_primer_apellido }} {{ items.item.persona_segundo_apellido }} {{ items.item.persona_nombres }}</td>
             <td>{{ items.item.email }}</td>
             <td>{{ items.item.entidad_nombre }}</td>
-            <td>{{ items.item.rol_nombre }}</td>
+            <td>{{ (items.item.rol_nombre).replace(/_/gi, ' ') }}</td>
             <td>
               <v-chip label color="success" text-color="white" v-if="items.item.estado == 'ACTIVO'">
                 {{ items.item.estado }}
@@ -208,6 +219,8 @@ import Auth from '@/components/admin/auth/mixins/auth';
 import validate from '@/common/mixins/validate';
 import usuario from './mixins/usuario';
 import PersonaForm from '@/components/admin/persona/PersonaForm';
+import LogDatos from '@/components/admin/usuario/LogDatos';
+import token from '@/components/admin/modulo/mixins/token';
 
 import { createHelpers } from 'vuex-map-fields';
 
@@ -217,7 +230,7 @@ const { mapFields } = createHelpers({
 });
 
 export default {
-  mixins: [ crud, validate, Auth, usuario ],
+  mixins: [ crud, validate, Auth, usuario, token ],
   created () {
     this.user = this.$storage.getUser();
     this.username = this.user.usuario;
@@ -228,6 +241,9 @@ export default {
   },
   data () {
     return {
+      logDatos: null,
+      operadores: [],
+      personaDatos: false,
       graphql: true, // Definiendo el CRUD con Graphql
       url: 'usuarios',
       headers: [
@@ -250,6 +266,7 @@ export default {
         persona_telefono
         estado
         id_entidad
+        id_operador
         id_rol
         entidad_nombre
         rol_nombre
@@ -263,6 +280,8 @@ export default {
         id_entidad
         id_rol
         id_persona
+        id_operador
+        id_aeropuerto
         persona_nombres
         persona_primer_apellido
         persona_segundo_apellido
@@ -278,13 +297,19 @@ export default {
         persona_estado
         rol_nombre
         entidad_nombre
+        _user_created
+        _user_updated
+        _created_at
+        _updated_at
       `,
       form: {
         usuario: '',
         contrasena: '',
         email: '',
-        id_entidad: '',
-        id_rol: ''
+        id_entidad: null,
+        id_rol: null,
+        id_aeropuerto: null,
+        id_operador: null
       },
       filters: [
         {
@@ -333,7 +358,8 @@ export default {
       ],
       hidePass: true,
       username: null,
-      valid: true
+      valid: true,
+      aeropuertos: []
     };
   },
   computed: {
@@ -352,6 +378,8 @@ export default {
       'form.cargo',
       'form.id_entidad',
       'form.id_rol',
+      'form.id_aeropuerto',
+      'form.id_operador',
       'form.id_persona'
     ])
   },
@@ -363,47 +391,73 @@ export default {
     },
     openModal (data = {}) {
       this.$refs.form.reset();
+      this.$store.commit('setDate', { 'form.fecha_nacimiento': null });
+      this.$store.commit('usuario/cleanForm');
+      this.logDatos = null;
       if (data.id) {
-        this.$store.commit('usuario/setForm', {
-          id: data.id,
-          usuario: data.usuario,
-          email: data.email,
-          cargo: data.cargo,
-          estado: data.estado,
-          id_entidad: data.id_entidad + '',
-          id_rol: data.id_rol + '',
-          id_persona: data.id_persona,
-          tipo_documento: data.persona_tipo_documento,
-          tipo_documento_otro: data.persona_tipo_documento_otro,
-          nro_documento: data.persona_nro_documento,
-          fecha_nacimiento: data.persona_fecha_nacimiento,
-          nombres: data.persona_nombres,
-          primer_apellido: data.persona_primer_apellido,
-          segundo_apellido: data.persona_segundo_apellido,
-          nombre_completo: data.persona_nombre_completo,
-          telefono: data.persona_telefono,
-          movil: data.persona_movil,
-          nacionalidad: data.persona_nacionalidad,
-          pais_nacimiento: data.persona_pais_nacimiento,
-          genero: data.persona_genero,
-          estado_persona: data.persona_estado,
-          persona: true
-        });
-        this.$store.commit('setAction', {
-          action: 'setDateValue',
-          value: data.persona_fecha_nacimiento
+        this.$nextTick(() => {
+          this.logDatos = {
+            _user_created: data._user_created,
+            _user_updated: data._user_updated,
+            _created_at: data._created_at,
+            _updated_at: data._updated_at
+          };
+          this.$store.commit('usuario/setForm', {
+            id: data.id,
+            usuario: data.usuario,
+            email: data.email,
+            cargo: data.cargo,
+            estado: data.estado,
+            id_entidad: data.id_entidad + '',
+            id_rol: data.id_rol + '',
+            id_persona: data.id_persona,
+            id_operador: data.id_operador ? data.id_operador + '' : null,
+            id_aeropuerto: data.id_aeropuerto ? data.id_aeropuerto + '' : null,
+            tipo_documento: data.persona_tipo_documento,
+            tipo_documento_otro: data.persona_tipo_documento_otro,
+            nro_documento: data.persona_nro_documento,
+            fecha_nacimiento: data.persona_fecha_nacimiento,
+            nombres: data.persona_nombres,
+            primer_apellido: data.persona_primer_apellido,
+            segundo_apellido: data.persona_segundo_apellido,
+            nombre_completo: data.persona_nombre_completo,
+            telefono: data.persona_telefono,
+            movil: data.persona_movil,
+            nacionalidad: data.persona_nacionalidad,
+            pais_nacimiento: data.persona_pais_nacimiento,
+            genero: data.persona_genero,
+            estado_persona: data.persona_estado,
+            persona: {
+              nombres: data.persona_nombres,
+              paterno: data.persona_primer_apellido,
+              materno: data.persona_segundo_apellido
+            }
+          });
+          if (data.persona_fecha_nacimiento) {
+            this.$store.commit('setDate', { 'form.fecha_nacimiento': this.$datetime.transform(data.persona_fecha_nacimiento) });
+          }
+          this.personaDatos = false;
+          this.$nextTick(() => {
+            this.personaDatos = true;
+          });
         });
       } else {
+        this.personaDatos = true;
         this.$store.commit('usuario/cleanForm');
       }
       this.$store.commit('openModal');
     },
     save () {
-      if (this.$store.state.user.id_rol === 3) {
-        this.$store.commit('usuario/setForm', { id_entidad: this.id_entidad });
-      }
       if (this.$refs.form.validate()) {
-        let data = Object.assign({}, this.$store.state.usuario.form);
+        let data = { ...this.$store.state.usuario.form };
+        console.log('data', data);
+        data.fecha_nacimiento = this.$datetime.format2(this.$store.state.date['form.fecha_nacimiento']);
+        if (this.$filter.empty(data.id_operador)) {
+          delete data.id_operador;
+        }
+        if (this.$filter.empty(data.id_aeropuerto)) {
+          delete data.id_aeropuerto;
+        }
         delete data.persona;
         if (data.id) {
           const id = data.id;
@@ -464,7 +518,8 @@ export default {
   },
   components: {
     CrudTable,
-    PersonaForm
+    PersonaForm,
+    LogDatos
   }
 };
 </script>

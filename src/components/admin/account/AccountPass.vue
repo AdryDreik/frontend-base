@@ -17,7 +17,6 @@
           <v-alert color="info" icon="info" value="true" class="mb-4">Haga click en <v-icon dark>visibility</v-icon> para poder ver/ocultar su contraseña.</v-alert>
           <v-text-field
             label="Antigua contraseña"
-            append-icon="lock"
             :append-icon="getIcon"
             :append-icon-cb="changeIcon"
             :type="hidePass ? 'password' : 'text'"
@@ -28,7 +27,6 @@
           ></v-text-field>
           <v-text-field
             label="Nueva contraseña"
-            append-icon="lock"
             :append-icon="getIcon"
             :append-icon-cb="changeIcon"
             :type="hidePass ? 'password' : 'text'"

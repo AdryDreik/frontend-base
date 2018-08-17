@@ -22,7 +22,7 @@ export default {
 <style lang="scss">
 @import '../../assets/scss/_variables.scss';
 
-.theme--light .footer {
+.theme--light .v-footer {
   font-size: 0.8rem;
   background: rgba(white, 0.8);
   min-height: 28px;

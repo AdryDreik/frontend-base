@@ -41,6 +41,9 @@ import {
   VRadioGroup,
   VCheckbox,
   VSelect,
+  VAutocomplete,
+  VCombobox,
+  VTextarea,
   VChip,
   VSwitch,
   VDataTable,
@@ -48,8 +51,13 @@ import {
   VBreadcrumbs,
   VAlert,
   VTabs,
+  VDatePicker,
+  VStepper,
+  VSubheader,
   VProgressCircular,
-  transitions
+  VExpansionPanel,
+  transitions,
+  VOverflowBtn
 } from 'vuetify';
 import '../node_modules/vuetify/src/stylus/app.styl';
 
@@ -74,6 +82,9 @@ Vue.use(Vuetify, {
     VRadioGroup,
     VCheckbox,
     VSelect,
+    VAutocomplete,
+    VCombobox,
+    VTextarea,
     VChip,
     VSwitch,
     VDataTable,
@@ -81,8 +92,13 @@ Vue.use(Vuetify, {
     VBreadcrumbs,
     VAlert,
     VTabs,
+    VDatePicker,
+    VStepper,
     VProgressCircular,
-    transitions
+    VSubheader,
+    VExpansionPanel,
+    transitions,
+    VOverflowBtn
   },
   theme: {
     primary: '#7e4e6e',

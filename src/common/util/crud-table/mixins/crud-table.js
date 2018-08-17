@@ -18,11 +18,11 @@ export default {
         });
       } else {
         this.$service.get(`${url || this.url}/${id}`)
-        .then(response => {
-          if (response) {
-            this.openModal(response, form);
-          }
-        });
+          .then(response => {
+            if (response) {
+              this.openModal(response, form);
+            }
+          });
       }
     },
 
@@ -46,10 +46,10 @@ export default {
           });
         } else {
           this.$service.delete(url || this.url, id)
-          .then(response => {
-            this.$message.success('¡Registro eliminado correctamente!');
-            this.updateList();
-          });
+            .then(response => {
+              this.$message.success('¡Registro eliminado correctamente!');
+              this.updateList();
+            });
         }
       });
     },
@@ -87,26 +87,25 @@ export default {
           });
         } else {
           this.$service.patch(`${this.url}/${id}`, { 'transicion': active ? 'activar' : 'inactivar' })
-          .then(response => {
-            if (response) {
-              if (active) {
-                this.$message.success(`¡Registro activado!`, null, { timeout: 2000 });
-              } else {
-                this.$message.warning(`¡Registro desactivado!`, null, { timeout: 2000 });
+            .then(response => {
+              if (response) {
+                if (active) {
+                  this.$message.success(`¡Registro activado!`, null, { timeout: 2000 });
+                } else {
+                  this.$message.warning(`¡Registro desactivado!`, null, { timeout: 2000 });
+                }
+                this.updateList();
+                if (typeof callback === 'function') {
+                  callback();
+                }
               }
-              this.updateList();
-              if (typeof callback === 'function') {
-                callback();
-              }
-            }
-          });
+            });
         }
       }, () => (obj.active = active ? 'INACTIVE' : 'ACTIVE'));
     },
 
     updateList (id = 'btn-refresh-list') {
       if (document.getElementById(id)) {
-        console.log('Update list', document.getElementById(id));
         document.getElementById(id).dispatchEvent(new window.Event('click'));
       }
     },
