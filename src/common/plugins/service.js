@@ -23,7 +23,7 @@ export default {
 
     // Plugins
     let instance = new Vue({
-      mixins: [Auth]
+      mixins: [ Auth ]
     });
     const Util = instance.$util;
     const Message = instance.$message;
@@ -82,29 +82,29 @@ export default {
       file (url, type, data = {}) {
         url = getUrl(url);
         return axios.post(url, data, { responseType: 'arraybuffer' })
-          .then(response => {
-            if (response.data) {
-              let file = new window.Blob([response.data], { type: type });
-              let fileURL = window.URL.createObjectURL(file);
-              // return $sce.trustAsResourceUrl(fileURL);
-              return fileURL;
-            }
-            return null;
-          }).catch(error => handlingErrors(error));
+        .then(response => {
+          if (response.data) {
+            let file = new window.Blob([response.data], { type: type });
+            let fileURL = window.URL.createObjectURL(file);
+            // return $sce.trustAsResourceUrl(fileURL);
+            return fileURL;
+          }
+          return null;
+        }).catch(error => handlingErrors(error));
       },
 
       pdf (url, data = {}, onlyUrl) {
         url = getUrl(url, data);
         return axios.post(url, data, { responseType: 'arraybuffer' })
-          .then(response => {
-            if (response.data) {
-              let file = new window.Blob([response.data], { type: 'application/pdf' });
-              let fileURL = window.URL.createObjectURL(file);
-              // return onlyUrl ? fileURL : $sce.trustAsResourceUrl(fileURL);
-              return fileURL;
-            }
-            return null;
-          }).catch(error => handlingErrors(error));
+        .then(response => {
+          if (response.data) {
+            let file = new window.Blob([response.data], { type: 'application/pdf' });
+            let fileURL = window.URL.createObjectURL(file);
+            // return onlyUrl ? fileURL : $sce.trustAsResourceUrl(fileURL);
+            return fileURL;
+          }
+          return null;
+        }).catch(error => handlingErrors(error));
       },
 
       graphql (data) {
@@ -116,7 +116,7 @@ export default {
 
         // Set token in headers
         if (Storage.exist('token')) {
-          setting.headers = { 'Authorization': `${authToken} ${Storage.get('token')}` };
+          setting.headers = {'Authorization': `${authToken} ${Storage.get('token')}`};
         }
         instance.$Progress.start();
         return axios(setting)
@@ -187,12 +187,12 @@ export default {
 
       // Set token in headers
       if (Storage.exist('token')) {
-        setting.headers = { 'Authorization': `${authToken} ${Storage.get('token')}` };
+        setting.headers = {'Authorization': `${authToken} ${Storage.get('token')}`};
       }
 
       return axios(setting)
-        .then(response => filterResponse(response.data))
-        .catch(error => handlingErrors(error));
+      .then(response => filterResponse(response.data))
+      .catch(error => handlingErrors(error));
     }
 
     function getUrl (url, id) {

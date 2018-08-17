@@ -25,11 +25,16 @@
 
           <template slot="form">
             <v-card-title class="headline">
-              <v-icon>business</v-icon> {{ form.id ? $t('module.crud.editModule') :  $t('module.crud.addModule') }}
-              <v-spacer></v-spacer>
-              <v-chip label :color="form.estado == 'ACTIVO' ? 'success' : 'warning'" text-color="white" v-if="form.estado == 'ACTIVO'">
+              <v-flex xs9>
+                <v-icon>business</v-icon> {{ form.id ? $t('module.crud.editModule') :  $t('module.crud.addModule') }}
+              </v-flex>
+              <v-chip label color="success" text-color="white" v-if="form.estado == 'ACTIVO'">
                 {{ form.estado }}
               </v-chip>
+              <v-chip label color="warning" text-color="white" v-if="form.estado == 'INACTIVO'">
+                {{ form.estado }}
+              </v-chip>
+              <v-spacer></v-spacer>
               <v-btn icon @click.native="$store.commit('closeModal')">
                 <v-icon>close</v-icon>
               </v-btn>

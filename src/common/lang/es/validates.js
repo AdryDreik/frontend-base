@@ -27,5 +27,6 @@ export default {
   regex: `El formato del campo no es válido.`,
   required: `El campo es obligatorio.`,
   size: `El campo debe ser menor a {size} KB.`,
-  url: `El campo no es una URL válida.`
+  url: `El campo no es una URL válida.`,
+  time: `El campo no es una Hora válida.`
 };
