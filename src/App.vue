@@ -34,7 +34,7 @@ import Auth from '@/components/admin/auth/mixins/auth';
 import { mapState } from 'vuex';
 
 // Páginas que no necesitan autenticación/token/sesión
-const PageNoLogin = ['login'];
+const PageNoLogin = ['login', 'login-ciudadania', 'login-nit'];
 
 export default {
   name: 'App',

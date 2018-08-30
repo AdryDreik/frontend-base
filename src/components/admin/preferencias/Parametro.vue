@@ -80,6 +80,7 @@
                 ></v-text-field>
 
                 </v-container>
+                <log-datos :data="logDatos" v-if="logDatos"></log-datos>
               </v-card-text>
               <v-card-actions>
                 <small class="error--text text-required">* Los campos son obligatorios</small>
@@ -139,14 +140,17 @@
 import CrudTable from '@/common/util/crud-table/CrudTable.vue';
 import crud from '@/common/util/crud-table/mixins/crud-table';
 import validate from '@/common/mixins/validate';
+import LogDatos from '@/components/admin/usuario/LogDatos';
+import logDatos from '@/components/admin/usuario/mixins/log-datos';
 
 export default {
-  mixins: [ crud, validate ],
+  mixins: [ crud, validate, logDatos ],
   created () {
     this.user = this.$storage.getUser();
   },
   data () {
     return {
+      logDatos: null,
       graphql: true, // Definiendo el CRUD con Graphql
       url: 'parametros',
       headers: [
@@ -168,6 +172,10 @@ export default {
         valor
         label
         descripcion
+        _user_created
+        _user_updated
+        _created_at
+        _updated_at
       `,
       filters: [
         {
@@ -189,8 +197,12 @@ export default {
   methods: {
     openModal (data = {}) {
       this.$refs.form.reset();
+      this.logDatos = null;
       if (data.id) {
-        this.form = data;
+        this.$nextTick(() => {
+          this.logDatos = this.getLogDatos(data);
+          this.form = data;
+        });
       } else {
         this.form = {
           nombre: '',
@@ -249,7 +261,8 @@ export default {
     }
   },
   components: {
-    CrudTable
+    CrudTable,
+    LogDatos
   }
 };
 </script>

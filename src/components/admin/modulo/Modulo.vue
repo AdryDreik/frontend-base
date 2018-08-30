@@ -1,6 +1,7 @@
 <template>
   <section>
     <h3 class="primary--text"><v-icon color="primary">business</v-icon> {{ $t('module.title') }}</h3>
+    <!-- <ordenar></ordenar> -->
     <v-card>
       <v-card-text>
         <crud-table
@@ -28,10 +29,7 @@
               <v-flex xs9>
                 <v-icon>business</v-icon> {{ form.id ? $t('module.crud.editModule') :  $t('module.crud.addModule') }}
               </v-flex>
-              <v-chip label color="success" text-color="white" v-if="form.estado == 'ACTIVO'">
-                {{ form.estado }}
-              </v-chip>
-              <v-chip label color="warning" text-color="white" v-if="form.estado == 'INACTIVO'">
+              <v-chip label :color="form.estado == 'ACTIVO' ? 'success' : 'warning'" text-color="white" v-if="form.estado">
                 {{ form.estado }}
               </v-chip>
               <v-spacer></v-spacer>
@@ -122,8 +120,8 @@
                         ></v-select>
                     </v-flex>
                   </v-layout>
-
                 </v-container>
+                <log-datos :data="logDatos" v-if="logDatos"></log-datos>
               </v-card-text>
               <v-card-actions>
                 <small class="error--text text-required">* Los campos son obligatorios</small>
@@ -180,8 +178,8 @@
                   v-model="items.item.active"
                   value="ACTIVE"
                   @change="changeActive(items.item, items.item.id, 'modulo', 'EditModulo', getMenu)"
-                  hide-details
                   slot="activator"
+                  hide-details
                   color="success"></v-switch>
                 <span>Activar/desactivar registro</span>
               </v-tooltip>
@@ -250,11 +248,15 @@ import CrudTable from '@/common/util/crud-table/CrudTable.vue';
 import crud from '@/common/util/crud-table/mixins/crud-table';
 import validate from '@/common/mixins/validate';
 import Permisos from './Permisos';
+// import Ordenar from './Ordenar';
 import usuario from '@/components/admin/usuario/mixins/usuario';
+import layout from '@/common/layout/mixins/layout';
 import modulo from './mixins/modulo';
+import LogDatos from '@/components/admin/usuario/LogDatos';
+import logDatos from '@/components/admin/usuario/mixins/log-datos';
 
 export default {
-  mixins: [ crud, validate, usuario, modulo ],
+  mixins: [ crud, validate, usuario, modulo, layout, logDatos ],
   created () {
     this.user = this.$storage.getUser();
     this.modulos = [];
@@ -266,6 +268,7 @@ export default {
   },
   data () {
     return {
+      logDatos: null,
       graphql: true, // Definiendo el CRUD con Graphql
       url: 'modulos',
       headers: [
@@ -300,6 +303,10 @@ export default {
         id_modulo
         modulo_label
         seccion_label
+        _user_created
+        _user_updated
+        _created_at
+        _updated_at
       `,
       filters: [
         {
@@ -337,11 +344,13 @@ export default {
     openModal (data = {}) {
       this.$refs.form.reset();
       this.isSection = false;
+      this.logDatos = null;
       if (data.id) {
         this.$nextTick(() => {
+          this.logDatos = this.getLogDatos(data);
           this.form = data;
-          this.form.id_modulo = this.form.id_modulo + '';
           if (this.form.id_modulo) {
+            this.form.id_modulo = this.form.id_modulo + '';
             this.isSection = true;
           }
         });
@@ -373,6 +382,10 @@ export default {
           delete data.id;
           delete data.modulo_label;
           delete data.seccion_label;
+
+          if (!this.isSection) {
+            data.id_modulo = null;
+          }
           this.$service.graphql({
             query: `
               mutation edit($id: Int!, $modulo: EditModulo!) {
@@ -493,7 +506,8 @@ export default {
   },
   components: {
     CrudTable,
-    Permisos
+    Permisos,
+    LogDatos
   },
   watch: {
     '$store.state.modal2': function (val) {

@@ -62,6 +62,12 @@
       </v-flex>
       <!-- END Section details -->
 
+       <!-- Section logs -->
+      <v-flex xs12>
+        <slot name="logs"></slot>
+      </v-flex>
+      <!-- END Section logs -->
+
       <!-- Section Filter -->
       <v-flex xs12 v-if="filter">
         <slot name="filters" :search="search">
@@ -161,13 +167,24 @@
         noDataText="No hay resultados"
         :rowsPerPageItems="rowsPerPageItems"
         >
+        <template slot="headerCell" slot-scope="props">
+          <v-tooltip bottom>
+            <span slot="activator">
+              {{ props.header.text }}
+            </span>
+            <span>
+              {{ props.header.text }}
+            </span>
+          </v-tooltip>
+        </template>
         <template slot="items" slot-scope="props">
-          <tr :active="props.selected" @click="props.selected = !props.selected">
+          <tr>
             <td v-if="checkbox">
               <v-checkbox
-                :input-value="props.selected"
+                v-model="props.selected"
                 primary
                 hide-details
+                v-if="!props.item.hide"
               ></v-checkbox>
             </td>
             <slot name="items" :item="props.item">
@@ -238,6 +255,10 @@ export default {
     checkbox: {
       type: Boolean,
       default: false
+    },
+    checkboxHide: {
+      type: Array,
+      default: null
     }
   },
   data () {
@@ -398,6 +419,11 @@ export default {
               if (el.estado !== undefined) {
                 el.active = el.estado === 'INACTIVO' ? 'INACTIVE' : 'ACTIVE';
               }
+              if (this.checkboxHide && this.checkboxHide.length >= 2) {
+                if (el[this.checkboxHide[0]] && el[this.checkboxHide[0]] === this.checkboxHide[1]) {
+                  el.hide = true;
+                }
+              }
             });
 
             this.items = items;
@@ -467,7 +493,15 @@ export default {
       deep: true
     },
     selected: function (val) {
-      this.$store.commit('setSelected', val);
+      if (Array.isArray(val)) {
+        let selected = [];
+        val.map(item => {
+          if (!item.hide) {
+            selected.push(item);
+          }
+        });
+        this.$store.commit('setSelected', selected);
+      }
     }
   }
 };

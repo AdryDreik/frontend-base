@@ -15,7 +15,7 @@
             <v-tooltip bottom v-if="$store.state.permissions['usuarios:create']">
               <v-btn
                 color="primary"
-                @click.native.stop="openModal()"
+                @click.stop="openModal()"
                 slot="activator"
               ><v-icon>person_add</v-icon> {{$t('common.add') }}</v-btn>
               <span>{{$t('user.add')}}</span>
@@ -26,7 +26,7 @@
             <v-card-title class="headline">
               <v-icon>{{ form.id ? 'person' : 'person_add' }}</v-icon> {{ id ? $t('user.crud.editUser') : $t('user.crud.addUser') }}
               <v-spacer></v-spacer>
-              <v-btn icon @click.native="$store.commit('closeModal')">
+              <v-btn icon @click="$store.commit('closeModal')">
                 <v-icon>close</v-icon>
               </v-btn>
             </v-card-title>
@@ -127,7 +127,7 @@
               <v-card-actions>
                 <small class="error--text text-required">* Los campos son obligatorios</small>
                 <v-spacer></v-spacer>
-                <v-btn @click.native="$store.commit('closeModal');"><v-icon>cancel</v-icon> {{$t('common.cancel') }}</v-btn>
+                <v-btn @click="$store.commit('closeModal');"><v-icon>cancel</v-icon> {{$t('common.cancel') }}</v-btn>
                 <v-btn color="primary" type="submit"><v-icon>check</v-icon> {{$t('common.save') }}</v-btn>
               </v-card-actions>
             </v-form>
@@ -139,7 +139,7 @@
                 <v-btn
                   icon
                   slot="activator"
-                  @click.native="editItem(items.item.id, 'usuario', dataGraphqlAll)">
+                  @click="editItem(items.item.id, 'usuario', dataGraphqlAll)">
                   <v-icon>edit</v-icon>
                 </v-btn>
                 <span>Editar registro</span>
@@ -148,10 +148,19 @@
                 <v-btn
                   icon
                   slot="activator"
-                  @click.native="generarToken('USUARIO', { usuario: items.item.usuario })">
+                  @click="generarToken('USUARIO', { usuario: items.item.usuario })">
                   <v-icon>vpn_key</v-icon>
                 </v-btn>
                 <span>Generar token para el usuario</span>
+              </v-tooltip>
+              <v-tooltip bottom v-if="$store.state.permissions['usuarios:update']">
+                <v-btn
+                  icon
+                  slot="activator"
+                  @click="regenerarPassword(items.item.id)">
+                  <v-icon>lock_open </v-icon>
+                </v-btn>
+                <span>Regenerar contraseña</span>
               </v-tooltip>
               <v-tooltip
                 bottom
@@ -159,7 +168,7 @@
                 <v-btn
                   icon
                   slot="activator"
-                  @click.native="deleteItem(items.item.id, 'usuario')">
+                  @click="deleteItem(items.item.id, 'usuario')">
                   <v-icon color="red">delete</v-icon>
                 </v-btn>
                 <span>Eliminar registro</span>
@@ -266,7 +275,6 @@ export default {
         persona_telefono
         estado
         id_entidad
-        id_operador
         id_rol
         entidad_nombre
         rol_nombre
@@ -280,8 +288,6 @@ export default {
         id_entidad
         id_rol
         id_persona
-        id_operador
-        id_aeropuerto
         persona_nombres
         persona_primer_apellido
         persona_segundo_apellido
@@ -307,9 +313,7 @@ export default {
         contrasena: '',
         email: '',
         id_entidad: null,
-        id_rol: null,
-        id_aeropuerto: null,
-        id_operador: null
+        id_rol: null
       },
       filters: [
         {
@@ -378,8 +382,6 @@ export default {
       'form.cargo',
       'form.id_entidad',
       'form.id_rol',
-      'form.id_aeropuerto',
-      'form.id_operador',
       'form.id_persona'
     ])
   },
@@ -411,8 +413,6 @@ export default {
             id_entidad: data.id_entidad + '',
             id_rol: data.id_rol + '',
             id_persona: data.id_persona,
-            id_operador: data.id_operador ? data.id_operador + '' : null,
-            id_aeropuerto: data.id_aeropuerto ? data.id_aeropuerto + '' : null,
             tipo_documento: data.persona_tipo_documento,
             tipo_documento_otro: data.persona_tipo_documento_otro,
             nro_documento: data.persona_nro_documento,
@@ -452,12 +452,6 @@ export default {
         let data = { ...this.$store.state.usuario.form };
         console.log('data', data);
         data.fecha_nacimiento = this.$datetime.format2(this.$store.state.date['form.fecha_nacimiento']);
-        if (this.$filter.empty(data.id_operador)) {
-          delete data.id_operador;
-        }
-        if (this.$filter.empty(data.id_aeropuerto)) {
-          delete data.id_aeropuerto;
-        }
         delete data.persona;
         if (data.id) {
           const id = data.id;

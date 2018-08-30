@@ -6,10 +6,10 @@ export default {
       this.$confirm('¿Realmente quiere generar el token?, el token creado anteriormente dejará de funcionar.', () => {
         data.tipo = tipo;
         this.$service.post('system/token/generar', data)
-          .then(response => {
-            if (response) {
-              this.$message.info(`Se envió el nuevo token al correo electrónico de ${tipo}`);
-              this.$alert(`
+        .then(response => {
+          if (response) {
+            this.$message.info(`Se envió el nuevo token al correo electrónico de ${tipo}`);
+            this.$alert(`
               <div class="token-container">
                 <p class="v-alert v-alert--outline success--text">
                   <i aria-hidden="true" class="icon material-icons alert__icon">check_circle</i>
@@ -20,9 +20,9 @@ export default {
                 </div>
               </div>
             `, null, 'Token generado');
-              this.selectText();
-            }
-          });
+            this.selectText();
+          }
+        });
       });
     },
     selectText () {

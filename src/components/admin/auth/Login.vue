@@ -2,6 +2,10 @@
   <section>
     <div class="login-container">
       <!-- <div class="logo-app"></div> -->
+      <div class="title-app">
+        <h2>Sistema</h2>
+        <h3>Base</h3>
+      </div>
       <v-card class="login-form">
         <v-form
           @submit.prevent="submit"
@@ -67,10 +71,14 @@
             </v-container>
           </v-card-title>
           <v-card-title class="info">
-            <a href="">{{ $t('login.signUp') }}</a>
+            <a href="" class="white--text">{{ $t('login.signUp') }}</a>
           </v-card-title>
         </v-form>
       </v-card>
+      <div class="text-xs-center mt-3">
+        <router-link to="/login-nit">Login NIT</router-link> |
+        <router-link to="/login-ciudadania">Login Ciudadania</router-link>
+      </div>
     </div>
     <div class="login-lang">
       <app-lang></app-lang>

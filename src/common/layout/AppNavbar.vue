@@ -5,7 +5,8 @@
     height="70"
     class="app-navbar white"
   >
-    <v-toolbar-side-icon @click.stop="$store.commit('layout/toggleMiniVariant')"></v-toolbar-side-icon>
+    <v-toolbar-side-icon class="btn-mini-variant" @click.stop="$store.commit('layout/toggleMiniVariant')"></v-toolbar-side-icon>
+    <v-toolbar-side-icon class="btn-drawer" @click.stop="$store.commit('layout/toggleDrawer')"></v-toolbar-side-icon>
     <v-spacer></v-spacer>
     <app-lang></app-lang>
     <v-tooltip bottom>
@@ -169,6 +170,21 @@ body.fullscreen {
   .v-icon {
     color: white !important;
     font-size: 1.1rem;
+  }
+}
+
+.btn-mini-variant {
+  display: inline-block;
+}
+.btn-drawer {
+  display: none;
+}
+@media (max-width: 1256px) {
+  .btn-mini-variant {
+    display: none;
+  }
+  .btn-drawer {
+    display: inline-block;
   }
 }
 </style>

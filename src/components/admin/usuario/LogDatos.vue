@@ -41,10 +41,10 @@ export default {
       if (this.data._user_updated) {
         query = `
           query usuarios($usuarioC: Int!, $usuarioU: Int!) {
-            usuarioC: usuario(id: $usuarioC) {
+            usuarioC: usuarioOnlyToken(id: $usuarioC) {
               usuario
             }
-            usuarioU: usuario(id: $usuarioU) {
+            usuarioU: usuarioOnlyToken(id: $usuarioU) {
               usuario
             }
           }
@@ -56,7 +56,7 @@ export default {
       } else {
         query = `
           query usuarios($usuarioC: Int!) {
-            usuarioC: usuario(id: $usuarioC) {
+            usuarioC: usuarioOnlyToken(id: $usuarioC) {
               usuario
             }
           }

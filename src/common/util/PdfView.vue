@@ -8,19 +8,21 @@
         <v-btn
           type="button"
           :disabled="page_num == 1"
-          @click="onPrevPage"><v-icon>keyboard_arrow_left</v-icon> Anterior</v-btn>
+          v-if="page_count > 1"
+          @click="onPrevPage" class="btn">
+          <v-icon>keyboard_arrow_left</v-icon> Anterior</v-btn>
+        <v-btn
+          type="buttosn"
+          :disabled="page_num == page_count"
+          v-if="page_count > 1"
+          @click="onNextPage" class="btn">
+          Siguiente <v-icon>keyboard_arrow_right</v-icon></v-btn>
         <v-btn
           type="button"
-          :disabled="page_num == page_count"
-          @click="onNextPage">Siguiente <v-icon>keyboard_arrow_right</v-icon></v-btn>
-        <a
-          :href="url"
-          target="_blank"
-          class="btn">
-          <div class="btn__content">
-            <v-icon>file_download</v-icon> Descargar
-          </div>
-        </a>
+          v-if="url || storage"
+          @click="descargar()" class="btn btn-success">
+          <v-icon>file_download</v-icon> Descargar PDF
+        </v-btn>
       </div>
     </div>
     <canvas :id="id">Cargando PDF espere por favor...</canvas>
@@ -28,7 +30,8 @@
 </template>
 
 <script>
-import 'pdfjs-dist';
+import PDFJS from 'pdfjs-dist';
+import axios from 'axios';
 
 export default {
   props: {
@@ -43,6 +46,10 @@ export default {
     url: {
       type: String,
       default: ''
+    },
+    storage: {
+      type: Number,
+      default: 0
     }
   },
   data () {
@@ -64,6 +71,10 @@ export default {
 
     if (this.data) {
       this.render(this.data);
+
+      if (this.storage) {
+        window.localStorage.setItem(`pdf-${this.storage}`, this.data);
+      }
     }
   },
   methods: {
@@ -77,10 +88,10 @@ export default {
       // PDFJS.disableWorker = true;
 
       // The workerSrc property shall be specified.
-      // window.PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
+      // PDFJS.workerSrc = '//mozilla.github.io/pdf.js/build/pdf.worker.js';
 
       // Using DocumentInitParameters object to load binary data.
-      let loadingTask = window.PDFJS.getDocument({ data: pdfData });
+      let loadingTask = PDFJS.getDocument({ data: pdfData });
       loadingTask.promise.then(pdsfDoc_ => {
         this.pdfDoc = pdsfDoc_;
         this.page_count = this.pdfDoc.numPages;
@@ -155,27 +166,70 @@ export default {
       }
       this.pageNum++;
       this.queueRenderPage(this.pageNum);
+    },
+    descargar () {
+      if (this.url) {
+        this.$service.get(this.url)
+        .then((response) => {
+          console.log('PDF FILE', response);
+          const url = window.URL.createObjectURL(this.b64toBlob(response.data, 'application/pdf'));
+          const link = document.createElement('a');
+          link.href = url;
+          const d = new Date();
+          link.setAttribute('download', `doc-${d.getTime()}.pdf`);
+          document.body.appendChild(link);
+          link.click();
+        });
+      } else if (this.storage) {
+        let pdf = window.localStorage.getItem(`pdf-${this.storage}`);
+        console.log('PDF STORAGE', pdf);
+        const url = window.URL.createObjectURL(this.b64toBlob(pdf, 'application/pdf'));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', `doc-${this.storage}.pdf`);
+        document.body.appendChild(link);
+        link.click();
+      }
+    },
+    b64toBlob (b64Data, contentType, sliceSize) {
+      contentType = contentType || '';
+      sliceSize = sliceSize || 512;
+
+      let byteCharacters = atob(b64Data);
+      let byteArrays = [];
+
+      for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+        let slice = byteCharacters.slice(offset, offset + sliceSize);
+
+        let byteNumbers = new Array(slice.length);
+        for (let i = 0; i < slice.length; i++) {
+          byteNumbers[i] = slice.charCodeAt(i);
+        }
+
+        let byteArray = new Uint8Array(byteNumbers);
+
+        byteArrays.push(byteArray);
+      }
+
+      let blob = new Blob(byteArrays, {type: contentType});
+      return blob;
     }
   }
 };
 </script>
 
 <style lang="scss">
-@import '../../../assets/scss/_variables.scss';
+@import '../../assets/scss/_variables.scss';
 
 .pdf-view {
   canvas {
+    box-sizing: border-box;
     width: 100%;
     border: 1px solid #ddd;
-    padding: 10px;
-  }
-
-  .btn-view {
-
   }
 
   .pdf-view-actions {
-    background: darken($info, 0%);
+    background: darken($primary, 0%);
     color: #f0f0f0;
     overflow: hidden;
 
@@ -183,7 +237,7 @@ export default {
       float: right;
       padding-right: 5px;
 
-      .btn {
+      .v-btn {
         margin: 5px 0;
       }
     }

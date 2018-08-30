@@ -13,29 +13,33 @@
         v-model="valid"
         ref="form"
         lazy-validation>
-        <v-card-text>
-          <v-alert color="info" icon="info" value="true" class="mb-4">Haga click en <v-icon dark>visibility</v-icon> para poder ver/ocultar su contraseña.</v-alert>
-          <v-text-field
-            label="Antigua contraseña"
-            :append-icon="getIcon"
-            :append-icon-cb="changeIcon"
-            :type="hidePass ? 'password' : 'text'"
-            v-model="form.password"
-            maxlength="100"
-            :rules="$validate(['required'])"
-            required
-          ></v-text-field>
-          <v-text-field
-            label="Nueva contraseña"
-            :append-icon="getIcon"
-            :append-icon-cb="changeIcon"
-            :type="hidePass ? 'password' : 'text'"
-            v-model="form.newPassword"
-            maxlength="100"
-            :rules="$validate(['required'])"
-            required
-          ></v-text-field>
-        </v-card-text>
+        <v-container grid-list-md class="pt-0">
+          <v-card-text>
+            <v-alert color="info" icon="info" value="true" class="mb-4">Haga click en <v-icon dark>visibility</v-icon> para poder ver/ocultar su contraseña.</v-alert>
+            <v-text-field
+              label="Antigua contraseña"
+              append-icon="lock"
+              :append-icon="getIcon"
+              @click:append="changeIcon"
+              :type="hidePass ? 'password' : 'text'"
+              v-model="form.password"
+              maxlength="100"
+              :rules="$validate(['required'])"
+              required
+            ></v-text-field>
+            <v-text-field
+              label="Nueva contraseña"
+              append-icon="lock"
+              :append-icon="getIcon"
+              @click:append="changeIcon"
+              :type="hidePass ? 'password' : 'text'"
+              v-model="form.newPassword"
+              maxlength="100"
+              :rules="$validate(['required'])"
+              required
+            ></v-text-field>
+          </v-card-text>
+        </v-container>
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn @click.native="$store.commit('closeModal')"><v-icon>cancel</v-icon> {{ $t('common.cancel') }}</v-btn>

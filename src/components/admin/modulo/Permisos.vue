@@ -34,7 +34,7 @@
       </v-layout>
     </v-alert>
     <v-card-text>
-      <table class="v-table">
+      <table class="v-table theme--light">
         <thead>
           <tr>
             <th>Rol</th>
@@ -181,7 +181,6 @@ export default {
                 delete
                 firma
                 csv
-                activo
                 id_modulo
                 id_rol
                 rol_nombre

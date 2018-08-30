@@ -3,7 +3,7 @@
     persistent
     :mini-variant="$store.state.layout.miniVariant"
     :clipped="clipped"
-    v-model="drawer"
+    v-model="$store.state.layout.drawer"
     enable-resize-watcher
     fixed
     class="app-sidenav"
@@ -12,7 +12,7 @@
     mini-variant-width="68"
   >
     <div class="app-logo">
-      <h1 class="app-title"><v-icon color="white">pets</v-icon><span>{{ $t('app.title') }}</span></h1>
+      <h1 class="app-title"><v-icon color="white">scatter_plot</v-icon><span>{{ $t('app.title') }}</span></h1>
     </div>
     <v-list id="sidenav-menu">
       <v-list-group
@@ -21,6 +21,7 @@
         :key="item.label"
         :prepend-icon="item.icon"
         v-if="item.submenu"
+        class="sidenav-parent"
         no-action
       >
         <v-list-tile
@@ -37,6 +38,7 @@
           :key="subItem.label"
           @click="send(subItem.url)"
           :data-url="subItem.url"
+          class="sidenav-children"
         >
           <v-list-tile-content>
             <v-list-tile-title>{{ getLabel(subItem) }}</v-list-tile-title>
@@ -47,6 +49,7 @@
         v-else
         @click="send(item.url, item.submenu)"
         :data-url="item.url"
+        class="sidenav-one"
       >
         <v-list-tile-action>
           <v-icon color="warning">{{ item.icon }}</v-icon>
@@ -63,10 +66,10 @@
 
 <script>
 import { mapState } from 'vuex';
-import Layout from './mixins/layout';
+import layout from './mixins/layout';
 
 export default {
-  mixins: [ Layout ],
+  mixins: [ layout ],
   mounted () {
     if (this.$storage.exist('menu')) {
       this.$store.commit('setMenu', this.$storage.get('menu'));
@@ -80,7 +83,6 @@ export default {
     setTimeout(() => (this.clickEvent(this.$route.path)), 600);
   },
   data: () => ({
-    drawer: true,
     clipped: false
   }),
   computed: {
@@ -142,7 +144,8 @@ $bgSidenav: darken($primary, 5%);
     }
   }
 
-  .v-list__tile.primary--text, .v-list__group {
+  .v-list__tile.primary--text, .v-list__group,
+  .sidenav-one .v-list__tile__content {
     color: lighten($primary, 40%);
 
     .v-icon {
@@ -151,6 +154,15 @@ $bgSidenav: darken($primary, 5%);
 
     .v-list__tile__title {
       font-size: 16px;
+    }
+  }
+
+  .sidenav-one {
+    .v-list__tile__action {
+      min-width: 44px;
+    }
+    .v-list__tile__content {
+
     }
   }
 
@@ -174,10 +186,91 @@ $bgSidenav: darken($primary, 5%);
   }
 
   &.v-navigation-drawer--mini-variant {
+    overflow: initial;
+
     .app-title {
       span {
         display: none;
       }
+    }
+
+    .sidenav-one:hover {
+      width: 280px;
+      background-color: $primary;
+
+      .v-list__tile__action {
+        margin-right: 30px;
+      }
+    }
+
+    .v-list__tile__content {
+      opacity: 1;
+    }
+
+    .v-list__group__items--no-action .v-list__tile {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    .sidenav-parent {
+      background-color: $primary;
+      position: relative;
+
+      &:hover {
+        .v-list__group__header {
+          background-color: $primary;
+          width: 280px;
+
+          .v-list__tile--link {
+            display: block;
+          }
+        }
+
+        .v-list__group__items {
+          border-top: 2px solid darken($primary, 10%);
+          background-color: $primary;
+          display: block !important;
+          position: absolute;
+          z-index: 5;
+          top: 60px;
+          left: 70px;
+          border-radius: 0 0 3px 3px;
+          width: 210px;
+        }
+      }
+    }
+
+    .v-list {
+      .sidenav-one .v-list__tile--link {
+        padding: 10px 20px 10px 9px;
+        height: 60px;
+
+        .v-list__tile__action {
+        }
+      }
+    }
+
+    .v-list__group__header {
+      .v-list__group__header__prepend-icon {
+        padding: 16px 4px 16px 20px;
+        width: 68px;
+
+        .v-icon {
+          font-size: 2rem;
+        }
+      }
+
+      .v-list__tile--link {
+        display: none;
+      }
+
+      .v-list__group__header__append-icon {
+        display: none;
+      }
+    }
+
+    .v-list__group__items {
+      display: none !important;
     }
   }
 

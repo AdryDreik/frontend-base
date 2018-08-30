@@ -8,7 +8,7 @@ export default {
       this.$service.graphql({
         query: `
           query getRoles {
-            roles {
+            roles(order: "nombre") {
               count
               rows {
                 id
@@ -24,7 +24,7 @@ export default {
           let items = response.roles.rows;
           let roles = [];
           items.map(rol => {
-            roles.push({ value: rol.id, text: rol.nombre + ' - ' + rol.descripcion });
+            roles.push({ value: rol.id, text: (rol.nombre + '').replace(/_/gi, ' ') + ' - ' + rol.descripcion });
           });
           this.roles = roles;
           if ((filter || filter === 0) && this.filters[filter] && this.filters[filter].items) {
@@ -36,8 +36,8 @@ export default {
     getEntidades (filter) {
       this.$service.graphql({
         query: `
-          query getRoles($estado: EstadoEntidad) {
-            entidades(estado: $estado) {
+          query getEntidades($estado: EstadoEntidad) {
+            entidades(estado: $estado, order: "nombre") {
               count
               rows {
                 id
@@ -62,6 +62,16 @@ export default {
             this.filters[filter].items = this.entidades;
           }
         }
+      });
+    },
+    regenerarPassword (id) {
+      this.$confirm('¿Realmente quiere regenerar la contraseña para el usuario?, la nueva contraseña será enviado al correo del usuario. ', () => {
+        this.$service.get('system/regenerar_password/' + id)
+          .then(response => {
+            if (response) {
+              this.$message.success();
+            }
+          });
       });
     }
   }

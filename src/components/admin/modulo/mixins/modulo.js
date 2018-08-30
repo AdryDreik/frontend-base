@@ -15,6 +15,8 @@ export default {
 
         // Actualizando token
         this.$storage.set('token', response.token);
+
+        setTimeout(() => (this.clickEvent('modulos')), 500);
       });
     }
   }

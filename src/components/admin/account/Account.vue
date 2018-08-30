@@ -41,21 +41,24 @@
           @submit.prevent="deactivate"
           ref="form2"
           lazy-validation>
-          <v-card-text>
-            <v-alert color="warning" icon="warning" value="true">Una vez desactivada su cuenta si desea volver a habilitarla deberá contactarse con el administrador del sistema.</v-alert>
-            <v-alert color="info" value="true" icon="info" class="mb-4">Ingrese su contraseña para confirmar la desactivación de su cuenta.</v-alert>
-            <v-text-field
+          <v-container grid-list-md class="pt-0">
+            <v-card-text>
+              <v-alert color="warning" icon="warning" value="true">Una vez desactivada su cuenta si desea volver a habilitarla deberá contactarse con el administrador del sistema.</v-alert>
+              <v-alert color="info" value="true" icon="info" class="mb-4">Ingrese su contraseña para confirmar la desactivación de su cuenta.</v-alert>
+              <v-text-field
               name="password"
               :label="$t('login.password')"
+              append-icon="lock"
               :append-icon="getIcon"
-              :append-icon-cb="changeIcon"
+              @click:append="changeIcon"
               :type="hidePass ? 'password' : 'text'"
               v-model="form.password"
               :rules="$validate(['required'])"
               required
               maxlength="100"
-            ></v-text-field>
-          </v-card-text>
+              ></v-text-field>
+            </v-card-text>
+          </v-container>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn @click.native="modalDeactivate = false"><v-icon>cancel</v-icon> {{ $t('common.cancel') }}</v-btn>

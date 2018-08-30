@@ -5,7 +5,8 @@ export default {
     login (data) {
       this.$http.post(this.$authUrl, {
         usuario: data.username,
-        contrasena: data.password
+        contrasena: data.password,
+        nit: data.nit
       }).then(response => {
         if (response.data) {
           let menu = response.data.menu;
@@ -26,6 +27,7 @@ export default {
           this.$store.commit('setSidenav', sidenav);
           this.$store.commit('setPermissions', permisos);
           this.$store.commit('setAuth', true);
+          this.$storage.remove('oauth2_state');
 
           this.timerSession();
           this.$router.push(redirect || data.redirect || '/');
@@ -36,23 +38,41 @@ export default {
     },
 
     logout (store, router, loading) {
-      store = store || this.$store;
-      router = router || this.$router;
-      loading = loading || this.$loading;
+      const codigo = this.$storage.get('oauth2_state');
+      if (codigo) {
+        if (this.$storage.existUser()) {
+          this.$service.get(`system/salir?codigo=${codigo}`)
+            .then(response => {
+              store = store || this.$store;
+              this.cleanData(store);
+              window.location.href = response.url;
+            });
+        }
+      } else {
+        store = store || this.$store;
+        router = router || this.$router;
+        loading = loading || this.$loading;
 
-      this.$storage.removeUser();
-      this.$storage.remove('menu');
-      this.$storage.remove('token');
-      this.$storage.remove('sidenav');
-      this.$storage.remove('permissions');
-      loading.hide();
+        this.$storage.removeUser();
+        this.$storage.remove('menu');
+        this.$storage.remove('token');
+        this.$storage.remove('sidenav');
+        this.$storage.remove('permissions');
 
+        if (loading) {
+          loading.hide();
+        }
+
+        this.cleanData(store);
+        router.push('/login');
+      }
+    },
+
+    cleanData (store) {
       store.commit('setDefault');
-
+      store.commit('DESTROY_INTERVAL');
       // Debemos resetear todos los formularios que usamos con vuex-map-fields
       store.commit('usuario/cleanForm');
-      store.commit('DESTROY_INTERVAL');
-      router.push('/login');
     },
 
     timerSession () {
@@ -71,6 +91,17 @@ export default {
       this.$store.commit('setMain', false);
       this.$nextTick(function () {
         this.$store.commit('setMain', true);
+      });
+    },
+
+    getCode () {
+      this.$http.get(`${this.$apiUrl}public/codigo`).then(response => {
+        if (response.data) {
+          this.$storage.set('oauth2_state', response.data.codigo);
+          window.location.href = response.data.url;
+        }
+      }).catch((error) => {
+        this.$message.error(error.response ? error.response.data.error || 'Usuario y/o contraseña inválida' : 'El sistema no pudo conectarse, revise su conexión de internet.');
       });
     }
   }

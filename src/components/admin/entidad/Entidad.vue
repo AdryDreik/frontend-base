@@ -9,7 +9,7 @@
           :filters="filters"
           :graphql="graphql"
           :widthModal="800"
-          v-if="$store.state.user.id_rol !== 2"
+          v-if="$util.isRol('SUPERADMIN')"
         >
           <template slot="buttons">
             <!-- <v-tooltip bottom v-if="$store.state.permissions['entidades:create']">
@@ -60,7 +60,7 @@
                 <v-container grid-list-md>
                   <h4>Datos generales</h4>
                   <v-layout wrap>
-                    <v-flex xs9>
+                    <v-flex xs8>
                       <v-text-field
                         name="nombre"
                         :label="$t('entity.crud.name')"
@@ -73,12 +73,22 @@
                       ></v-text-field>
                     </v-flex>
 
-                    <v-flex xs3>
+                    <v-flex xs2>
                       <v-text-field
                         name="sigla"
                         :label="$t('entity.crud.acronym')"
                         id="sigla"
                         v-model="form.sigla"
+                        maxlength="20"
+                      ></v-text-field>
+                    </v-flex>
+
+                    <v-flex xs2>
+                      <v-text-field
+                        name="nit"
+                        label="NIT"
+                        id="nit"
+                        v-model="form.nit"
                         maxlength="20"
                       ></v-text-field>
                     </v-flex>
@@ -161,6 +171,7 @@
                     </v-combobox>
                   </v-flex>
                 </v-container>
+                <log-datos :data="logDatos" v-if="logDatos"></log-datos>
               </v-card-text>
               <v-card-actions>
                 <small class="error--text text-required">* Los campos son obligatorios</small>
@@ -215,6 +226,7 @@
                   v-model="items.item.active"
                   value="ACTIVE"
                   @change="changeActive(items.item, items.item.id, 'entidad', 'EditEntidad')"
+                  hide-details
                   v-if="idEntidad != items.item.id"
                   slot="activator"
                   color="success"></v-switch>
@@ -256,114 +268,123 @@
           lazy-validation
           v-else
           >
-          <v-card-text>
-            <v-container grid-list-md>
-              <h4>Datos generales</h4>
-              <v-layout wrap>
-                <v-flex xs9>
-                  <v-text-field
-                    name="nombre"
-                    :label="$t('entity.crud.name')"
-                    id="nombre"
-                    v-model="form.nombre"
-                    autofocus
-                    maxlength="150"
-                    :rules="$validate(['required'])"
-                    required
-                  ></v-text-field>
-                </v-flex>
-
-                <v-flex xs3>
-                  <v-text-field
-                    name="sigla"
-                    :label="$t('entity.crud.acronym')"
-                    id="sigla"
-                    v-model="form.sigla"
-                    maxlength="20"
-                  ></v-text-field>
-                </v-flex>
-
-                <v-flex xs8>
-                  <v-text-field
-                    name="descripcion"
-                    :label="$t('entity.crud.description')"
-                    id="descripcion"
-                    v-model="form.descripcion"
-                    maxlength="500"
-                    :counter="500"
-                    :rules="$validate(['required'])"
-                    required
-                  ></v-text-field>
-                </v-flex>
-
-                <v-flex xs4>
-                  <v-text-field
-                    name="codigo_portal"
-                    label="Código único de portal"
-                    id="codigo_portal"
-                    v-model="form.codigo_portal"
-                    maxlength="20"
-                    :rules="$validate(['required'])"
-                    required
-                  ></v-text-field>
-                </v-flex>
-              </v-layout>
-
-              <h4>Datos de contacto</h4>
-              <v-layout wrap>
+          <v-container grid-list-md>
+            <h4>Datos generales</h4>
+            <v-layout wrap>
+              <v-flex xs8>
                 <v-text-field
-                  name="email"
-                  :label="$t('entity.crud.email')"
-                  prepend-icon="email"
-                  id="email"
-                  v-model="form.email"
-                  maxlength="100"
-                  :rules="$validate(['email'])"
+                  name="nombre"
+                  :label="$t('entity.crud.name')"
+                  id="nombre"
+                  v-model="form.nombre"
+                  autofocus
+                  maxlength="150"
+                  :rules="$validate(['required'])"
+                  required
                 ></v-text-field>
+              </v-flex>
 
+              <v-flex xs2>
                 <v-text-field
-                  name="web"
-                  :label="$t('entity.crud.web')"
-                  prepend-icon="public"
-                  id="web"
-                  v-model="form.web"
-                  maxlength="100"
-                  :rules="$validate(['url'])"
+                  name="sigla"
+                  :label="$t('entity.crud.acronym')"
+                  id="sigla"
+                  v-model="form.sigla"
+                  maxlength="20"
                 ></v-text-field>
-              </v-layout>
+              </v-flex>
 
-              <v-flex xs12>
+              <v-flex xs2>
                 <v-text-field
-                  name="direccion"
-                  :label="$t('entity.crud.address')"
-                  id="direccion"
-                  v-model="form.direccion"
+                  name="nit"
+                  label="NIT"
+                  id="nit"
+                  v-model="form.nit"
+                  maxlength="20"
+                ></v-text-field>
+              </v-flex>
+
+              <v-flex xs8>
+                <v-text-field
+                  name="descripcion"
+                  :label="$t('entity.crud.description')"
+                  id="descripcion"
+                  v-model="form.descripcion"
                   maxlength="500"
                   :counter="500"
+                  :rules="$validate(['required'])"
+                  required
                 ></v-text-field>
               </v-flex>
 
-              <v-flex xs12>
-                <v-combobox
-                  :label="$t('entity.crud.phones')"
-                  chips
-                  multiple
-                  prepend-icon="phone"
-                  v-model="form.telefonos"
-                >
-                  <template slot="selection" slot-scope="data">
-                    <v-chip
-                      close
-                      @input="remove(data.item)"
-                      :selected="data.selected"
-                    >
-                      {{ data.item }}
-                    </v-chip>
-                  </template>
-                </v-combobox>
+              <v-flex xs4>
+                <v-text-field
+                  name="codigo_portal"
+                  label="Código único de portal"
+                  id="codigo_portal"
+                  v-model="form.codigo_portal"
+                  maxlength="20"
+                  :rules="$validate(['required'])"
+                  required
+                ></v-text-field>
               </v-flex>
-            </v-container>
-          </v-card-text>
+            </v-layout>
+
+            <h4>Datos de contacto</h4>
+            <v-layout wrap>
+              <v-text-field
+                name="email"
+                :label="$t('entity.crud.email')"
+                prepend-icon="email"
+                id="email"
+                v-model="form.email"
+                maxlength="100"
+                :rules="$validate(['email'])"
+              ></v-text-field>
+
+              <v-text-field
+                name="web"
+                :label="$t('entity.crud.web')"
+                prepend-icon="public"
+                id="web"
+                v-model="form.web"
+                maxlength="100"
+                :rules="$validate(['url'])"
+              ></v-text-field>
+            </v-layout>
+
+            <v-flex xs12>
+              <v-text-field
+                name="direccion"
+                :label="$t('entity.crud.address')"
+                id="direccion"
+                v-model="form.direccion"
+                maxlength="500"
+                :counter="500"
+              ></v-text-field>
+            </v-flex>
+
+            <v-flex xs12>
+              <v-combobox
+                :label="$t('entity.crud.phones')"
+                chips
+                multiple
+                prepend-icon="phone"
+                v-model="form.telefonos"
+              >
+                <template slot="selection" slot-scope="data">
+                  <v-chip
+                    close
+                    @input="remove(data.item)"
+                    :selected="data.selected"
+                  >
+                    {{ data.item }}
+                  </v-chip>
+                </template>
+              </v-combobox>
+            </v-flex>
+          </v-container>
+          <log-datos :data="logDatos" v-if="logDatos"></log-datos>
           <v-card-actions>
             <small class="error--text text-required">* Los campos son obligatorios</small>
             <v-spacer></v-spacer>
@@ -385,20 +406,23 @@ import CrudTable from '@/common/util/crud-table/CrudTable.vue';
 import crud from '@/common/util/crud-table/mixins/crud-table';
 import validate from '@/common/mixins/validate';
 import token from '@/components/admin/modulo/mixins/token';
+import LogDatos from '@/components/admin/usuario/LogDatos';
+import logDatos from '@/components/admin/usuario/mixins/log-datos';
 
 export default {
-  mixins: [ crud, validate, token ],
+  mixins: [ crud, validate, token, logDatos ],
   created () {
     this.user = this.$storage.getUser();
     this.idEntidad = this.user.id_entidad;
   },
   mounted () {
-    if (this.$store.state.user.id_rol === 5) {
+    if (this.$util.isRol('ADMIN')) {
       this.editItem(this.$store.state.user.id_entidad, 'entidad', this.dataGraphql, false);
     }
   },
   data () {
     return {
+      logDatos: null,
       successAlert: false,
       graphql: true, // Definiendo el CRUD con Graphql
       url: 'entidades',
@@ -431,7 +455,12 @@ export default {
         direccion
         codigo_portal
         web
+        nit
         estado
+        _user_created
+        _user_updated
+        _created_at
+        _updated_at
       `,
       filters: [
         {
@@ -466,13 +495,17 @@ export default {
     openModal (data = {}, form = true) {
       this.valid = true;
       this.$refs.form.reset();
+      this.logDatos = null;
       if (data.id) {
         if (data.telefonos) {
           data.telefonos = data.telefonos.split(',');
         } else {
           data.telefonos = [];
         }
-        this.form = data;
+        this.$nextTick(() => {
+          this.logDatos = this.getLogDatos(data);
+          this.form = data;
+        });
       } else {
         this.form = {
           nombre: '',
@@ -546,7 +579,8 @@ export default {
     }
   },
   components: {
-    CrudTable
+    CrudTable,
+    LogDatos
   }
 };
 </script>

@@ -7,6 +7,8 @@ import AppError from '@/common/layout/pages/AppError';
 
 // System
 import Login from '@/components/admin/auth/Login';
+import LoginCiudadania from '@/components/admin/auth/LoginCiudadania';
+import LoginNit from '@/components/admin/auth/LoginNit';
 import Account from '@/components/admin/account/Account';
 import Entidad from '@/components/admin/entidad/Entidad';
 import Usuario from '@/components/admin/usuario/Usuario';
@@ -27,6 +29,16 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/login-ciudadania',
+      name: 'LoginCiudadania',
+      component: LoginCiudadania
+    },
+    {
+      path: '/login-nit',
+      name: 'LoginNit',
+      component: LoginNit
     },
     {
       path: '/usuarios',

@@ -13,9 +13,11 @@ export default {
     logOut: 'Cerrar sesión'
   },
   login: {
-    title: 'Inicia tu sesión',
+    title: 'Ingrese como Usuario',
+    title_nit: 'Ingrese como Administrador',
     user: 'Nombre de usuario',
     password: 'Contraseña',
+    nit: 'NIT',
     rememberMe: 'Recuerdame',
     forgotPass: '¿Se te olvidó tu contraseña?',
     login: 'Ingresar',

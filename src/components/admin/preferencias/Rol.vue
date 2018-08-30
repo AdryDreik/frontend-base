@@ -22,9 +22,8 @@
 
           <template slot="form">
             <v-card-title class="headline">
-              <v-flex xs10>
-                <v-icon>business</v-icon> {{ form.id ? $t('rol.crud.editRol') :  $t('rol.crud.addRol') }}
-              </v-flex>
+              <v-icon>person</v-icon> {{ form.id ? $t('rol.crud.editRol') :  $t('rol.crud.addRol') }}
+              <v-spacer></v-spacer>
               <v-btn icon @click.native="$store.commit('closeModal')">
                 <v-icon>close</v-icon>
               </v-btn>
@@ -49,6 +48,14 @@
                 ></v-text-field>
 
                 <v-text-field
+                  name="path"
+                  :label="$t('rol.crud.path')"
+                  id="path"
+                  v-model="form.path"
+                  maxlength="100"
+                ></v-text-field>
+
+                <v-text-field
                   name="descripcion"
                   :label="$t('rol.crud.description')"
                   id="descripcion"
@@ -58,6 +65,7 @@
                 ></v-text-field>
 
                 </v-container>
+                <log-datos :data="logDatos" v-if="logDatos"></log-datos>
               </v-card-text>
               <v-card-actions>
                 <small class="error--text text-required">* Los campos son obligatorios</small>
@@ -99,6 +107,7 @@
             </td>
             <td>{{ items.item.nombre }}</td>
             <td>{{ items.item.descripcion }}</td>
+            <td>{{ items.item.path }}</td>
 
           </template>
         </crud-table>
@@ -111,33 +120,38 @@
 import CrudTable from '@/common/util/crud-table/CrudTable.vue';
 import crud from '@/common/util/crud-table/mixins/crud-table';
 import validate from '@/common/mixins/validate';
+import LogDatos from '@/components/admin/usuario/LogDatos';
+import logDatos from '@/components/admin/usuario/mixins/log-datos';
 
 export default {
-  mixins: [ crud, validate ],
-  created () {
-    this.user = this.$storage.getUser();
-    this.idRol = this.user.id_rol;
-  },
+  mixins: [ crud, validate, logDatos ],
   data () {
     return {
+      logDatos: null,
       graphql: true, // Definiendo el CRUD con Graphql
       url: 'roles',
       headers: [
         { text: this.$t('common.actions'), sortable: false },
         { text: this.$t('rol.crud.name'), value: 'nombre' },
-        { text: this.$t('rol.crud.description'), value: 'descripcion' }
+        { text: this.$t('rol.crud.description'), value: 'descripcion' },
+        { text: this.$t('rol.crud.path'), value: 'path' }
       ],
       form: {
         nombre: '',
+        path: '',
         descripcion: ''
       },
       dataGraphql: `
         id
         nombre
+        path
         descripcion
+        _user_created
+        _user_updated
+        _created_at
+        _updated_at
       `,
       filters: [],
-      idRol: null,
       valid: true,
       tipos: [
         { text: 'ADMIN' },
@@ -149,8 +163,12 @@ export default {
   methods: {
     openModal (data = {}) {
       this.$refs.form.reset();
+      this.logDatos = null;
       if (data.id) {
-        this.form = data;
+        this.$nextTick(() => {
+          this.logDatos = this.getLogDatos(data);
+          this.form = data;
+        });
       } else {
         this.form = {
           nombre: '',
@@ -207,7 +225,8 @@ export default {
     }
   },
   components: {
-    CrudTable
+    CrudTable,
+    LogDatos
   }
 };
 </script>
