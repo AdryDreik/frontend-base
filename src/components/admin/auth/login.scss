@@ -152,6 +152,32 @@ $textColor: #99abb4;
   }
 }
 
+.contactos {
+  text-align: center;
+  margin-top: 15px;
+
+  .link-social {
+    display: inline-block;
+    line-height: 42px;
+    border: 1px solid #bbb;
+    text-decoration: none;
+    padding: 0 10px;
+    outline: 0;
+    color: #777;
+    border-radius: 3px;
+
+    img {
+      float: left;
+      margin: 3px 4px 0 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+      outline: 0;
+    }
+  }
+}
+
 .login-lang {
   position: fixed;
   top: 15px;

@@ -75,6 +75,11 @@
           </v-card-title>
         </v-form>
       </v-card>
+      <div class="contactos">
+        <a class="link-social" href="https://wa.me/59170520083?text=Hola%20mundo" target="_blank">
+          <img src="../../../assets/images/whatsapp.png"> <span>Contáctanos</span>
+        </a>
+      </div>
       <div class="text-xs-center mt-3">
         <router-link to="/login-nit">Login NIT</router-link> |
         <router-link to="/login-ciudadania">Login Ciudadania</router-link>
