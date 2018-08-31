@@ -204,6 +204,10 @@ import { mapState } from 'vuex';
 
 export default {
   props: {
+    path: {
+      type: String,
+      default: this.path
+    },
     headers: {
       type: Array,
       default: () => []
@@ -414,7 +418,7 @@ export default {
         .then(response => {
           if (response) {
             this.selected = [];
-            let items = response[this.url].rows;
+            let items = response[this.path];
             items.map(el => {
               if (el.estado !== undefined) {
                 el.active = el.estado === 'INACTIVO' ? 'INACTIVE' : 'ACTIVE';
@@ -441,7 +445,7 @@ export default {
         .then(response => {
           if (response) {
             this.selected = [];
-            let items = response.datos;
+            let items = response[this.path];
             items.map(el => {
               if (el.estado !== undefined) {
                 el.active = el.estado === 'INACTIVO' ? 'INACTIVE' : 'ACTIVE';

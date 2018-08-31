@@ -1,0 +1,11 @@
+{
+  "pasos": {
+    "1": {
+      "mensaje": "Este es el boton con el cual usted puede crear la cantidad que desee de documentos."
+    },
+    "2": {
+      "mensaje": "Esta tabla representa todos los documentos creados por usted, estos registros estan ordenados por fecha, tambien podra observar que cada registros posee acciones, estas acciones le ayudaran a editar, eliminar, publicar, duplicar y tener una vista previa."
+    }
+
+  }
+}

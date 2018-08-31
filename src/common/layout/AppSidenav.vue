@@ -153,7 +153,7 @@ $bgSidenav: darken($primary, 5%);
     }
 
     .v-list__tile__title {
-      font-size: 16px;
+      font-size: 14px;
     }
   }
 

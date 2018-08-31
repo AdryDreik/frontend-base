@@ -16,6 +16,9 @@ import Modulo from '@/components/admin/modulo/Modulo';
 import Preferencias from '@/components/admin/preferencias/Preferencias';
 import Log from '@/components/admin/Log';
 
+// Components
+import DocumentosPlantilla from '@/components/admin/documentos_plantilla/documentos_plantilla';
+
 Vue.use(Router);
 
 export default new Router({
@@ -29,6 +32,11 @@ export default new Router({
       path: '/login',
       name: 'Login',
       component: Login
+    },
+    {
+      path: '/documentos_plantilla',
+      name: 'Lista de documentos Plantilla',
+      component: DocumentosPlantilla
     },
     {
       path: '/login-ciudadania',
