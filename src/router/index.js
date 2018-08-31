@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Dashboard from '@/components/admin/Dashboard';
+import Dashboard from '@/components/admin/Dashboard/Dashboard';
 import AppNotFound from '@/common/layout/pages/AppNotFound';
 import AppForbidden from '@/common/layout/pages/AppForbidden';
 import AppError from '@/common/layout/pages/AppError';

@@ -6,7 +6,6 @@ const path = require('path');
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/', // AQUÍ DEFINIMOS EL PATH DEL SISTEMA
@@ -14,8 +13,8 @@ module.exports = {
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
-    autoOpenBrowser: false,
+    port: 8889, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    autoOpenBrowser: true,
     errorOverlay: true,
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
@@ -39,24 +38,26 @@ module.exports = {
     // set this to false - it *may* help
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
-
-    cssSourceMap: true
+    cssSourceMap: true,
+    /* GRUPOS */
+    GRUPO_SOLICITANTE: '000000000000000000000111',
+    GRUPO_SISTEMA: '000000000000000000000555',
+    /* ROLES */
+    SUPER_ADMIN: '000000000000000000000222',
+    ADMIN: '000000000000000000000333',
+    CREADOR_PLANTILLAS: '000000000000000000000444'
   },
-
   build: {
     // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
-
+    index: path.resolve(__dirname, '../bpm-admin/index.html'),
     // Paths
-    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsRoot: path.resolve(__dirname, '../bpm-admin'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/', // AQUÍ DEFINIMOS EL PATH DEL SISTEMA
+    assetsPublicPath: '/bpm-admin/', // DEFINIMOS EL PATH DEL SISTEMA
     portServer: 3100, // Puerto del servidor para el archivo server.js
-
     /**
      * Source Maps
      */
-
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',

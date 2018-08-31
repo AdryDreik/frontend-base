@@ -1,0 +1,11 @@
+{
+  "pasos": {
+    "1": {
+      "mensaje": "Inicio del openflow, aca se indican la cantidad de trámites concluidos, trámites en proceso, pagos concluidos, delegaciones y otros módulos mas."
+    },
+    "2": {
+      "mensaje": "Gráfico generado en base a resultados estadisticos realizados por el sistema."
+    }
+
+  }
+}

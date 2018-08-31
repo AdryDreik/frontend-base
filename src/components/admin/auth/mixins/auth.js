@@ -4,12 +4,12 @@ export default {
   methods: {
     login (data) {
       this.$http.post(this.$authUrl, {
-        usuario: data.username,
-        contrasena: data.password,
+        user: data.username,
+        password: data.password,
         nit: data.nit
       }).then(response => {
         if (response.data) {
-          let menu = response.data.menu;
+          let menu = response.data.usuario.roles.menu;
           let usuario = response.data.usuario;
           let permisos = response.data.permisos;
           let token = response.data.token;
