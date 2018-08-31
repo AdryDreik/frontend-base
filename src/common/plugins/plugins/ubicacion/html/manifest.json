@@ -1,0 +1,21 @@
+{
+  "nombre": "ubicacion",
+  "descripcion": "Componenente utilizado para utilizar un graficador de mapas con marcador que puede ser unico o multiple",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "icon" : "my_location",
+    "image" : "../../../static/images/plugins/mapa.png",
+    "label" : "Nombre",
+    "id" : null,
+    "placeholder" : "Seleccione una ubicacion",
+    "validations" : [],
+    "value" : null,
+    "position" : [],
+    "settings" : false,
+    "multiple" : false,
+    "disabled" : false
+  }
+}
+

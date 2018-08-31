@@ -1,0 +1,2368 @@
+[{
+    "id_usuario": 199,
+    "nombres": "2017-07-24T15:38:13.821Z",
+    "apellidos": "2017-07-24T15:38:13.821Z",
+    "cargo": "Profesional en gestión de datos",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 199,
+      "id_usuario_rol": 360,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 153,
+    "nombres": "Adrian Alvaro",
+    "apellidos": "Chambi Quenta",
+    "cargo": "Consultoría Individual de Linea: Asistente en Procesamiento de Datos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 153,
+      "id_usuario_rol": 289,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 111,
+    "nombres": "Alberto Daniel",
+    "apellidos": "Inch Sainz",
+    "cargo": "Profesional de Desarrollo e implementación de Modelo de Datos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 111,
+      "id_usuario_rol": 111,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 39,
+    "nombres": "Alvaro",
+    "apellidos": "Mamani Quispe",
+    "cargo": "Profesional de Desarrollo Movil",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 39,
+      "id_usuario_rol": 39,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 427,
+    "nombres": "Alvaro Rene",
+    "apellidos": "Bozo Toledo",
+    "cargo": "PASANTIA APOYO EN LA REINGENIERIA DE PROCESOS PARA INSTITUCIONES PÚBLICAS IV",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 427,
+      "id_usuario_rol": 430,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 100,
+    "nombres": "Ana Vanessa",
+    "apellidos": "Villarreal Espejo",
+    "cargo": "Profesional de Seguimiento a la Ejecución",
+    "usuario_rol": [{
+        "fid_rol": 5,
+        "fid_usuario": 100,
+        "id_usuario_rol": 465,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 5,
+          "nombre": "CONFIGURADOR",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 2,
+        "fid_usuario": 100,
+        "id_usuario_rol": 464,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 270,
+    "nombres": "Andre",
+    "apellidos": "Mitsutake Cueto",
+    "cargo": "Profesional de Evaluación de Seguridad",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 270,
+      "id_usuario_rol": 308,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 425,
+    "nombres": "Angela Maria",
+    "apellidos": "Manzenada Arze",
+    "cargo": "PASANTIA APOYO EN LA REINGENIERIA DE PROCESOS PARA INSTITUCIONES PÚBLICAS I",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 425,
+      "id_usuario_rol": 425,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 72,
+    "nombres": "Ariel",
+    "apellidos": "Alvarado Atahuichi",
+    "cargo": "PROFESIONAL DE INNOVACIÓN Y DISEÑO",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 72,
+      "id_usuario_rol": 522,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 24,
+    "nombres": "Ariel Marcos",
+    "apellidos": "Condo Merlo",
+    "cargo": "Responsable de Investigación",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 24,
+      "id_usuario_rol": 24,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 98,
+    "nombres": "Arturo",
+    "apellidos": "Hernandez Calleja",
+    "cargo": "Profesional de Investigación en Seguridad de la Información",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 98,
+      "id_usuario_rol": 98,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 399,
+    "nombres": "Bruno Luis",
+    "apellidos": "Villarroel Davalos",
+    "cargo": "PASANTIA DESARROLLO EN INVESTIGACIÓN EN SOFTWARE",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 399,
+      "id_usuario_rol": 432,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 275,
+    "nombres": "Caja Chica",
+    "apellidos": "2",
+    "cargo": "Responsable de Caja Chica DGE",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 275,
+      "id_usuario_rol": 519,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 276,
+    "nombres": "Caja Chica",
+    "apellidos": "1",
+    "cargo": "Responsable de Caja Chica UAF",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 276,
+      "id_usuario_rol": 520,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 34,
+    "nombres": "Carlos",
+    "apellidos": "Remuzzi Livio",
+    "cargo": "Técnico de Desarrollo Web",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 34,
+      "id_usuario_rol": 34,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 61,
+    "nombres": "Carmen Fedra",
+    "apellidos": "Valverde Rossel",
+    "cargo": "Jefe de Unidad Administrativa Financiera",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 61,
+      "id_usuario_rol": 61,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 94,
+    "nombres": "Carolina",
+    "apellidos": "Ovale Chory",
+    "cargo": "Profesional de Enlace Interinstitucional",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 94,
+      "id_usuario_rol": 94,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 74,
+    "nombres": "Cecilia Leonor",
+    "apellidos": "Alvarado Monrroy",
+    "cargo": "Profesional de Desarrollo Web",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 74,
+      "id_usuario_rol": 204,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 162,
+    "nombres": "Claudia",
+    "apellidos": "Segurondo Muiba",
+    "cargo": "Profesional de bienes y servicios",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 162,
+      "id_usuario_rol": 184,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 272,
+    "nombres": "Claudia Soraya",
+    "apellidos": "Cuevas Simons",
+    "cargo": "Responsable Financiero",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 272,
+      "id_usuario_rol": 315,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 468,
+    "nombres": "CLAUDIO ADHEMAR",
+    "apellidos": "CUELLAR VALENCIA",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 468,
+      "id_usuario_rol": 478,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 163,
+    "nombres": "correspondencia",
+    "apellidos": "correspondencia",
+    "cargo": "Responsable de correspondencia",
+    "usuario_rol": [{
+      "fid_rol": 6,
+      "fid_usuario": 163,
+      "id_usuario_rol": 187,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 6,
+        "nombre": "CORRESPONDENCIA",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 472,
+    "nombres": "CRISTIAN RUBEN",
+    "apellidos": "PAUCARA ESPAÑA",
+    "cargo": "PROFESIONAL DE APOYO EN DISEÑO DE TRAMITES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 472,
+      "id_usuario_rol": 584,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 134,
+    "nombres": "Daniel",
+    "apellidos": "Jimenez Jerez",
+    "cargo": "Técnico de Desarrollo de Sistemas",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 134,
+      "id_usuario_rol": 367,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 114,
+    "nombres": "Daniel Agustin",
+    "apellidos": "Viscarra Morales",
+    "cargo": "Responsable de Procesos y Procedimientos Gubernamentales",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 114,
+      "id_usuario_rol": 444,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 108,
+    "nombres": "David",
+    "apellidos": "Peñaranda Torrejon",
+    "cargo": "Responsable de Auditoría Interna",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 108,
+      "id_usuario_rol": 108,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 131,
+    "nombres": "Davis",
+    "apellidos": "Mendoza Paco",
+    "cargo": "Jefe de Unidad de Servicios e Infraestructura Tecnologica",
+    "usuario_rol": [{
+        "fid_rol": 1,
+        "fid_usuario": 131,
+        "id_usuario_rol": 298,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 1,
+          "nombre": "ADMIN",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 2,
+        "fid_usuario": 131,
+        "id_usuario_rol": 299,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 83,
+    "nombres": "Deymar",
+    "apellidos": "Callisaya Quispe",
+    "cargo": "Técnico en Administración de Hardware",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 83,
+      "id_usuario_rol": 208,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 448,
+    "nombres": "Diana",
+    "apellidos": "Villavicencio Sanchez",
+    "cargo": "Consultoria en Linea: Asistente de Coordinación Interinstitucional",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 448,
+      "id_usuario_rol": 459,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 69,
+    "nombres": "Diego",
+    "apellidos": "Parraga Menchaca",
+    "cargo": "Profesional de Hardware y Comunicaciones",
+    "usuario_rol": [{
+        "fid_rol": 1,
+        "fid_usuario": 69,
+        "id_usuario_rol": 471,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 1,
+          "nombre": "ADMIN",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 2,
+        "fid_usuario": 69,
+        "id_usuario_rol": 469,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 4,
+        "fid_usuario": 69,
+        "id_usuario_rol": 470,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 4,
+          "nombre": "SECRETARIA",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 223,
+    "nombres": "Diego Adrian",
+    "apellidos": "Barra Paredes",
+    "cargo": "Técnico de desarrollo web",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 223,
+      "id_usuario_rol": 477,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 271,
+    "nombres": "Dilian Marcela",
+    "apellidos": "Quea Puma",
+    "cargo": "Profesional de Apoyo en Procesos y Procedimientos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 271,
+      "id_usuario_rol": 309,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 481,
+    "nombres": "D'JALMAR",
+    "apellidos": "GUTIERREZ TITIRICO",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 481,
+      "id_usuario_rol": 595,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 28,
+    "nombres": "Eliana",
+    "apellidos": "Onis Vargas",
+    "cargo": "Responsable de Planificación",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 28,
+      "id_usuario_rol": 28,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 412,
+    "nombres": "Eliana Wendy",
+    "apellidos": "Paco Sanizo",
+    "cargo": "PROFESIONAL EN IMPLEMENTACIÓN DE PROCESOS Y PROCEDIMIENTOS",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 412,
+      "id_usuario_rol": 531,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 139,
+    "nombres": "Elio Ramon",
+    "apellidos": "Canqui Choque",
+    "cargo": "Profesional de Desarrollo e Implementación de Modelo de Datos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 139,
+      "id_usuario_rol": 139,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 122,
+    "nombres": "Eliseo",
+    "apellidos": "Condori Gabriel",
+    "cargo": "Profesional en Administración de Comunicaciones",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 122,
+      "id_usuario_rol": 122,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 397,
+    "nombres": "Elmer Alvaro",
+    "apellidos": "Zapana Marquez",
+    "cargo": "CONSULTORÍA INDIVIDUAL DE LÍNEA TÉCNICO DESARROLLADOR DE APLICACIONES WEB Y MÓVILES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 397,
+      "id_usuario_rol": 400,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 101,
+    "nombres": "Elmer Freddy",
+    "apellidos": "Mendoza Apaza",
+    "cargo": "Responsable de Innovación y Desarrollo en Gobierno Electrónico",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 101,
+      "id_usuario_rol": 101,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 274,
+    "nombres": "Erick Dick",
+    "apellidos": "Calderon Mostajo",
+    "cargo": "Responsable de reacción ante incidentes y vulnerabilidades",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 274,
+      "id_usuario_rol": 319,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 109,
+    "nombres": "Erick Osvaldo",
+    "apellidos": "Poppe Yañez",
+    "cargo": "Profesional de Investigación en Gestión de Datos e Información",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 109,
+      "id_usuario_rol": 109,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 121,
+    "nombres": "Esteban Enrique",
+    "apellidos": "Lima Torricos",
+    "cargo": "Jefe de Unidad de Gobierno Electronico",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 121,
+      "id_usuario_rol": 414,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 138,
+    "nombres": "Eva",
+    "apellidos": "Jimenez Choque",
+    "cargo": "Profesional de desarrollo e implementación de Modelo de Datos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 138,
+      "id_usuario_rol": 138,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 82,
+    "nombres": "Ever Favio",
+    "apellidos": "Argollo Ticona",
+    "cargo": "Consultor Individual de linea Desarrollo de Sistemas 4",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 82,
+      "id_usuario_rol": 597,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 351,
+    "nombres": "Felix Ariel",
+    "apellidos": "Carreño Barrenechea",
+    "cargo": "PROFESIONAL DE INNOVACIÓN Y DISEÑO",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 351,
+      "id_usuario_rol": 390,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 466,
+    "nombres": "FELIX ARIEL",
+    "apellidos": "CARREÑO BARRENECHEA",
+    "cargo": "PROFESIONAL DE INNOVACIÓN Y DISEÑO",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 466,
+      "id_usuario_rol": 494,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 392,
+    "nombres": "Fernando",
+    "apellidos": "Conde Conde",
+    "cargo": "Consultor Individual de Línea: \"DESARROLLO DE SISTEMAS 2\"",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 392,
+      "id_usuario_rol": 518,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 93,
+    "nombres": "Fernando Alan",
+    "apellidos": "Carrillo Dominguez",
+    "cargo": "Técnico en post producción",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 93,
+      "id_usuario_rol": 93,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 29,
+    "nombres": "Franz",
+    "apellidos": "Rojas Castillo",
+    "cargo": "Profesional de Gestión de Amenazas y Vulnerabilidades",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 29,
+      "id_usuario_rol": 29,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 137,
+    "nombres": "Franz Deniz",
+    "apellidos": "Huayta Quevedo",
+    "cargo": "Profesional de Desarrollo de Sistemas",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 137,
+      "id_usuario_rol": 137,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 471,
+    "nombres": "GABRIEL",
+    "apellidos": "CASAS MAMANI",
+    "cargo": "Consultoría Individual de Línea “DESARROLLO DE SISTEMAS 10",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 471,
+      "id_usuario_rol": 496,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 31,
+    "nombres": "Gonzalo Diego",
+    "apellidos": "Vargas Ramos",
+    "cargo": "Profesional de Análisis Forense",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 31,
+      "id_usuario_rol": 31,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 35,
+    "nombres": "Grover",
+    "apellidos": "Pinto Esquivel",
+    "cargo": "Técnico de Desarrollo de Aplicaciones",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 35,
+      "id_usuario_rol": 602,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 404,
+    "nombres": "Guillermo Miguel",
+    "apellidos": "Villarroel LLanos",
+    "cargo": "Consultoría Individual de Línea ASISTENTE DEL AREA DE INFORMACION Y PARTICIPACION",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 404,
+      "id_usuario_rol": 585,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 130,
+    "nombres": "Horacio",
+    "apellidos": "Lopez Justiniano",
+    "cargo": "Jefe de Unidad Centro de Gestión de Incidentes Informáticos",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 130,
+      "id_usuario_rol": 292,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 213,
+    "nombres": "Humberto Martin",
+    "apellidos": "Bellido Quintanilla",
+    "cargo": "Profesional de Gestión de incidentes informaticos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 213,
+      "id_usuario_rol": 212,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 394,
+    "nombres": "Ilssen Pamela",
+    "apellidos": "Castillo Villarroel",
+    "cargo": "Consultor en línea Profesional en Comunicación Digital",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 394,
+      "id_usuario_rol": 614,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 476,
+    "nombres": "ION IMANOL",
+    "apellidos": "VILLARREAL ARUQUIPA",
+    "cargo": "CONSULTOR INDIVIDUAL DE LÍNEA DESARROLLO DE SISTEMAS 7",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 476,
+      "id_usuario_rol": 499,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 128,
+    "nombres": "Israel Marco",
+    "apellidos": "Maldonado Rios",
+    "cargo": "Profesional en Recursos Humanos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 128,
+      "id_usuario_rol": 284,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 393,
+    "nombres": "Ivan",
+    "apellidos": "Tancara Casilla",
+    "cargo": "TÉCNICO DE DESARROLLO DE APLICACIONES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 393,
+      "id_usuario_rol": 474,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 473,
+    "nombres": "IVAN FERNANDO",
+    "apellidos": "MUJICA MAMANI",
+    "cargo": "Consultoría Individual de Línea Desarrollo de Sistemas 6",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 473,
+      "id_usuario_rol": 609,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 102,
+    "nombres": "Jael Jemina",
+    "apellidos": "Rodriguez Escalera",
+    "cargo": "Secretaria de Jefaturas de Unidad",
+    "usuario_rol": [{
+      "fid_rol": 4,
+      "fid_usuario": 102,
+      "id_usuario_rol": 102,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 4,
+        "nombre": "SECRETARIA",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 467,
+    "nombres": "JANETH SOFIA",
+    "apellidos": "QUISBERT GUTIERREZ",
+    "cargo": "Consultoría Individual de Línea TÉCNICO EN SOPORTE",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 467,
+      "id_usuario_rol": 590,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 354,
+    "nombres": "Javier Andres",
+    "apellidos": "Zelada Yujra",
+    "cargo": "Consultoría Individual de Línea TÉCNICO EN DESARROLLO DE APLICACIONES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 354,
+      "id_usuario_rol": 378,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 479,
+    "nombres": "JHONNY RUBEN",
+    "apellidos": "MONRROY CASILLO",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 479,
+      "id_usuario_rol": 593,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 5,
+    "nombres": "Jorge Luis",
+    "apellidos": "Ramos Telleria",
+    "cargo": "Profesional de Contabilidad",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 5,
+      "id_usuario_rol": 189,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 452,
+    "nombres": "Jose Esteban",
+    "apellidos": "Saavedra Lopez",
+    "cargo": "Responsable de Servicios",
+    "usuario_rol": [{
+        "fid_rol": 2,
+        "fid_usuario": 452,
+        "id_usuario_rol": 483,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 1,
+        "fid_usuario": 452,
+        "id_usuario_rol": 485,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 1,
+          "nombre": "ADMIN",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 4,
+        "fid_usuario": 452,
+        "id_usuario_rol": 484,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 4,
+          "nombre": "SECRETARIA",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 36,
+    "nombres": "Juan Carlos",
+    "apellidos": "Condori Machicado",
+    "cargo": "Profesional de Validación de Sistemas",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 36,
+      "id_usuario_rol": 36,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 475,
+    "nombres": "JUAN CARLOS",
+    "apellidos": "CANAZA AYARACHI",
+    "cargo": "CONSULTOR INDIVIDUAL DE LINEA DESARROLLO DE SISTEMAS 9",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 475,
+      "id_usuario_rol": 539,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 119,
+    "nombres": "Juan Marcelo",
+    "apellidos": "Arteaga Gutierrez",
+    "cargo": "Responsable de Desarrollo de Sistemas de Información Pública",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 119,
+      "id_usuario_rol": 119,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 37,
+    "nombres": "Juan Pablo",
+    "apellidos": "Poma Chuquimia",
+    "cargo": "PROFESIONAL DE DESARROLLO DE APLICACIONES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 37,
+      "id_usuario_rol": 523,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 75,
+    "nombres": "Judith Alejandra",
+    "apellidos": "Calizaya Pacema",
+    "cargo": "Profesional de Investigación de Gobierno Electronico",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 75,
+      "id_usuario_rol": 368,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 474,
+    "nombres": "JUDITH TANIA",
+    "apellidos": "APAZA MARCA",
+    "cargo": "Responsable Administrativo",
+    "usuario_rol": [{
+        "fid_rol": 2,
+        "fid_usuario": 474,
+        "id_usuario_rol": 541,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 3,
+        "fid_usuario": 474,
+        "id_usuario_rol": 542,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 3,
+          "nombre": "OPERADOR",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 273,
+    "nombres": "Julia Elena",
+    "apellidos": "Sillo Condori",
+    "cargo": "Profesional en analisis de datos geograficos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 273,
+      "id_usuario_rol": 317,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 483,
+    "nombres": "KAREN",
+    "apellidos": "RODRIGUEZ BARRADAS",
+    "cargo": "tecnico en atencion 3",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 483,
+      "id_usuario_rol": 615,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 55,
+    "nombres": "Khantuta",
+    "apellidos": "Muruchi Escobar",
+    "cargo": "Responsable de Coordinación Interinstitucional",
+    "usuario_rol": [{
+        "fid_rol": 4,
+        "fid_usuario": 55,
+        "id_usuario_rol": 177,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 4,
+          "nombre": "SECRETARIA",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 2,
+        "fid_usuario": 55,
+        "id_usuario_rol": 176,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 95,
+    "nombres": "Laura Lizie",
+    "apellidos": "Velasco Flores",
+    "cargo": "Profesional de procesos y procedimientos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 95,
+      "id_usuario_rol": 294,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 406,
+    "nombres": "Linzett Alejandra",
+    "apellidos": "Cespedes Mendoza",
+    "cargo": "Consultoría Individual de Línea TÉCNICO EN SOPORTE",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 406,
+      "id_usuario_rol": 611,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 464,
+    "nombres": "LINZETT ALEJANDRA",
+    "apellidos": "CESPEDES MENDOZA",
+    "cargo": "Consultoría Individual de Línea TÉCNICO EN SOPORTE",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 464,
+      "id_usuario_rol": 606,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 288,
+    "nombres": "Luis Alberto",
+    "apellidos": "Orellano Valenzuela",
+    "cargo": "Jefe de Unidad Juridica",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 288,
+      "id_usuario_rol": 333,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 350,
+    "nombres": "Luis Alfredo",
+    "apellidos": "Mamani Mollericona",
+    "cargo": "Consultoría Individual de Línea CONSULTOR INDIVIDUAL DE LÍNEA DESARROLLO DE SISTEMAS 1",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 350,
+      "id_usuario_rol": 500,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 25,
+    "nombres": "Luis Gonzaga",
+    "apellidos": "Pillco Mamani",
+    "cargo": "Profesional de Apoyo en Auditoría Interna",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 25,
+      "id_usuario_rol": 25,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 352,
+    "nombres": "Manuel Henry",
+    "apellidos": "Sanchez Carvajal",
+    "cargo": "PROFESIONAL DE VALIDACIÓN DE SISTEMAS",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 352,
+      "id_usuario_rol": 380,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 8,
+    "nombres": "Marcelo",
+    "apellidos": "Alejo Calle",
+    "cargo": "PROFESIONAL DE INVESTIGACIÓN EN SEGURIDAD DE LA INFORMACIÓN",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 8,
+      "id_usuario_rol": 398,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 115,
+    "nombres": "Marco Antonio",
+    "apellidos": "Laura Avendaño",
+    "cargo": "PROFESIONAL DE DESARROLLO DE SISTEMAS",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 115,
+      "id_usuario_rol": 537,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 71,
+    "nombres": "Marco Antonio",
+    "apellidos": "Avendaño Ajata",
+    "cargo": "PROFESIONAL EN GESTIÓN DE PROYECTOS DE GOBIERNO ELECTRÓNICO",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 71,
+      "id_usuario_rol": 528,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 113,
+    "nombres": "Mariela",
+    "apellidos": "Padilla Callejas",
+    "cargo": "Profesional de Información Socioeconómica",
+    "usuario_rol": [{
+        "fid_rol": 2,
+        "fid_usuario": 113,
+        "id_usuario_rol": 353,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 2,
+          "nombre": "JEFE",
+          "estado": "ACTIVO"
+        }
+      },
+      {
+        "fid_rol": 3,
+        "fid_usuario": 113,
+        "id_usuario_rol": 354,
+        "estado": "ACTIVO",
+        "rol": {
+          "id_rol": 3,
+          "nombre": "OPERADOR",
+          "estado": "ACTIVO"
+        }
+      }
+    ]
+  },
+  {
+    "id_usuario": 106,
+    "nombres": "Martin Fabian",
+    "apellidos": "Meruvia Guisbert",
+    "cargo": "Profesional de Análisis de Datos Socioeconómicos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 106,
+      "id_usuario_rol": 106,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 73,
+    "nombres": "Mary Eugenia",
+    "apellidos": "Rosales Escarzo",
+    "cargo": "Profesional de Desarrollo Web",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 73,
+      "id_usuario_rol": 73,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 485,
+    "nombres": "MAURICIO ALEJANDRO",
+    "apellidos": "CALLA MARIN",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 485,
+      "id_usuario_rol": 605,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 97,
+    "nombres": "Melany Andrea",
+    "apellidos": "Gutierrez Alcocer",
+    "cargo": "Secretaria de Dirección Ejecutiva",
+    "usuario_rol": [{
+      "fid_rol": 4,
+      "fid_usuario": 97,
+      "id_usuario_rol": 97,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 4,
+        "nombre": "SECRETARIA",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 52,
+    "nombres": "Miguel Angel",
+    "apellidos": "Lizarazu Rios",
+    "cargo": "Profesional de Activos Fijos y Almacén",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 52,
+      "id_usuario_rol": 391,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 398,
+    "nombres": "Miguel Angel",
+    "apellidos": "Ruiz Samo",
+    "cargo": "Consultor Individual de Línea: \"DESARROLLO DE SISTEMAS 3\"",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 398,
+      "id_usuario_rol": 517,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 469,
+    "nombres": "MIGUEL ANGEL",
+    "apellidos": "CHOQUE QUISPE",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 469,
+      "id_usuario_rol": 479,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 478,
+    "nombres": "Mijail Edgar",
+    "apellidos": "Aguilar Delgadillo",
+    "cargo": "Consultor en Linea Soporte Técnico",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 478,
+      "id_usuario_rol": 540,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 65,
+    "nombres": "Miriam Jhenny",
+    "apellidos": "Mamani Valencia",
+    "cargo": "Técnico en Recursos Humanos",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 65,
+      "id_usuario_rol": 65,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 118,
+    "nombres": "Natalia",
+    "apellidos": "Antezana Bosques",
+    "cargo": "Responsable de Comunicación",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 118,
+      "id_usuario_rol": 118,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 66,
+    "nombres": "Nelson",
+    "apellidos": "Colomo Lopez",
+    "cargo": "Mensajero",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 66,
+      "id_usuario_rol": 66,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 402,
+    "nombres": "Nestor Felix",
+    "apellidos": "Poma Callisaya",
+    "cargo": "CONSULTORÍA INDIVIDUAL DE LÍNEA PROFESIONAL EN DESARROLLO DE SISTEMAS CON ARQUITECTURA MODELO VISTA CONTROLADOR MVC",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 402,
+      "id_usuario_rol": 407,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 477,
+    "nombres": "NESTOR RAUL",
+    "apellidos": "ROMERO CHAVARRIA",
+    "cargo": "DESARROLLO DE SISTEMAS 5",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 477,
+      "id_usuario_rol": 535,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 60,
+    "nombres": "Nicolas",
+    "apellidos": "Laguna Quiroga",
+    "cargo": "Director General Ejecutivo",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 60,
+      "id_usuario_rol": 60,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 126,
+    "nombres": "Norman Elias",
+    "apellidos": "Huasebe Rodriguez",
+    "cargo": "Responsable de Desarrollo y Actualización de Servicios",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 126,
+      "id_usuario_rol": 126,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 132,
+    "nombres": "Omar",
+    "apellidos": "Gutierrez Condori",
+    "cargo": "Profesional de Desarrollo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 132,
+      "id_usuario_rol": 207,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 395,
+    "nombres": "Omar Mario",
+    "apellidos": "Yanarico Mamani",
+    "cargo": "CONSULTORÍA INDIVIDUAL DE LÍNEA: TÉCNICO EN DESARROLLO FRONTEND",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 395,
+      "id_usuario_rol": 399,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 85,
+    "nombres": "Orestes",
+    "apellidos": "Sotomayor Vasquez",
+    "cargo": "Técnico de Diagramación",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 85,
+      "id_usuario_rol": 200,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 87,
+    "nombres": "Pamela",
+    "apellidos": "Pacheco Cabezas",
+    "cargo": "TÉCNICO\t DE\t SOPORTE",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 87,
+      "id_usuario_rol": 440,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 96,
+    "nombres": "Paola Thelma",
+    "apellidos": "Fernandez Noriega",
+    "cargo": "Técnico de Soporte Técnico Interno",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 96,
+      "id_usuario_rol": 96,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 338,
+    "nombres": "Patricia",
+    "apellidos": "Lopez Avendaño",
+    "cargo": "Responsable de Auditoria en Informatica",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 338,
+      "id_usuario_rol": 366,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 269,
+    "nombres": "Patricia Noemi",
+    "apellidos": "Guisbert Sanchez",
+    "cargo": "Profesional de Gestión e Interoperabilidad",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 269,
+      "id_usuario_rol": 307,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 480,
+    "nombres": "PAUL SILVIO",
+    "apellidos": "SANCHEZ PARDO",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 480,
+      "id_usuario_rol": 594,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 124,
+    "nombres": "Pedro Alejandro",
+    "apellidos": "Callisaya Pacheco",
+    "cargo": "Técnico de Desarrollo de Aplicaciones",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 124,
+      "id_usuario_rol": 124,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 129,
+    "nombres": "Ramiro",
+    "apellidos": "Huayller Zuleta",
+    "cargo": "Profesional de Desarrollo Móvil",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 129,
+      "id_usuario_rol": 129,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 127,
+    "nombres": "Raul Fernando",
+    "apellidos": "Molina Rodriguez",
+    "cargo": "Profesional de Información Geográfica",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 127,
+      "id_usuario_rol": 412,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 15,
+    "nombres": "Reynaldo",
+    "apellidos": "Quispe Merlo",
+    "cargo": "PROFESIONAL DE INNOVACIÓN Y DISEÑO",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 15,
+      "id_usuario_rol": 533,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 470,
+    "nombres": "REYNALDO ALONZO",
+    "apellidos": "VERA ARIAS",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 470,
+      "id_usuario_rol": 480,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 328,
+    "nombres": "Reyna Zeila",
+    "apellidos": "Rios Flores",
+    "cargo": "Técnico en Soporte 3",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 328,
+      "id_usuario_rol": 475,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 287,
+    "nombres": "Rodrigo",
+    "apellidos": "Quiroga Challco",
+    "cargo": "Pasante Infraestructura II",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 287,
+      "id_usuario_rol": 329,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 107,
+    "nombres": "Rodrigo Alejandro",
+    "apellidos": "Martinez Flores",
+    "cargo": "PROFESIONAL DE DISEÑO DE TRAMITES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 107,
+      "id_usuario_rol": 530,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 484,
+    "nombres": "RODRIGO ALEXIS",
+    "apellidos": "URUCHI QUISPE",
+    "cargo": "2018-05-22T15:42:52.350Z",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 484,
+      "id_usuario_rol": 612,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 385,
+    "nombres": "Rodrigo Diego",
+    "apellidos": "Quispe Laura",
+    "cargo": "Consultoría Individual de Linea TÉCNICO EN DESARROLLO WEB",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 385,
+      "id_usuario_rol": 384,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 219,
+    "nombres": "Roger Ivan",
+    "apellidos": "Aroa Miranda",
+    "cargo": "Consultor Individual de linea: Técnico en Desarrollo de Modulos Backend",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 219,
+      "id_usuario_rol": 213,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 400,
+    "nombres": "Rogers Adalid",
+    "apellidos": "Salinas Caritas",
+    "cargo": "CONSULTORÍA INDIVIDUAL DE LÍNEA “PROFESIONAL EN DISEÑO Y DESARROLLO WEB FULLSTACK",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 400,
+      "id_usuario_rol": 438,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 64,
+    "nombres": "Ronald",
+    "apellidos": "Escobar Quispe",
+    "cargo": "PROFESIONAL DE INVESTIGACIÓN EN GOBIERNO ELECTRÓNICO",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 64,
+      "id_usuario_rol": 536,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 112,
+    "nombres": "Ronald Victor",
+    "apellidos": "Vallejos Duran",
+    "cargo": "Profesional de Desarrollo de Sistemas de Información Geográfica",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 112,
+      "id_usuario_rol": 394,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 401,
+    "nombres": "Ruddy",
+    "apellidos": "Condori Topoco",
+    "cargo": "CONSULTORÍA INDIVIDUAL DE LÍNEA TECNICO DESARROLLADOR DE SISTEMAS BACKEND",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 401,
+      "id_usuario_rol": 434,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 268,
+    "nombres": "Sandra Paola",
+    "apellidos": "Beltran Ascarrunz",
+    "cargo": "Profesional de Análisis",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 268,
+      "id_usuario_rol": 332,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 353,
+    "nombres": "Santos Manolo",
+    "apellidos": "Alarcon Alarcon",
+    "cargo": "Consultoría Individual de Línea TÉCNICO EN DISEÑO E IMPLEMENTACIÓN DE SISTEMAS",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 353,
+      "id_usuario_rol": 379,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 70,
+    "nombres": "Sergio Alejandro",
+    "apellidos": "Criales Yujra",
+    "cargo": "PROFESIONAL DE DESARROLLO DE SISTEMAS",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 70,
+      "id_usuario_rol": 524,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 482,
+    "nombres": "TEODORO DAVID",
+    "apellidos": "NINA MAMANI",
+    "cargo": "Sin cargo",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 482,
+      "id_usuario_rol": 596,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 321,
+    "nombres": "usuario plantilla 2",
+    "apellidos": "usuario plantilla 2",
+    "cargo": "Técnico en análisis de datos",
+    "usuario_rol": [{
+      "fid_rol": 2,
+      "fid_usuario": 321,
+      "id_usuario_rol": 361,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 2,
+        "nombre": "JEFE",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 135,
+    "nombres": "Valeria",
+    "apellidos": "Mendez Salinas",
+    "cargo": "PROFESIONAL DE PROCESOS DE INTEROPERABILIDAD",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 135,
+      "id_usuario_rol": 529,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 42,
+    "nombres": "Wilmer Alex",
+    "apellidos": "Quispe Quispe",
+    "cargo": "CONSULTOR INDIVIDUAL DE LÍNEA: TÉCNICO EN PROGRAMACIÓN DE SISTEMAS DE SIMPLIFICACIÓN DE TRÁMITES",
+    "usuario_rol": [{
+      "fid_rol": 3,
+      "fid_usuario": 42,
+      "id_usuario_rol": 403,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 3,
+        "nombre": "OPERADOR",
+        "estado": "ACTIVO"
+      }
+    }]
+  },
+  {
+    "id_usuario": 49,
+    "nombres": "Yesmy Cristina",
+    "apellidos": "Marquez Huanca",
+    "cargo": "Secretaria",
+    "usuario_rol": [{
+      "fid_rol": 4,
+      "fid_usuario": 49,
+      "id_usuario_rol": 49,
+      "estado": "ACTIVO",
+      "rol": {
+        "id_rol": 4,
+        "nombre": "SECRETARIA",
+        "estado": "ACTIVO"
+      }
+    }]
+  }
+]

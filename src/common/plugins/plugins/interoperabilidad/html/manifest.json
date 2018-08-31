@@ -1,0 +1,17 @@
+{
+  "nombre": "interoperabilidad",
+  "descripcion": "Componente para configurar interoperabilidad inmediata",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "description": "Interoperabilidad",
+    "label": null,
+    "id": null,
+    "placeholder": "",
+    "validations": [],
+    "icon": "cloud_download",
+    "value": null,
+    "disabled": false
+  }
+}

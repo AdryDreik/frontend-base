@@ -1,0 +1,21 @@
+{
+  "nombre": "numero-cite",
+  "descripcion": "Componenente utilizado para configurar el número de cite",
+  "version": "1.0",
+  "autor": "imujica@agetic.gob.bo",
+  "tipo": "simple",
+  "urlValidacion": null,
+  "urlGuardado": null,
+  "urlBase": null,
+  "templateOptions": {
+    "order": 1,
+    "description": "Número de cite",
+    "label": null,
+    "id": null,
+    "placeholder": "Placeholder",
+    "validations": [],
+    "disabled": false,
+    "value": null,
+    "icon": "numero_cite"
+  }
+}

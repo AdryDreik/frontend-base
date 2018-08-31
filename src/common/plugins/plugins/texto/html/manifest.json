@@ -1,0 +1,19 @@
+{
+  "nombre": "texto",
+  "descripcion": "Componenente utilizado para realizar titulo, subtitulo y alertas.",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "icon": "text_format",
+    "image": "../../../static/images/plugins/titulo.png",
+    "label": "Título",
+    "id": null,
+    "placeholder": "Escriba un titulo o subtitulo",
+    "option": "Titulo",
+    "fontTransform": null,
+    "validations": [],
+    "alignment": null,
+    "value": null
+  }
+}

@@ -1,0 +1,56 @@
+[{
+    "clave": "001",
+    "grupo": "EMPRESA",
+    "valor": "Empresa Unipersonal o Comerciante Individual"
+  },
+  {
+    "clave": "002",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad de Responsabilidad Limitada"
+  },
+  {
+    "clave": "003",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad Anónima"
+  },
+  {
+    "clave": "004",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad Anónima Mixta"
+  },
+  {
+    "clave": "005",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad Colectiva"
+  },
+  {
+    "clave": "006",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad Constituida en el Extranjero"
+  },
+  {
+    "clave": "007",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad en Comandita Simple"
+  },
+  {
+    "clave": "008",
+    "grupo": "EMPRESA",
+    "valor": "Sociedad en Comandita por Acciones"
+  },
+  {
+    "clave": "009",
+    "grupo": "EMPRESA",
+    "valor": "Entidad Financiera de Vivienda"
+  },
+  {
+    "clave": "010",
+    "grupo": "EMPRESA",
+    "valor": "Empresa Estatal"
+  },
+  {
+    "clave": "011",
+    "grupo": "EMPRESA",
+    "valor": "Empresa Estatal Mixta, Empresa Mixta, Empresa Estatal Intergubernamental"
+  }
+]

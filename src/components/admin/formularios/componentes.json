@@ -1,0 +1,222 @@
+[
+  {
+    "render": "formly",
+    "name": "",
+    "type": "encabezado",
+    "templateOptions": {
+      "order": 4,
+      "description": "Datos Generales",
+      "icon": "contacts",
+      "label": "Datos generales",
+      "id": null,
+      "value": null,
+      "checkVia": true,
+      "checkRef": true
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "titulo",
+    "templateOptions": {
+      "order": 4,
+      "description": "Títuto",
+      "icon": "title",
+      "label": "Título",
+      "id": null,
+      "placeholder": "Escriba un titulo o subtitulo",
+      "option": "Titulo",
+      "fontTransform": null,
+      "validations": [],
+      "alignment": null,
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "input",
+    "templateOptions": {
+      "order": 1,
+      "description": "Caja de texto",
+      "icon": "text_fields",
+      "label": null,
+      "id": null,
+      "placeholder": "Placeholder",
+      "validations": [],
+      "disabled": false,
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "radio",
+    "templateOptions": {
+      "order": 3,
+      "description": "Selección simple",
+      "icon": "radio_button_checked",
+      "label": null,
+      "options": ["Opcion1", "Opcion2"],
+      "id": null,
+      "validations": [],
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "calendario",
+    "templateOptions": {
+      "order": 2,
+      "description": "Calendario",
+      "icon": "date_range",
+      "label": null,
+      "id": null,
+      "placeholder": "Dia/Mes/Año",
+      "validations": [],
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "parrafo",
+    "templateOptions": {
+      "order": 5,
+      "description": "Texto multilínea",
+      "icon": "text_fields",
+      "label": "Textarea",
+      "id": null,
+      "placeholder": null,
+      "validations": [],
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "dropdown",
+    "templateOptions": {
+      "order": 7,
+      "description": "Lista desplegable",
+      "icon": "list",
+      "label": "Seleccione",
+      "options": [
+        "Opcion1",
+        "Opcion2"
+      ],
+      "id": null,
+      "placeholder": null,
+      "validations": [],
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "check",
+    "templateOptions": {
+      "order": 8,
+      "description": "Selección múltiple",
+      "icon": "check_box",
+      "label": "Seleccion Multiple",
+      "options": [
+        "Opcion1"
+      ],
+      "id": null,
+      "placeholder": null,
+      "validations": [],
+      "value": null,
+      "multiple": false
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "autocompletado",
+    "templateOptions": {
+      "order": 8,
+      "description": "Autocompletado",
+      "icon": "text_fields",
+      "label": null,
+      "id": null,
+      "placeholder": "Escriba palabras como algo, eso, etc",
+      "validations": [],
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "archivo",
+    "templateOptions": {
+      "order": 9,
+      "description": "Subir Archivos",
+      "icon": "attach_file",
+      "label": null,
+      "id": 1134,
+      "placeholder": "Puede subir uno o mas de un archivo",
+      "validations": [],
+      "value": null,
+      "settings": false
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "mapa",
+    "templateOptions": {
+      "order": 9,
+      "description": "Mapa",
+      "icon": "location_on",
+      "label": null,
+      "id": null,
+      "placeholder": "Seleccione una ubicacion",
+      "validations": [],
+      "value": null,
+      "position": [],
+      "settings": false,
+      "multiple": false
+    },
+    "validacion": {},
+    "contenido": {}
+  },
+  {
+    "render": "formly",
+    "name": "",
+    "type": "persona",
+    "templateOptions": {
+      "order": 10,
+      "description": "interoperabilidad",
+      "icon": "person_outline",
+      "label": null,
+      "id": null,
+      "placeholder": null,
+      "validations": [],
+      "value": null
+    },
+    "validacion": {},
+    "contenido": {}
+  }
+]

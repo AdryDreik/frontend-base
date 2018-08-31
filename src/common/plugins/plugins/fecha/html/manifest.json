@@ -1,0 +1,17 @@
+{
+  "nombre": "fecha",
+  "descripcion": "Componenente utilizado para fechas, le aparecera un calendario el cual el usuario puede seleccionar",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "label" : "Nombre",
+    "id" : null,
+    "placeholder" : "Dia/Mes/Año",
+    "validations" : [],
+    "value" : null,
+    "icon" : "date_range",
+    "image" : "../../../static/images/plugins/calendario.png"
+  }
+}
+

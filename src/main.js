@@ -15,11 +15,19 @@ import Util from '@/common/plugins/util';
 import Storage from '@/common/plugins/storage';
 import Datetime from '@/common/plugins/datetime';
 import Filter from '@/common/plugins/filter';
+import Waiting from '@/common/plugins/waiting/waiting';
 import Message from '@/common/plugins/message/message';
 import Loading from '@/common/plugins/loading/loading';
 import Service from '@/common/plugins/service';
 import Modal from '@/common/plugins/modal/modal';
 import messages from '@/common/lang/';
+
+// plugins componentes
+import Plugin from '../src/common/plugins/plugins';
+
+// libs
+// drag and drop
+import Vue2DnD from 'vue2-dnd';
 
 import {
   Vuetify,
@@ -57,7 +65,8 @@ import {
   VProgressCircular,
   VExpansionPanel,
   transitions,
-  VOverflowBtn
+  VOverflowBtn,
+  VSlider
 } from 'vuetify';
 import '../node_modules/vuetify/src/stylus/app.styl';
 
@@ -98,7 +107,8 @@ Vue.use(Vuetify, {
     VSubheader,
     VExpansionPanel,
     transitions,
-    VOverflowBtn
+    VOverflowBtn,
+    VSlider
   },
   theme: {
     primary: '#003366',
@@ -137,6 +147,12 @@ Vue.use(VueProgressBar, {
 
 // i18n config
 Vue.use(VueI18n);
+// waiting
+Vue.use(Waiting);
+// Vue2DnD
+Vue.use(Vue2DnD);
+// Injectando el plugin
+Vue.use(Plugin);
 const i18n = new VueI18n({
   locale: process.env.LANG,
   messages

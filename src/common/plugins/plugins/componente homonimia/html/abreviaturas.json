@@ -1,0 +1,103 @@
+{
+  "001": [],
+  "002": [
+    {
+      "clave": 1,
+      "name": "S.R.L."
+    },
+    {
+      "clave": 2,
+      "name": "SRL"
+    },
+    {
+      "clave": 3,
+      "name": "LTDA"
+    },
+    {
+      "clave": 4,
+      "name": "L.T.D.A."
+    },
+    {
+      "clave": 5,
+      "name": "Sociedad de Responsabilidad Limitada"
+    }
+  ],
+  "003": [
+    {
+      "clave": 1,
+      "name": "S.A."
+    },
+    {
+      "clave": 2,
+      "name": "SA"
+    },
+    {
+      "clave": 3,
+      "name": "Sociedad Anónima"
+    }
+  ],
+  "004": [],
+  "005": [
+    {
+      "clave": 1,
+      "name": "S.C."
+    },
+    {
+      "clave": 2,
+      "name": "SC"
+    },
+    {
+      "clave": 3,
+      "name": "Sociedad Colectiva"
+    }
+  ],
+  "006": [],
+  "007": [
+    {
+      "clave": 1,
+      "name": "S en CS"
+    },
+    {
+      "clave": 2,
+      "name": "S. en C.S."
+    },
+    {
+      "clave": 3,
+      "name": "SCS"
+    },
+    {
+      "clave": 4,
+      "name": "S.C.S."
+    },
+    {
+      "clave": 5,
+      "name": "Sociedad en Comandita Simple"
+    }
+  ],
+  "008": [
+    {
+      "clave": 1,
+      "name": "S.C.A."
+    },
+    {
+      "clave": 1,
+      "name": "SCA"
+    },
+    {
+      "clave": 2,
+      "name": "Sociedad en Comandita por Acciones"
+    }
+  ],
+  "009": [
+    {
+      "clave": 1,
+      "name": "EFV"
+    },
+    {
+      "clave": 2,
+      "name": "Entidad Financiera de Vivienda"
+    }
+  ],
+  "010": [],
+  "011": []
+}

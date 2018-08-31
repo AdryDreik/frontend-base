@@ -1,0 +1,21 @@
+{
+  "nombre": "lista desplegable",
+  "descripcion": "Componenente utilizado para utilizar listas las cuales al usuario tendra la opcion de elegir una de ellas. No tiene limite el numero de opciones que se quieran añadir",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "icon": "list",
+    "label": "Nombre",
+    "options": [
+      "Opcion1",
+      "Opcion2"
+    ],
+    "id": null,
+    "placeholder": null,
+    "validations": [],
+    "disabled": null,
+    "value": null
+  }
+}
+

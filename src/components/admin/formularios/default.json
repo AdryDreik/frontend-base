@@ -1,0 +1,207 @@
+  [
+    {
+      "render": "formly",
+      "key": "title",
+      "type": "titulo",
+      "templateOptions": {
+        "order": 4,
+        "description": "Títuto",
+        "image": "../../../../static/images/label.png",
+        "label": "Datos personales",
+        "id": 257,
+        "placeholder": null,
+        "name": "title-257",
+        "option": "Subtitulo",
+        "fontTransform": null,
+        "validations": [],
+        "alignment": null,
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "input",
+      "type": "texto",
+      "templateOptions": {
+        "order": 1,
+        "description": "Caja de texto",
+        "image": "../../../../static/images/input.png",
+        "label": "Nombre(s)",
+        "id": "nombrePersona",
+        "placeholder": "Ejemplo: Juan",
+        "name": "input-287",
+        "validations": [
+          "required",
+          "text"
+        ],
+        "disabled": false,
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "input",
+      "type": "texto",
+      "templateOptions": {
+        "order": 1,
+        "description": "Caja de texto",
+        "image": "../../../../static/images/input.png",
+        "label": "Apellido Paterno",
+        "id": "apePat",
+        "placeholder": "Ejemplo: Perez",
+        "name": "input-323",
+        "validations": [
+          "required",
+          "text"
+        ],
+        "disabled": false,
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "input",
+      "type": "texto",
+      "templateOptions": {
+        "order": 1,
+        "description": "Caja de texto",
+        "image": "../../../../static/images/input.png",
+        "label": "Apellido Materno",
+        "id": "apeMat",
+        "placeholder": "Ejemplo: Zurita",
+        "name": "input-359",
+        "validations": [
+          "required",
+          "text"
+        ],
+        "disabled": false,
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "radio",
+      "type": "radio",
+      "templateOptions": {
+        "order": 3,
+        "description": "Selección simple",
+        "image": "../../../../static/images/radio.png",
+        "label": "Sexo",
+        "options": [
+          "Masculino",
+          "Femenino"
+        ],
+        "id": "sexoPersona",
+        "name": "radio",
+        "validations": [
+          "required"
+        ],
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "datepicker",
+      "type": "calendario",
+      "templateOptions": {
+        "order": 2,
+        "description": "Calendario",
+        "image": "../../../../static/images/datepicker.png",
+        "label": "Fecha de Nacimiento",
+        "id": "fechaNacimiento",
+        "placeholder": "Dia/Mes/Año",
+        "name": "datepicker",
+        "validations": [],
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "textarea",
+      "type": "parrafo",
+      "templateOptions": {
+        "order": 5,
+        "description": "Texto multilínea",
+        "image": "../../../../static/images/textarea.png",
+        "label": "Descripcion Laboral",
+        "id": "descripcionLaboral",
+        "placeholder": null,
+        "name": "textarea-464",
+        "validations": [],
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "dropdown",
+      "type": "lista",
+      "templateOptions": {
+        "order": 7,
+        "description": "Lista desplegable",
+        "image": "../../../../static/images/dropdown.png",
+        "label": "Departamento",
+        "options": [
+          "La Paz",
+          "Oruro",
+          "Potosi",
+          "Cochabamba",
+          "Chuquisaca",
+          "Tarija",
+          "Beni",
+          "Pando",
+          "Santa Cruz"
+        ],
+        "id": "departamentoBolivia",
+        "placeholder": null,
+        "name": "select",
+        "validations": [
+          "required"
+        ],
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "map",
+      "type": "mapa",
+      "templateOptions": {
+        "order": 9,
+        "description": "Mapa",
+        "image": "../../../../static/images/segip.png",
+        "label": "Ubicacion",
+        "id": "ubicacionDireccion",
+        "placeholder": "Seleccione una ubicacion",
+        "name": "Mapa-547",
+        "validations": [],
+        "position":{},
+        "value": null,
+        "settings": false
+      }
+    },
+    {
+      "render": "formly",
+      "key": "segip",
+      "type": "segip",
+      "templateOptions": {
+        "order": 10,
+        "description": "interoperabilidad",
+        "image": "../../../../static/images/segip.png",
+        "label": "Interoperabilidad segip",
+        "id": "segipUno",
+        "placeholder": null,
+        "name": "segip",
+        "validations": [],
+        "value": null,
+        "segip": {},
+        "settings": false
+      }
+    }
+  ]

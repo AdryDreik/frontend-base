@@ -1,0 +1,17 @@
+{
+  "nombre": "cite",
+  "descripcion": "Componenente utilizado para el encabezado del cite",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "label" : "Datos generales",
+    "id" : null,
+    "value" : null,
+    "checkVia" : true,
+    "checkRef" : true,
+    "icon" : "subtitles",
+    "image" : "../../../static/images/plugins/cite.png"
+  }
+}
+

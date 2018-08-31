@@ -1,0 +1,19 @@
+{
+	"pasos": { 
+		"1" : { 
+			"mensaje": "Este texto es el título del documento que se acaba de crear o que este modificando actualmente." 
+		},
+		"2" : { 
+			"mensaje": "Estos iconos representan todos los componentes creados para que usted pueda diseñar su documento." 
+		},
+		"3" : { 
+			"mensaje": "Este botón esta encargado de guardar los cambios realizados por usted." 
+		},
+		"4" : { 
+			"mensaje": "Este botón esta encargado de redireccionar a la bandeja de todos los documentos creados." 
+		},
+		"5" : { 
+			"mensaje": "Este es el lienzo, espacio o bloque donde usted tiene podra dibujar su formulario, solo debe jalar los componentes de arriba presionando en un icono (hacer click sin soltar el presionado) y arrastrando a esta sección y soltar, asi se quedara dibujado su componente." 
+		}
+	} 
+}

@@ -1,0 +1,24 @@
+{
+  "nombre": "actividades economicas",
+  "descripcion": "Un clasificador de actividades económicas es un elemento gráfico de interacción que la BPM ha creado para el usuario. Este componente le permite al usuario seleccionar una o mas de una actividad económica.",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "description": "",
+    "label": null,
+    "id": null,
+    "placeholder": "",
+    "validations": [],
+    "disabled": false,
+    "value": null,
+    "icon": "subject"
+  },
+  "proxy": {
+    "headers": null,
+    "urlBase": null,
+    "urlGuardado": null,
+    "urlValidacion": null
+  },
+  "tipo": "simple"
+}

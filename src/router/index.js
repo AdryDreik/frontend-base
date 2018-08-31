@@ -18,6 +18,7 @@ import Log from '@/components/admin/Log';
 
 // Components
 import DocumentosPlantilla from '@/components/admin/documentos_plantilla/documentos_plantilla';
+import Formulario from '@/components/admin/formularios/Formularios';
 
 Vue.use(Router);
 
@@ -37,6 +38,16 @@ export default new Router({
       path: '/documentos_plantilla',
       name: 'Lista de documentos Plantilla',
       component: DocumentosPlantilla
+    },
+    {
+      path: '/formularios/:id',
+      name: 'Edicion de formularios',
+      component: Formulario
+    },
+    {
+      path: '/formularios',
+      name: 'Formulario',
+      component: Formulario
     },
     {
       path: '/login-ciudadania',

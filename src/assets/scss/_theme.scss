@@ -5,7 +5,7 @@ html {
 }
 
 body {
-  font-family: $fontFamily;
+  font-family: $fontFamily !important;
   background-color: $bgBody;
   .application {
     font-family: $fontFamily;
@@ -36,15 +36,29 @@ h4 {
   white-space: nowrap;
 }
 
+
 .v-card__title.headline {
-  font-size: 20px !important;
+  font-size: 18px !important;
   line-height: 28px !important;
   color: $primary;
   background-color: #e0e0e0;
   padding-top: 10px;
   padding-bottom: 10px;
   margin-bottom: 15px;
-
+  font-family: $fontFamily !important;
+  .v-icon {
+    color: $primary;
+    margin-right: 5px; 
+  }
+}
+.headline {
+  font-size: 20px !important;
+  line-height: 28px !important;
+  color: $primary;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+  font-family: $fontFamily !important;
   .v-icon {
     color: $primary;
   }

@@ -1,0 +1,23 @@
+{
+  "nombre": "casilla de verificacion",
+  "descripcion": "Componenente utilizado escribir una lista de opciones las cuales seran chequeadas, puede ser unica o multiple",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "label" : "Nombre",
+    "options" : [ 
+        "check uno", 
+        "check dos"
+    ],
+    "id" : null,
+    "placeholder" : null,
+    "validations" : [],
+    "value" : null,
+    "multiple" : false,
+    "icon" : "check_circle",
+    "position": false,
+    "image" : "../../../static/images/plugins/check.png"
+  }
+}
+

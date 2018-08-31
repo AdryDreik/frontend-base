@@ -1,0 +1,17 @@
+{
+  "nombre": "parrafo",
+  "descripcion": "Componente utilizado para escribir un texto de varias lineas que puede indicar una idea, argumento, concepto, plantilla etc.",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "label": "Nombre",
+    "id": null,
+    "placeholder": null,
+    "validations": [],
+    "value": null,
+    "numberRows": 1,
+    "icon": "comment",
+    "image": "../../../static/images/plugins/text-input.png"
+  }
+}

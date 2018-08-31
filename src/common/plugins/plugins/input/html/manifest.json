@@ -1,0 +1,17 @@
+{
+  "nombre": "input",
+  "descripcion": "Componenente utilizado para escribir texto",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "description": "Caja de texto",
+    "label": null,
+    "id": null,
+    "placeholder": "Placeholder",
+    "validations": [],
+    "disabled": false,
+    "value": null,
+    "icon": "input"
+  }
+}

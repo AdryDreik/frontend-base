@@ -6,6 +6,9 @@ export default {
   error,
   validate,
   menu,
+  forms: {
+    template: 'Plantilla para crear formularios'
+  },
   app: {
     title: 'OPENFLOW',
     account: 'Mi cuenta',

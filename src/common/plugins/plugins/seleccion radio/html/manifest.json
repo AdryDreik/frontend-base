@@ -1,0 +1,22 @@
+{
+  "nombre": "seleccion radio",
+  "descripcion": "Componenente utilizado para escribir opciones y el usuario solo puede seleccionar uno de ellos",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "icon" : "radio_button_checked",
+    "image" : "../../../static/images/plugins/radio.png",
+    "label" : "Nombre",
+    "options" : [ 
+        "Opcion uno radio", 
+        "Opcion dos radio"
+    ],
+    "id" : null,
+    "validations" : [],
+    "value" : null,
+    "position": null
+  }
+}
+
+

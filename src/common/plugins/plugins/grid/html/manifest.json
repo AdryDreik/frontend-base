@@ -1,0 +1,17 @@
+{
+  "nombre": "grid",
+  "descripcion": "Componenente utilizado para imitar una tabla",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "description": "Grilla",
+    "label": null,
+    "id": null,
+    "placeholder": "",
+    "validations": [],
+    "icon": "grid_on",
+    "value": null,
+    "disabled": false
+  }
+}

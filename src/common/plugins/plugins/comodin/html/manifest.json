@@ -1,0 +1,25 @@
+{
+  "nombre": "comodin",
+  "descripcion": "Componenente comodin para duplicar cualquier otro componente",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "description": "",
+    "label": null,
+    "id": null,
+    "placeholder": "",
+    "validations": [],
+    "disabled": false,
+    "value": null,
+    "icon": "help",
+    "component": {}
+  },
+  "proxy": {
+    "headers": null,
+    "urlBase": null,
+    "urlGuardado": null,
+    "urlValidacion": null
+  },
+  "tipo": "simple"
+}

@@ -1,0 +1,3758 @@
+[
+  {
+    "clave": "departamento",
+    "valor": "La Paz",
+    "avatar": "static/images/laPaz.jpg",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "02"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Oruro",
+    "avatar": "static/images/oruro.jpg",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "04"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Potosi",
+    "avatar": "static/images/potosi.jpg",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "05"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Cochabamba",
+    "avatar": "static/images/cochabamba.jpg",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "03"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Chuquisaca",
+    "avatar": "static/images/chuquisaca.jpg",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "05"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Tarija",
+    "avatar": "static/images/tarija.jpg",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "06"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Beni",
+    "avatar": "static/images/beni.jpg",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "08"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Pando",
+    "avatar": "static/images/pando.jpg",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "09"
+  },
+  {
+    "clave": "departamento",
+    "valor": "Santa Cruz",
+    "avatar": "static/images/santaCruz.jpg",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "07"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Oropeza",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0101"
+  },{
+    "clave": "provincia",
+    "valor": "Azurduy",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0102"
+  },{
+    "clave": "provincia",
+    "valor": "Zudañez",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0103"
+  },{
+    "clave": "provincia",
+    "valor": "Tomina",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0104"
+  },{
+    "clave": "provincia",
+    "valor": "Hernando Siles",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0105"
+  },{
+    "clave": "provincia",
+    "valor": "Yamparáez",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0106"
+  },{
+    "clave": "provincia",
+    "valor": "Nor Cinti",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0107"
+  },{
+    "clave": "provincia",
+    "valor": "Belisario Boeto",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0108"
+  },{
+    "clave": "provincia",
+    "valor": "Sur Cinti",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0109"
+  },{
+    "clave": "provincia",
+    "valor": "Luis Calvo",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "0110"
+  },{
+    "clave": "municipio",
+    "valor": "Sucre",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010101"
+  },{
+    "clave": "municipio",
+    "valor": "Yotala",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010102"
+  },{
+    "clave": "municipio",
+    "valor": "Poroma",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010103"
+  },{
+    "clave": "municipio",
+    "valor": "Azurduy",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010201"
+  },{
+    "clave": "municipio",
+    "valor": "Tarvita",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010202"
+  },{
+    "clave": "municipio",
+    "valor": "Zudañez",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010301"
+  },{
+    "clave": "municipio",
+    "valor": "Presto",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010302"
+  },{
+    "clave": "municipio",
+    "valor": "Mojocoya",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010303"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Ricardo Mugia - Icla",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010304"
+  },{
+    "clave": "municipio",
+    "valor": "Padilla",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010401"
+  },{
+    "clave": "municipio",
+    "valor": "Tomina",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010402"
+  },{
+    "clave": "municipio",
+    "valor": "Sopachui",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010403"
+  },{
+    "clave": "municipio",
+    "valor": "Alcalá",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010404"
+  },{
+    "clave": "municipio",
+    "valor": "El Villar",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010405"
+  },{
+    "clave": "municipio",
+    "valor": "Monteagudo",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010501"
+  },{
+    "clave": "municipio",
+    "valor": "Huacareta",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010502"
+  },{
+    "clave": "municipio",
+    "valor": "Tarabuco",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010601"
+  },{
+    "clave": "municipio",
+    "valor": "Yamparáez",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010602"
+  },{
+    "clave": "municipio",
+    "valor": "Camargo",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010701"
+  },{
+    "clave": "municipio",
+    "valor": "San Lucas",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010702"
+  },{
+    "clave": "municipio",
+    "valor": "Incahuasi",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010703"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Charcas",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010704"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Serrano",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010801"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Abecia",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010901"
+  },{
+    "clave": "municipio",
+    "valor": "Culpina",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010902"
+  },{
+    "clave": "municipio",
+    "valor": "Las Carreras",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "010903"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Vaca Guzmán",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "011001"
+  },{
+    "clave": "municipio",
+    "valor": "Huacaya",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "011002"
+  },{
+    "clave": "municipio",
+    "valor": "Macharetí",
+    "geohash": {
+      "latitud": -65.25961574410739,
+      "longitud": -19.047636587523552
+    },
+    "dpa": "011003"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Murillo",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0201"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Omasuyos",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0202"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Pacajes",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0203"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Camacho",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0204"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Muñecas",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0205"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Larecaja",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0206"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Franz Tamayo",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0207"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Ingavi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0208"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Loayza",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0209"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Inquisivi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0210"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Sud Yungas",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0211"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Los Andes",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0212"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Aroma",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0213"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Nor Yungas",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0214"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Abel Iturralde",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0215"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Bautista Saavedra",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0216"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Manco Kapac",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0217"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Gualberto Villarroel",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0218"
+  },
+  {
+    "clave": "provincia",
+    "valor": "General José Manuel Pando",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0219"
+  },
+  {
+    "clave": "provincia",
+    "valor": "Caranavi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "0220"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Nuestra Señora de La Paz",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020101"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Palca",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020102"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Mecapaca",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020103"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Achocalla",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020104"
+  },
+  {
+    "clave": "municipio",
+    "valor": "El Alto",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020105"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Achacachi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020201"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Villa Ancoraimes",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020202"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Huarina",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020203"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Santiago de Huata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020204"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Huatajata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020205"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Chua Cocani",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020206"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Corocoro",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020301"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Caquiaviri",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020302"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Calacoto",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020303"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Comanche",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020304"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Charaña",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020305"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Waldo Ballivian",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020306"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Nazacara de Pacajes",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020307"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Santiago de Callapa",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020308"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Puerto Acosta",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020401"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Mocomoco",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020402"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Puerto Mayor de Carabuco",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020403"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Humanata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020404"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Escoma",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020405"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Chuma",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020501"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Ayata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020502"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Aucapata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020503"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Sorata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020601"
+  },
+  {
+    "clave": "municipio",
+    "valor": "Guanay",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020602"
+  },{
+    "clave": "municipio",
+    "valor": "Tacacoma",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020603"
+  },{
+    "clave": "municipio",
+    "valor": "Quiabaya",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020604"
+  },{
+    "clave": "municipio",
+    "valor": "Combaya",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020605"
+  },{
+    "clave": "municipio",
+    "valor": "Tipuani",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020606"
+  },{
+    "clave": "municipio",
+    "valor": "Mapiri",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020607"
+  },{
+    "clave": "municipio",
+    "valor": "Teoponte",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020608"
+  },{
+    "clave": "municipio",
+    "valor": "Apolo",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020701"
+  },{
+    "clave": "municipio",
+    "valor": "Pelechuco",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020702"
+  },{
+    "clave": "municipio",
+    "valor": "Viacha",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020801"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Mayor de Guaqui",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020802"
+  },{
+    "clave": "municipio",
+    "valor": "Tihuanacu",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020803"
+  },{
+    "clave": "municipio",
+    "valor": "Desaguadero",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020804"
+  },{
+    "clave": "municipio",
+    "valor": "La (Marka) San Andrés de Machaca",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020805"
+  },{
+    "clave": "municipio",
+    "valor": "Jesús de Machaka",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020806"
+  },{
+    "clave": "municipio",
+    "valor": "Taraco",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020807"
+  },{
+    "clave": "municipio",
+    "valor": "Luribay",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020901"
+  },{
+    "clave": "municipio",
+    "valor": "Sapahaqui",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020902"
+  },{
+    "clave": "municipio",
+    "valor": "Yaco",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020903"
+  },{
+    "clave": "municipio",
+    "valor": "Malla",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020904"
+  },{
+    "clave": "municipio",
+    "valor": "Cairoma",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "020905"
+  },{
+    "clave": "municipio",
+    "valor": "Inquisivi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021001"
+  },{
+    "clave": "municipio",
+    "valor": "Quime",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021002"
+  },{
+    "clave": "municipio",
+    "valor": "Cajuata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021003"
+  },{
+    "clave": "municipio",
+    "valor": "Colquiri",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021004"
+  },{
+    "clave": "municipio",
+    "valor": "Ichoca",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021005"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Libertad Licoma",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021006"
+  },{
+    "clave": "municipio",
+    "valor": "Chulumani",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021101"
+  },{
+    "clave": "municipio",
+    "valor": "Irupana",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021102"
+  },{
+    "clave": "municipio",
+    "valor": "Yanacachi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021103"
+  },{
+    "clave": "municipio",
+    "valor": "Palos Blancos",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021104"
+  },{
+    "clave": "municipio",
+    "valor": "La Asunta",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021105"
+  },{
+    "clave": "municipio",
+    "valor": "Pucarani",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021201"
+  },{
+    "clave": "municipio",
+    "valor": "laja",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021202"
+  },{
+    "clave": "municipio",
+    "valor": "Batallas",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021203"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Pérez",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021204"
+  },{
+    "clave": "municipio",
+    "valor": "Sicasica",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021301"
+  },{
+    "clave": "municipio",
+    "valor": "Umala",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021302"
+  },{
+    "clave": "municipio",
+    "valor": "Ayo Ayo",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021303"
+  },{
+    "clave": "municipio",
+    "valor": "Calamarca",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021304"
+  },{
+    "clave": "municipio",
+    "valor": "Patacamaya",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021305"
+  },{
+    "clave": "municipio",
+    "valor": "Colquencha",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021306"
+  },{
+    "clave": "municipio",
+    "valor": "Collana",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021307"
+  },{
+    "clave": "municipio",
+    "valor": "Coroico",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021401"
+  },{
+    "clave": "municipio",
+    "valor": "Coripata",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021402"
+  },{
+    "clave": "municipio",
+    "valor": "Ixiamas",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021501"
+  },{
+    "clave": "municipio",
+    "valor": "San Buenaventura",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021502"
+  },{
+    "clave": "municipio",
+    "valor": "Charazani",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021601"
+  },{
+    "clave": "municipio",
+    "valor": "Curva",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021602"
+  },{
+    "clave": "municipio",
+    "valor": "Copacabana",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021701"
+  },{
+    "clave": "municipio",
+    "valor": "San Pedro de Tiquina",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021702"
+  },{
+    "clave": "municipio",
+    "valor": "Tito Yupanqui",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021703"
+  },{
+    "clave": "municipio",
+    "valor": "San Pedro de Curahuara",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021801"
+  },{
+    "clave": "municipio",
+    "valor": "Papel Pampa",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021802"
+  },{
+    "clave": "municipio",
+    "valor": "Chacarilla",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021803"
+  },{
+    "clave": "municipio",
+    "valor": "Santiago de Machaca",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021901"
+  },{
+    "clave": "municipio",
+    "valor": "Catacora",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "021902"
+  },{
+    "clave": "municipio",
+    "valor": "Caranavi",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "022001"
+  },{
+    "clave": "municipio",
+    "valor": "Alto Beni",
+    "geohash": {
+      "latitud": -68.13416796511032,
+      "longitud": -16.494608212524277
+    },
+    "dpa": "022002"
+  },{
+    "clave": "provincia",
+    "valor": "Cercado",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0301"
+  },{
+    "clave": "provincia",
+    "valor": "Campero",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0302"
+  },{
+    "clave": "provincia",
+    "valor": "Ayopaya",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0303"
+  },{
+    "clave": "provincia",
+    "valor": "Esteban Arze",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0304"
+  },{
+    "clave": "provincia",
+    "valor": "Arani",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0305"
+  },{
+    "clave": "provincia",
+    "valor": "Arque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0306"
+  },{
+    "clave": "provincia",
+    "valor": "Capinota",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0307"
+  },{
+    "clave": "provincia",
+    "valor": "Germán Jordán",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0308"
+  },{
+    "clave": "provincia",
+    "valor": "Quillacollo",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0309"
+  },{
+    "clave": "provincia",
+    "valor": "Chapare",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0310"
+  },{
+    "clave": "provincia",
+    "valor": "Tapacarí",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0311"
+  },{
+    "clave": "provincia",
+    "valor": "Carrasco",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0312"
+  },{
+    "clave": "provincia",
+    "valor": "Mizque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0313"
+  },{
+    "clave": "provincia",
+    "valor": "Punata",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0314"
+  },{
+    "clave": "provincia",
+    "valor": "Bolivar",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0315"
+  },{
+    "clave": "provincia",
+    "valor": "Tiraque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "0316"
+  },{
+    "clave": "municipio",
+    "valor": "Cochabamba",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030101"
+  },{
+    "clave": "municipio",
+    "valor": "Aiquile",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030201"
+  },{
+    "clave": "municipio",
+    "valor": "Pasorapa",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030202"
+  },{
+    "clave": "municipio",
+    "valor": "Omereque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030203"
+  },{
+    "clave": "municipio",
+    "valor": "Ayopaya",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030301"
+  },{
+    "clave": "municipio",
+    "valor": "Morochata",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030302"
+  },{
+    "clave": "municipio",
+    "valor": "Cocapata",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030303"
+  },{
+    "clave": "municipio",
+    "valor": "Tarata",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030401"
+  },{
+    "clave": "municipio",
+    "valor": "Anzaldo",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030402"
+  },{
+    "clave": "municipio",
+    "valor": "Arbieto",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030403"
+  },{
+    "clave": "municipio",
+    "valor": "Sacabamba",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030404"
+  },{
+    "clave": "municipio",
+    "valor": "Arani",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030501"
+  },{
+    "clave": "municipio",
+    "valor": "Vacas",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030502"
+  },{
+    "clave": "municipio",
+    "valor": "Arque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030601"
+  },{
+    "clave": "municipio",
+    "valor": "Tacopaya",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030602"
+  },{
+    "clave": "municipio",
+    "valor": "Capinota",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030701"
+  },{
+    "clave": "municipio",
+    "valor": "Santivañez",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030702"
+  },{
+    "clave": "municipio",
+    "valor": "Sicaya",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030703"
+  },{
+    "clave": "municipio",
+    "valor": "Cliza",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030801"
+  },{
+    "clave": "municipio",
+    "valor": "Toco",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030802"
+  },{
+    "clave": "municipio",
+    "valor": "Tolata",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030803"
+  },{
+    "clave": "municipio",
+    "valor": "Quillacollo",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030901"
+  },{
+    "clave": "municipio",
+    "valor": "Sipesipe",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030902"
+  },{
+    "clave": "municipio",
+    "valor": "Tiquipaya",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030903"
+  },{
+    "clave": "municipio",
+    "valor": "Vinto",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030904"
+  },{
+    "clave": "municipio",
+    "valor": "Colcapirhua",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "030905"
+  },{
+    "clave": "municipio",
+    "valor": "Sacaba",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031001"
+  },{
+    "clave": "municipio",
+    "valor": "Colomi",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031002"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Tunari",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031003"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Tunari",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031003"
+  },{
+    "clave": "municipio",
+    "valor": "Tapacarí",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031101"
+  },{
+    "clave": "municipio",
+    "valor": "Totora",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031201"
+  },{
+    "clave": "municipio",
+    "valor": "Pojo",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031202"
+  },{
+    "clave": "municipio",
+    "valor": "Pocona",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031203"
+  },{
+    "clave": "municipio",
+    "valor": "Chimoré",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031204"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Villarroel",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031205"
+  },{
+    "clave": "municipio",
+    "valor": "Entre Ríos",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031206"
+  },{
+    "clave": "municipio",
+    "valor": "Mizque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031301"
+  },{
+    "clave": "municipio",
+    "valor": "Vila Vila",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031302"
+  },{
+    "clave": "municipio",
+    "valor": "Alalay",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031303"
+  },{
+    "clave": "municipio",
+    "valor": "Punata",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031401"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Rivero",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031402"
+  },{
+    "clave": "municipio",
+    "valor": "San Benito",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031403"
+  },{
+    "clave": "municipio",
+    "valor": "Tacachi",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031404"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Gualberto Villarroel",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031405"
+  },{
+    "clave": "municipio",
+    "valor": "Bolivar",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031501"
+  },{
+    "clave": "municipio",
+    "valor": "Tiraque",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031601"
+  },{
+    "clave": "municipio",
+    "valor": "Shinahota",
+    "geohash": {
+      "latitud": -66.1701085685944,
+      "longitud": -17.3935621455525
+    },
+    "dpa": "031602"
+  },{
+    "clave": "provincia",
+    "valor": "Cercado",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0401"
+  },{
+    "clave": "provincia",
+    "valor": "Abaroa",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0402"
+  },{
+    "clave": "provincia",
+    "valor": "Carangas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0403"
+  },{
+    "clave": "provincia",
+    "valor": "Sajama",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0404"
+  },{
+    "clave": "provincia",
+    "valor": "Litoral",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0405"
+  },{
+    "clave": "provincia",
+    "valor": "Poopó",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0406"
+  },{
+    "clave": "provincia",
+    "valor": "Pantaleón Dalence",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0407"
+  },{
+    "clave": "provincia",
+    "valor": "Ladislao Cabrera",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0408"
+  },{
+    "clave": "provincia",
+    "valor": "Sabaya",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0409"
+  },{
+    "clave": "provincia",
+    "valor": "Saucarí",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0410"
+  },{
+    "clave": "provincia",
+    "valor": "Tomás Barrón",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0411"
+  },{
+    "clave": "provincia",
+    "valor": "Sur Carangas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0412"
+  },{
+    "clave": "provincia",
+    "valor": "San Pedro de Totora",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0413"
+  },{
+    "clave": "provincia",
+    "valor": "Sebastián Pagador",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0414"
+  },{
+    "clave": "provincia",
+    "valor": "Mejillones",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0415"
+  },{
+    "clave": "provincia",
+    "valor": "Nor Carangas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "0416"
+  },{
+    "clave": "municipio",
+    "valor": "Oruro",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040101"
+  },{
+    "clave": "municipio",
+    "valor": "Caracollo",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040102"
+  },{
+    "clave": "municipio",
+    "valor": "El Choro",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040103"
+  },{
+    "clave": "municipio",
+    "valor": "Paria",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040104"
+  },{
+    "clave": "municipio",
+    "valor": "Challapata",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040201"
+  },{
+    "clave": "municipio",
+    "valor": "Santuario de Quillacas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040202"
+  },{
+    "clave": "municipio",
+    "valor": "Corque",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040301"
+  },{
+    "clave": "municipio",
+    "valor": "Choquecota",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040302"
+  },{
+    "clave": "municipio",
+    "valor": "Curahuara de Carangas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040401"
+  },{
+    "clave": "municipio",
+    "valor": "Turco",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040402"
+  },{
+    "clave": "municipio",
+    "valor": "Huachacalla",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040501"
+  },{
+    "clave": "municipio",
+    "valor": "Escara",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040502"
+  },{
+    "clave": "municipio",
+    "valor": "Cruz de Machacamarca",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040503"
+  },{
+    "clave": "municipio",
+    "valor": "Yunguyo del Litoral",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040504"
+  },{
+    "clave": "municipio",
+    "valor": "Esmeralda",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040505"
+  },{
+    "clave": "municipio",
+    "valor": "Poopó",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040601"
+  },{
+    "clave": "municipio",
+    "valor": "PazñaPazña",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040602"
+  },{
+    "clave": "municipio",
+    "valor": "Antequera",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040603"
+  },{
+    "clave": "municipio",
+    "valor": "Huanuni",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040701"
+  },{
+    "clave": "municipio",
+    "valor": "Machacamarca",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040702"
+  },{
+    "clave": "municipio",
+    "valor": "Salinas de Garcí Mendoza",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040801"
+  },{
+    "clave": "municipio",
+    "valor": "Pampa Aullagas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040802"
+  },{
+    "clave": "municipio",
+    "valor": "Sabaya",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040901"
+  },{
+    "clave": "municipio",
+    "valor": "Coipasa",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040902"
+  },{
+    "clave": "municipio",
+    "valor": "Chipaya",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "040903"
+  },{
+    "clave": "municipio",
+    "valor": "Toledo",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041001"
+  },{
+    "clave": "municipio",
+    "valor": "Eucaliptus",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041101"
+  },{
+    "clave": "municipio",
+    "valor": "Andamarca",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041201"
+  },{
+    "clave": "municipio",
+    "valor": "Belén de Andamarca",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041202"
+  },{
+    "clave": "municipio",
+    "valor": "Totora",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041301"
+  },{
+    "clave": "municipio",
+    "valor": "Santiago de Huari",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041401"
+  },{
+    "clave": "municipio",
+    "valor": "La Rivera",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041501"
+  },{
+    "clave": "municipio",
+    "valor": "Todos Santos",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041502"
+  },{
+    "clave": "municipio",
+    "valor": "Carangas",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041503"
+  },{
+    "clave": "municipio",
+    "valor": "Huayllamarca",
+    "geohash": {
+      "latitud": -67.11038329581555,
+      "longitud": -17.975018451282565
+    },
+    "dpa": "041601"
+  },{
+    "clave": "provincia",
+    "valor": "Tomás Frías",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0501"
+  },{
+    "clave": "provincia",
+    "valor": "Rafael Bustillo",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0502"
+  },{
+    "clave": "provincia",
+    "valor": "Cornelio Saavedra",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0503"
+  },{
+    "clave": "provincia",
+    "valor": "Chayanta",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0504"
+  },{
+    "clave": "provincia",
+    "valor": "Chárcas",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0505"
+  },{
+    "clave": "provincia",
+    "valor": "Nor Chichas",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0505"
+  },{
+    "clave": "provincia",
+    "valor": "Alonso de Ibáñez",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0507"
+  },{
+    "clave": "provincia",
+    "valor": "Sur Chichas",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0508"
+  },{
+    "clave": "provincia",
+    "valor": "Nor Lipez",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0509"
+  },{
+    "clave": "provincia",
+    "valor": "Sur Lipez",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0510"
+  },{
+    "clave": "provincia",
+    "valor": "José María Linares",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0511"
+  },{
+    "clave": "provincia",
+    "valor": "Antonio Quijarro",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0512"
+  },{
+    "clave": "provincia",
+    "valor": "General Bilbao",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0513"
+  },{
+    "clave": "provincia",
+    "valor": "Daniel Campos",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0514"
+  },{
+    "clave": "provincia",
+    "valor": "Modesto Omiste",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0515"
+  },{
+    "clave": "provincia",
+    "valor": "Enrique Baldivieso",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "0516"
+  },{
+    "clave": "municipio",
+    "valor": "Potosí",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050101"
+  },{
+    "clave": "municipio",
+    "valor": "Tinguipaya",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050102"
+  },{
+    "clave": "municipio",
+    "valor": "Yocalla",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050103"
+  },{
+    "clave": "municipio",
+    "valor": "Urmiri",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050104"
+  },{
+    "clave": "municipio",
+    "valor": "Uncía",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050201"
+  },{
+    "clave": "municipio",
+    "valor": "Chayanta",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050202"
+  },{
+    "clave": "municipio",
+    "valor": "Llallagua",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050203"
+  },{
+    "clave": "municipio",
+    "valor": "Chuquihuta Ayllu Jucumani",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050204"
+  },{
+    "clave": "municipio",
+    "valor": "Betanzos",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050301"
+  },{
+    "clave": "municipio",
+    "valor": "Chaquí",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050302"
+  },{
+    "clave": "municipio",
+    "valor": "Tacobambav",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050303"
+  },{
+    "clave": "municipio",
+    "valor": "Colquechaca",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050401"
+  },{
+    "clave": "municipio",
+    "valor": "Ravelo",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050402"
+  },{
+    "clave": "municipio",
+    "valor": "Pocoata",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050403"
+  },{
+    "clave": "municipio",
+    "valor": "Ocurí",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050404"
+  },{
+    "clave": "municipio",
+    "valor": "San Pedro",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050501"
+  },{
+    "clave": "municipio",
+    "valor": "Toro Toro",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050502"
+  },{
+    "clave": "municipio",
+    "valor": "Cotagaita",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050601"
+  },{
+    "clave": "municipio",
+    "valor": "Vitiche",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050602"
+  },{
+    "clave": "municipio",
+    "valor": "Sacaca",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050701"
+  },{
+    "clave": "municipio",
+    "valor": "Caripuyo",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050702"
+  },{
+    "clave": "municipio",
+    "valor": "Tupiza",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050801"
+  },{
+    "clave": "municipio",
+    "valor": "Atocha",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050802"
+  },{
+    "clave": "municipio",
+    "valor": "Colcha K",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050901"
+  },{
+    "clave": "municipio",
+    "valor": "San Pedro de Quemes",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "050902"
+  },{
+    "clave": "municipio",
+    "valor": "San Pablo",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051001"
+  },{
+    "clave": "municipio",
+    "valor": "Mojinete",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051002"
+  },{
+    "clave": "municipio",
+    "valor": "San Antonio de Esmoruco",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051003"
+  },{
+    "clave": "municipio",
+    "valor": "Puna",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051101"
+  },{
+    "clave": "municipio",
+    "valor": "Caiza D",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051102"
+  },{
+    "clave": "municipio",
+    "valor": "Ckochas",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051103"
+  },{
+    "clave": "municipio",
+    "valor": "Uyuni",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051201"
+  },{
+    "clave": "municipio",
+    "valor": "Tomave",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051202"
+  },{
+    "clave": "municipio",
+    "valor": "Porco",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051203"
+  },{
+    "clave": "municipio",
+    "valor": "Arampampa",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051301"
+  },{
+    "clave": "municipio",
+    "valor": "Acasio",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051302"
+  },{
+    "clave": "municipio",
+    "valor": "Llica",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051401"
+  },{
+    "clave": "municipio",
+    "valor": "Tahua",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051402"
+  },{
+    "clave": "municipio",
+    "valor": "Villazón",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051501"
+  },{
+    "clave": "municipio",
+    "valor": "San Agustín",
+    "geohash": {
+      "latitud": -66.82427742290314,
+      "longitud": -20.462479871927595
+    },
+    "dpa": "051601"
+  },{
+    "clave": "provincia",
+    "valor": "Cercado",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "0601"
+  },{
+    "clave": "provincia",
+    "valor": "Arce",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "0602"
+  },{
+    "clave": "provincia",
+    "valor": "Gran Chaco",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "0603"
+  },{
+    "clave": "provincia",
+    "valor": "Avilés",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "0604"
+  },{
+    "clave": "provincia",
+    "valor": "Méndez",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "0605"
+  },{
+    "clave": "provincia",
+    "valor": "O'Connor",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "0606"
+  },{
+    "clave": "municipio",
+    "valor": "Tarija",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060101"
+  },{
+    "clave": "municipio",
+    "valor": "Bermejo",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060201"
+  },{
+    "clave": "municipio",
+    "valor": "Yacuiba",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060301"
+  },{
+    "clave": "municipio",
+    "valor": "Caraparí",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060302"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Montes",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060303"
+  },{
+    "clave": "municipio",
+    "valor": "Uriondo",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060401"
+  },{
+    "clave": "municipio",
+    "valor": "Yunchará",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060402"
+  },{
+    "clave": "municipio",
+    "valor": "San Lorenzo",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060501"
+  },{
+    "clave": "municipio",
+    "valor": "El Puente",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060502"
+  },{
+    "clave": "municipio",
+    "valor": "Entre Ríos",
+    "geohash": {
+      "latitud": -64.73321522607725,
+      "longitud": -21.532252203770565
+    },
+    "dpa": "060601"
+  },{
+    "clave": "provincia",
+    "valor": "Andrés Ibáñez",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0701"
+  },{
+    "clave": "provincia",
+    "valor": "Warnes",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0702"
+  },{
+    "clave": "provincia",
+    "valor": "Velasco",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0703"
+  },{
+    "clave": "provincia",
+    "valor": "Ichilo",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0704"
+  },{
+    "clave": "provincia",
+    "valor": "Chiquitos",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0705"
+  },{
+    "clave": "provincia",
+    "valor": "Sara",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0706"
+  },{
+    "clave": "provincia",
+    "valor": "Cordillera",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0707"
+  },{
+    "clave": "provincia",
+    "valor": "Vallegrande",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0708"
+  },{
+    "clave": "provincia",
+    "valor": "Florida",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0709"
+  },{
+    "clave": "provincia",
+    "valor": "Obispo Santistéban",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0710"
+  },{
+    "clave": "provincia",
+    "valor": "Ñuflo De Chávez",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0711"
+  },{
+    "clave": "provincia",
+    "valor": "Angel Sandoval",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0712"
+  },{
+    "clave": "provincia",
+    "valor": "Manuel María Caballero",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0713"
+  },{
+    "clave": "provincia",
+    "valor": "Germán Busch",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0714"
+  },{
+    "clave": "provincia",
+    "valor": "Guarayos",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "0715"
+  },{
+    "clave": "municipio",
+    "valor": "Santa Cruz de la Sierra",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070101"
+  },{
+    "clave": "municipio",
+    "valor": "Cotoca",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070102"
+  },{
+    "clave": "municipio",
+    "valor": "Porongo",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070103"
+  },{
+    "clave": "municipio",
+    "valor": "La Guardia",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070104"
+  },{
+    "clave": "municipio",
+    "valor": "El Torno",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070105"
+  },{
+    "clave": "municipio",
+    "valor": "Warnes",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070201"
+  },{
+    "clave": "municipio",
+    "valor": "Okinawa Uno",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070202"
+  },{
+    "clave": "municipio",
+    "valor": "San Ignacio",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070301"
+  },{
+    "clave": "municipio",
+    "valor": "San Miguel",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070302"
+  },{
+    "clave": "municipio",
+    "valor": "San Rafael",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070303"
+  },{
+    "clave": "municipio",
+    "valor": "Buena Vista",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070401"
+  },{
+    "clave": "municipio",
+    "valor": "San Carlos",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070402"
+  },{
+    "clave": "municipio",
+    "valor": "Yapacaní",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070403"
+  },{
+    "clave": "municipio",
+    "valor": "San Juan",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070404"
+  },{
+    "clave": "municipio",
+    "valor": "San José",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070501"
+  },{
+    "clave": "municipio",
+    "valor": "Pailón",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070502"
+  },{
+    "clave": "municipio",
+    "valor": "Roboré",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070503"
+  },{
+    "clave": "municipio",
+    "valor": "Portachuelo",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070601"
+  },{
+    "clave": "municipio",
+    "valor": "Santa Rosa",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070602"
+  },{
+    "clave": "municipio",
+    "valor": "Colpa Bélgica",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070603"
+  },{
+    "clave": "municipio",
+    "valor": "Lagunillas",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070701"
+  },{
+    "clave": "municipio",
+    "valor": "Charagua",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070702"
+  },{
+    "clave": "municipio",
+    "valor": "Cabezas",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070703"
+  },{
+    "clave": "municipio",
+    "valor": "Cuevo",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070704"
+  },{
+    "clave": "municipio",
+    "valor": "Gutiérrez",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070705"
+  },{
+    "clave": "municipio",
+    "valor": "Camiri",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070706"
+  },{
+    "clave": "municipio",
+    "valor": "Boyuibe",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070707"
+  },{
+    "clave": "municipio",
+    "valor": "Vallegrande",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070801"
+  },{
+    "clave": "municipio",
+    "valor": "Trigal",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070802"
+  },{
+    "clave": "municipio",
+    "valor": "Moromoro",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070803"
+  },{
+    "clave": "municipio",
+    "valor": "Postrervalle",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070804"
+  },{
+    "clave": "municipio",
+    "valor": "Pucará",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070805"
+  },{
+    "clave": "municipio",
+    "valor": "Samaipata",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070901"
+  },{
+    "clave": "municipio",
+    "valor": "Pampa Grande",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070902"
+  },{
+    "clave": "municipio",
+    "valor": "Mairana",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070903"
+  },{
+    "clave": "municipio",
+    "valor": "Quirusillas",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "070904"
+  },{
+    "clave": "municipio",
+    "valor": "Montero",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071001"
+  },{
+    "clave": "municipio",
+    "valor": "General Saavedra",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071002"
+  },{
+    "clave": "municipio",
+    "valor": "Mineros",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071003"
+  },{
+    "clave": "municipio",
+    "valor": "Fernández Alonso",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071004"
+  },{
+    "clave": "municipio",
+    "valor": "San Pedro",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071005"
+  },{
+    "clave": "municipio",
+    "valor": "Concepción",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071101"
+  },{
+    "clave": "municipio",
+    "valor": "San Javier",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071102"
+  },{
+    "clave": "municipio",
+    "valor": "San Julián",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071103"
+  },{
+    "clave": "municipio",
+    "valor": "San Antonio de Lomerio",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071103"
+  },{
+    "clave": "municipio",
+    "valor": "San Ramón",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071105"
+  },{
+    "clave": "municipio",
+    "valor": "Cuatro Cañadas",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071106"
+  },{
+    "clave": "municipio",
+    "valor": "San Matías",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071201"
+  },{
+    "clave": "municipio",
+    "valor": "Comarapa",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071301"
+  },{
+    "clave": "municipio",
+    "valor": "Saipina",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071302"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Suarez",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071401"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Quijarro",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071402"
+  },{
+    "clave": "municipio",
+    "valor": "El Carmen Rivero Tórrez",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071403"
+  },{
+    "clave": "municipio",
+    "valor": "Ascención de Guarayos",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071501"
+  },{
+    "clave": "municipio",
+    "valor": "Urubicha",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071502"
+  },{
+    "clave": "municipio",
+    "valor": "El Puente",
+    "geohash": {
+      "latitud": -63.18217071477561,
+      "longitud": -17.783179879214295
+    },
+    "dpa": "071503"
+  },{
+    "clave": "provincia",
+    "valor": "Cercado",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0801"
+  },{
+    "clave": "provincia",
+    "valor": "Vaca Diez",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0802"
+  },{
+    "clave": "provincia",
+    "valor": "General José Ballivián",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0803"
+  },{
+    "clave": "provincia",
+    "valor": "Yacuma",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0804"
+  },{
+    "clave": "provincia",
+    "valor": "Moxos",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0805"
+  },{
+    "clave": "provincia",
+    "valor": "Marbán",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0806"
+  },{
+    "clave": "provincia",
+    "valor": "Mamoré",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0807"
+  },{
+    "clave": "provincia",
+    "valor": "Iténez",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "0808"
+  },{
+    "clave": "municipio",
+    "valor": "Trinidad",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080101"
+  },{
+    "clave": "municipio",
+    "valor": "San Javier",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080102"
+  },{
+    "clave": "municipio",
+    "valor": "Riberalta",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080201"
+  },{
+    "clave": "municipio",
+    "valor": "Guayaramerín",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080202"
+  },{
+    "clave": "municipio",
+    "valor": "Reyes",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080301"
+  },{
+    "clave": "municipio",
+    "valor": "San Borja",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080302"
+  },{
+    "clave": "municipio",
+    "valor": "Santa Rosa",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080303"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Menor de Rurrenabaque",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080304"
+  },{
+    "clave": "municipio",
+    "valor": "Santa Ana",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080401"
+  },{
+    "clave": "municipio",
+    "valor": "Exaltación",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080402"
+  },{
+    "clave": "municipio",
+    "valor": "San Ignacio",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080501"
+  },{
+    "clave": "municipio",
+    "valor": "Loreto",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080601"
+  },{
+    "clave": "municipio",
+    "valor": "San Andrés",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080602"
+  },{
+    "clave": "municipio",
+    "valor": "San Joaquín",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080701"
+  },{
+    "clave": "municipio",
+    "valor": "San Ramón",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080702"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Siles",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080703"
+  },{
+    "clave": "municipio",
+    "valor": "Magdalena",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080801"
+  },{
+    "clave": "municipio",
+    "valor": "Baures",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080802"
+  },{
+    "clave": "municipio",
+    "valor": "Huacaraje",
+    "geohash": {
+      "latitud": -65.42912436466942,
+      "longitud": -13.744054025072476
+    },
+    "dpa": "080803"
+  },{
+    "clave": "provincia",
+    "valor": "Nicolás Suárez",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "0901"
+  },{
+    "clave": "provincia",
+    "valor": "Manuripi",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "0902"
+  },{
+    "clave": "provincia",
+    "valor": "Madre de Dios",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "0903"
+  },{
+    "clave": "provincia",
+    "valor": "Abuná",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "0904"
+  },{
+    "clave": "provincia",
+    "valor": "Federico Román",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "0905"
+  },{
+    "clave": "municipio",
+    "valor": "Cobija",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090101"
+  },{
+    "clave": "municipio",
+    "valor": "Porvenir",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090102"
+  },{
+    "clave": "municipio",
+    "valor": "Bolpebra",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090103"
+  },{
+    "clave": "municipio",
+    "valor": "Bella Flor",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090104"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Rico",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090201"
+  },{
+    "clave": "municipio",
+    "valor": "San Pedro",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090202"
+  },{
+    "clave": "municipio",
+    "valor": "Filadelfia",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090203"
+  },{
+    "clave": "municipio",
+    "valor": "Puerto Gonzalo Moreno",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090301"
+  },{
+    "clave": "municipio",
+    "valor": "San Lorenzo",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090302"
+  },{
+    "clave": "municipio",
+    "valor": "Sena",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090303"
+  },{
+    "clave": "municipio",
+    "valor": "Santa Rosa",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090401"
+  },{
+    "clave": "municipio",
+    "valor": "Ingavi",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090402"
+  },{
+    "clave": "municipio",
+    "valor": "Nueva Esperanza",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090501"
+  },{
+    "clave": "municipio",
+    "valor": "Nueva Esperanza",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090501"
+  },{
+    "clave": "municipio",
+    "valor": "Villa Nueva",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090502"
+  },{
+    "clave": "municipio",
+    "valor": "Santos Mercado",
+    "geohash": {
+      "latitud": -68.76622260957193,
+      "longitud": -11.026798226347697
+    },
+    "dpa": "090503"
+  }
+]

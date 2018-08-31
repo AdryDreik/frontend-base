@@ -1,0 +1,24 @@
+{
+  "nombre": "subir archivo",
+  "descripcion": "Componenente utilizado para subir archivos",
+  "version": "1.0",
+  "autor": "dbarra@agetic.gob.bo",
+  "templateOptions": {
+    "order": 1,
+    "label": "Nombre",
+    "id": null,
+    "placeholder": "Puede subir uno o mas de un archivo",
+    "validations": [],
+    "value": null,
+    "settings": false,
+    "icon": "file_upload",
+    "image": "../../../static/images/plugins/upload.png"
+  },
+  "proxy": {
+    "headers": null,
+    "urlBase": null,
+    "urlGuardado": null,
+    "urlValidacion": null
+  },
+  "tipo": "simple"
+}

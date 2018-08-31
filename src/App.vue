@@ -17,6 +17,7 @@
     <app-confirm></app-confirm>
     <vue-progress-bar></vue-progress-bar>
     <app-loading></app-loading>
+    <app-waiting></app-waiting>
   </v-app>
 </template>
 
@@ -30,6 +31,7 @@ import AppLoading from '@/common/plugins/loading/AppLoading';
 import AppNotification from '@/common/layout/AppNotification';
 import AppAlert from '@/common/plugins/modal/AppAlert';
 import AppConfirm from '@/common/plugins/modal/AppConfirm';
+import AppWaiting from '@/common/plugins/waiting/AppWaiting';
 import Auth from '@/components/admin/auth/mixins/auth';
 import { mapState } from 'vuex';
 
@@ -92,6 +94,7 @@ export default {
     AppNotification,
     AppAlert,
     AppConfirm,
+    AppWaiting,
     AppLoading
   },
   computed: {
