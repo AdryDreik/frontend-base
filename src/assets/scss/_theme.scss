@@ -210,17 +210,17 @@ table.v-table tbody td {
 
 /**/
 .bloqueTituloCabecera {
-  background: $primary !important;
+  background-color: #e0e0e0;
   padding-top: 15px  !important;
   padding-left: 15px  !important;
   padding-bottom: 0px  !important;
   padding-right: 15px  !important;
+  height: 50px !important;
   .headline {
-    color: #FFF;
+    color: $primary;
     text-transform: uppercase;
     font-weight: 700;
     font-size: 1em !important;
-    margin-top: -10px;
   }
 }
 /**/

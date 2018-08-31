@@ -19,6 +19,7 @@ import Log from '@/components/admin/Log';
 // Components
 import DocumentosPlantilla from '@/components/admin/documentos_plantilla/documentos_plantilla';
 import Formulario from '@/components/admin/formularios/Formularios';
+import ListaFlujos from '@/components/admin/flujos/listaFlujos';
 
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ export default new Router({
       path: '/formularios',
       name: 'Formulario',
       component: Formulario
+    },
+    {
+      path: '/lista_flujos',
+      name: 'Lista flujos',
+      component: ListaFlujos
     },
     {
       path: '/login-ciudadania',

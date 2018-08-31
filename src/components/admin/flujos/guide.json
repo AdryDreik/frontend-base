@@ -1,0 +1,10 @@
+{
+	"pasos": { 
+		"1" : { 
+			"mensaje": "Estos registros indican todos los flujos que se crearon ordenados por la última fecha de creación." 
+		},
+		"2" : { 
+			"mensaje": "Este botón es para crear un nuevo flujo." 
+		}
+	} 
+}
