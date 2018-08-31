@@ -13,7 +13,7 @@ export default {
     logOut: 'Cerrar sesión'
   },
   login: {
-    title: 'Ingrese como Usuario',
+    title: 'Inicia tu sesión',
     title_nit: 'Ingrese como Administrador',
     user: 'Nombre de usuario',
     password: 'Contraseña',

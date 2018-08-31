@@ -1,85 +1,127 @@
 @import '../../../assets/scss/_variables.scss';
-
 $textColor: #99abb4;
 
-.app-login.application.theme--light {
-  background-image: url(../../../assets/images/bg.png);
+.logoOPENFLOW {
+  background: transparent url(../../../../static/images/openflow1.svg) no-repeat;
   background-repeat: no-repeat;
-  background-position: center;
   background-size: cover;
+  height: 200px;
+}
 
+.loginTitle {
+  margin-left: -20px; 
+}
+.app-login.application {
   .application--wrap {
-    background-color: rgba(245, 245, 245, 0.8);
-  }
+    background: transparent url(../../../../static/images/background.jpg) no-repeat;
+    background-size: cover;
 
-  .title-app {
-    text-align: center;
+    .content--wrap {
+      background: rgba($color: $primary, $alpha: 0.25);
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
 
-    h2 {
-      font-size: 3.7rem;
-      font-weight: 300;
-      color: darken($primary, 8%);
-      line-height: 3rem;
-    }
-
-    h3 {
-      font-size: 1.7rem;
-      letter-spacing: 0.6px;
-      font-weight: 300;
-      color: #333;
-      margin-bottom: 20px;
-    }
-  }
-
-  .logo-app {
-    width: 280px;
-    height: 60px;
-    margin: 0 auto 20px;
-    // background: transparent url(../../../assets/images/logo.png) no-repeat;
-    background-size: 100%;
-  }
-
-  main {
-    padding-top: 0;
-
-    &.content {
-      background-color: transparent;
-    }
-  }
-
-  .login-container {
-    width: 100%;
-    max-width: 380px;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    &.login-nit {
-      max-width: 760px;
-    }
-
-    &.login-ciudadania {
-      .login-form {
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
+      .content {
+        background: none;
       }
     }
   }
 
   .login-form {
+    width: 100%;
+    max-width: 420px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
-    border-top: 5px solid $primary;
+    background: none;
+    .container {
+      background: transparent;
+      padding: 0;
+      .layout {
+        background: transparent;
+        padding: 0;
+        .flex {
+          .card__title {
+            padding-left: 0;
+            margin-left: 0;
+            h5 {
+              color: #FFF !important;
+            }
+          }
+          padding: 70px;
+          -webkit-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.5);
+          -moz-box-shadow: 0px 0px 20px -1px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 30px -1px rgba(0, 0, 0, 0.4);
 
-    form > .v-card__title:not(:last-child) {
+          &:first-child {
+            background: #FFF;
+          }
+
+          &:last-child {
+            label {
+              color: #FFF;
+            }
+
+            color: #FFF !important;
+
+            input[type='text'],
+            input[type='password'],
+              {
+              color: #FFF;
+            }
+            i {
+              color: #FFF;
+            }
+            background: rgba($color: #FFF, $alpha: .25);
+          }
+        }
+      }
+    }
+  }
+
+  .top-login {
+    top: 0;
+    background: rgba($color: $primary, $alpha: .5);
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  .login-form {
+    width: 100%;
+    max-width: 420px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+    background: none;
+
+    form>.card__title:not(:last-child) {
       padding-bottom: 0;
     }
 
-    form > .v-card__title:last-child {
+    form>.card__title:not(:last-child) {
+      padding-bottom: 0;
+    }
+
+    form>.card__title:last-child {
       margin-top: 20px;
 
       a {
+        color: white;
         display: inline-block;
         margin: 0 auto;
         text-transform: uppercase;
@@ -98,16 +140,16 @@ $textColor: #99abb4;
       padding: 5px 5px 0;
     }
 
-    .v-card__title {
+    .card__title {
       color: darken($textColor, 20%);
       font-size: 0.95rem;
 
-      & > span {
+      &>span {
         margin-right: 5px;
       }
     }
 
-    .v-input--checkbox {
+    .input-group.checkbox {
       margin-top: -1px;
       margin-left: -5px;
       padding: 0;
@@ -116,6 +158,7 @@ $textColor: #99abb4;
         margin-top: -4px;
         color: darken($textColor, 20%);
       }
+
       .input-group__details {
         display: none;
       }
@@ -124,15 +167,11 @@ $textColor: #99abb4;
     .login-options {
       padding-bottom: 7px;
 
-      & > div {
-        width: 100%;
-      }
-
       a {
         color: $textColor;
         font-size: 0.95rem;
 
-        .v-icon {
+        .icon {
           font-size: 1.2rem;
         }
       }
@@ -146,34 +185,8 @@ $textColor: #99abb4;
       }
     }
 
-    .v-card__actions {
-      padding: 0 15px 20px;
-    }
-  }
-}
-
-.contactos {
-  text-align: center;
-  margin-top: 15px;
-
-  .link-social {
-    display: inline-block;
-    line-height: 42px;
-    border: 1px solid #bbb;
-    text-decoration: none;
-    padding: 0 10px;
-    outline: 0;
-    color: #777;
-    border-radius: 3px;
-
-    img {
-      float: left;
-      margin: 3px 4px 0 0;
-    }
-
-    &:hover {
-      text-decoration: underline;
-      outline: 0;
+    .card__actions {
+      padding: 0 15px;
     }
   }
 }
@@ -184,9 +197,10 @@ $textColor: #99abb4;
   right: 15px;
   background-color: rgba(255, 255, 255, .6);
 
-  .v-btn {
+  .btn {
     margin: 0;
-    .v-btn__content {
+
+    .btn__content {
       color: #333;
     }
   }

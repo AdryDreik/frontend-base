@@ -11,7 +11,7 @@
       </div>
     </v-content>
     <app-notification></app-notification>
-    <app-footer></app-footer>
+    <app-footer v-if="auth"></app-footer>
     <app-messages></app-messages>
     <app-alert></app-alert>
     <app-confirm></app-confirm>

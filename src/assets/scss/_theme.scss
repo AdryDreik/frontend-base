@@ -1,17 +1,18 @@
 $bgBody: #f2f3f8;
 
+html {
+  overflow: auto;
+}
+
 body {
   font-family: $fontFamily;
   background-color: $bgBody;
-
   .application {
     font-family: $fontFamily;
     font-size: 16px;
-    font-weigth: 400;
-
+    font-weight: 400;
     main {
       color: $color;
-
       .main {
         padding: 0 30px;
       }

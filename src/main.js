@@ -101,13 +101,13 @@ Vue.use(Vuetify, {
     VOverflowBtn
   },
   theme: {
-    primary: '#7e4e6e',
-    secondary: '#ffffff',
+    primary: '#003366',
+    secondary: '#3399FF',
     accent: '#82B1FF',
-    info: '#36a3f7',
+    info: '#00293C',
     warning: '#ffb822',
     error: '#f4516c',
-    success: '#34bfa3'
+    success: '#6B8E23'
   }
 });
 
