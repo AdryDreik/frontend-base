@@ -2,18 +2,19 @@
 
 /* botones de eliminacion de componentes*/
 .eliminarComponente {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    top: 38px;
-    margin-right: -15px;
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+  top: 38px;
+  margin-right: -15px;
 }
 
 .botonApps {
   position: absolute;
-  right: 0;
-  top: 0;
-  margin-right: -10px;
+  z-index: 1;
+  right: 10px;
+  top: 0px;
+  margin-right: -15px;
 }
 
 .faq-container{

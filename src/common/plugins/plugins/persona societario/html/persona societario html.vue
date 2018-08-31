@@ -412,7 +412,7 @@
         </v-layout>
         <div id="mainDialog">
           <v-dialog v-model="dialog" persistent max-width="670" :content-class="`translate-position-${translatePosition}`" v-if="settings" origin="center center">
-              <v-btn icon slot="activator" large class="botonApps">
+              <v-btn icon abslute slot="activator" large class="botonApps">
                 <v-icon color="primary darken-1">settings</v-icon>
               </v-btn>
               <v-card>

@@ -120,7 +120,7 @@
             </div>
           </v-flex>
           <div>
-            <v-btn icon slot="activator" large class="botonApps" @click.native="mostrarDialogo" v-if="settings">
+            <v-btn icon absolute slot="activator" large class="botonApps" @click.native="mostrarDialogo" v-if="settings">
               <v-icon color="primary darken-1">settings</v-icon>
             </v-btn>
             <v-dialog v-model="dialog" persistent max-width="600" v-if="settings" scrollable>

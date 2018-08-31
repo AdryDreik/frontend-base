@@ -63,7 +63,7 @@
     </v-card-text>
     <!-- VENTANA PARA LAS CONFIGURACIONES -->
     <v-dialog v-model="dialog" persistent max-width="500" v-if="settings">
-      <v-btn icon slot="activator" large class="botonApps">
+      <v-btn icon absolute slot="activator" large class="botonApps">
         <v-icon color="primary darken-1">settings</v-icon>
       </v-btn>
       <v-card>

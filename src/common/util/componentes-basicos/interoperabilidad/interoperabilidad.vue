@@ -1,6 +1,6 @@
 <template>
   <section>
-    <v-btn icon slot="activator" large class="botonApps" @click.native="abrirConfiguracion" v-if="esComponenteFormulario">
+    <v-btn icon absolute slot="activator" large class="botonApps" @click.native="abrirConfiguracion" v-if="esComponenteFormulario">
       <v-icon color="primary darken-1">settings</v-icon>
     </v-btn>
     <!-- Dialog para la desactivación -->
