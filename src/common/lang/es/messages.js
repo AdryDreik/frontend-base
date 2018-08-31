@@ -7,7 +7,7 @@ export default {
   validate,
   menu,
   app: {
-    title: 'Base frotend',
+    title: 'OPENFLOW',
     account: 'Mi cuenta',
     settings: 'Configuración',
     logOut: 'Cerrar sesión'

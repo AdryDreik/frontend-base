@@ -1,35 +1,27 @@
 <template>
-  <v-footer
-    :fixed="fixed"
-    :inset="inset"
-    height="28"
-    app
-  >
+  <v-footer class="footer pa-3">
     <v-spacer></v-spacer>
-    <div>&copy; Agetic {{ new Date().getFullYear() }}</div>
+    <div>© {{ new Date().getFullYear() }}</div>
   </v-footer>
 </template>
 
-<script>
-export default {
-  data: () => ({
-    fixed: false,
-    inset: true
-  })
-};
-</script>
-
 <style lang="scss">
-@import '../../assets/scss/_variables.scss';
-
-.theme--light .v-footer {
-  font-size: 0.8rem;
-  background: rgba(white, 0.8);
-  min-height: 28px;
-  color: $color;
-
-  div {
-    padding: 0 10px;
-  }
+aside + nav + main + footer {
+  left: 250px !important;
 }
+
+.navigation-drawer--close.navigation-drawer:not(.navigation--permanent):not(.navigation-drawer--right) + nav + main + footer {
+  left: 0 !important;
+}
+
+.navigation-drawer--persistent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right)~main {
+  padding-left: 250px !important;
+}
+
+.footer {
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.6);
+  font-size: 0.8rem;
+}
+
 </style>

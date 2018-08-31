@@ -33,6 +33,23 @@ export default new Vuex.Store({
     modal8: false,
     action: null,
     selected: null,
+    tour: null,
+    modalForm: {
+      show: false,
+      callback: null,
+      nameFunction: null,
+      path: null,
+      width: null
+    },
+    locked: {
+      show: false,
+      time: null,
+      path: null
+    },
+    waiting: {
+      show: false,
+      message: ''
+    },
     alert: {
       show: false,
       title: 'Alerta',

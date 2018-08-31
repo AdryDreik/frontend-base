@@ -8,7 +8,11 @@
     <v-toolbar-side-icon class="btn-mini-variant" @click.stop="$store.commit('layout/toggleMiniVariant')"></v-toolbar-side-icon>
     <v-toolbar-side-icon class="btn-drawer" @click.stop="$store.commit('layout/toggleDrawer')"></v-toolbar-side-icon>
     <v-spacer></v-spacer>
-    <app-lang></app-lang>
+    <!-- <app-lang></app-lang> -->
+    <v-tooltip bottom>
+      <v-btn @click="activateTour()" slot="activator" color="primary">INICIAR GUIA</v-btn>
+      <span>Iniciar guia para esta sección</span>
+    </v-tooltip>
     <v-tooltip bottom>
       <v-btn icon @click="fullscreen()" class="btn-fullscreen" slot="activator">
         <v-icon>fullscreen</v-icon>
@@ -22,53 +26,52 @@
       </v-btn>
       <span>Actualizar la página</span>
     </v-tooltip>
-    <v-btn icon @click.stop="$store.commit('layout/toggleRightDrawer')">
-      <v-icon>notifications</v-icon>
-    </v-btn>
     <v-menu
-      offset-x
-      :close-on-content-click="false"
-      max-width="320"
-      min-width="320"
+      origin="center center"
+      transition="scale-transition"
+      bottom
+      content-class="app-notifications"
     >
-      <v-toolbar-title slot="activator">
-        <v-avatar class="info">
-          <span class="white--text headline">{{ inicial }}</span>
-        </v-avatar>
-      </v-toolbar-title>
-      <v-card>
-        <v-container grid-list-md class="menu-person">
-          <v-layout row wrap>
-            <v-flex xs3 text-md-center>
-              <v-avatar
-                class="info"
-                size="64"
-              >
-                <span class="white--text headline">{{ inicial }}</span>
-              </v-avatar>
-            </v-flex>
-            <v-flex xs9>
-              <h3>{{ nombreCompleto }}</h3>
-              <v-icon>mail</v-icon> {{ user.email }}<br>
-              <v-icon>person_pin</v-icon> {{ user.rol }} <br>
-              <v-icon>location_city</v-icon>{{ user.entidad }}
-            </v-flex>
-          </v-layout>
-        </v-container>
-        <v-divider></v-divider>
+        <v-btn icon slot="activator">
+          <v-icon>notifications</v-icon>
+        </v-btn>
         <v-list>
-          <v-list-tile @click="$router.push('account')">
-            <v-list-tile-title>
-              <v-icon>account_circle</v-icon> {{$t('app.account') }}
-            </v-list-tile-title>
+          <!-- <iframe src="http://localhost:8888" frameborder="0"></iframe> -->
+          <v-list-tile class="item-notificacion" avatar>
+            <v-list-tile-avatar>
+              <v-icon>info</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>Ejemplo de notificación</v-list-tile-title>
+              <v-list-tile-sub-title>Ejemplo de detalle de notificación con descripción definida</v-list-tile-sub-title>
+            </v-list-tile-content>
           </v-list-tile>
-          <v-list-tile @click="logout()">
-            <v-list-tile-title>
-              <v-icon>&#xE8AC;</v-icon> {{$t('app.logOut') }}
-            </v-list-tile-title>
+          <v-list-tile class="item-notificacion" avatar>
+            <v-list-tile-avatar>
+              <v-icon>info</v-icon>
+            </v-list-tile-avatar>
+            <v-list-tile-content>
+              <v-list-tile-title>Ejemplo de notificación</v-list-tile-title>
+              <v-list-tile-sub-title>Ejemplo de detalle de notificación con descripción definida</v-list-tile-sub-title>
+            </v-list-tile-content>
           </v-list-tile>
         </v-list>
-      </v-card>
+    </v-menu>
+    <v-menu bottom left>
+      <v-btn icon slot="activator">
+        <v-icon>more_vert</v-icon>
+      </v-btn>
+      <v-list>
+        <v-list-tile>
+          <v-list-tile-title class="cursor" @click="$router.push('account')"><v-icon>account_circle</v-icon> {{$t('app.account') }}</v-list-tile-title>
+        </v-list-tile>
+        <!-- <v-list-tile>
+          <v-list-tile-title class="cursor" @click="$router.push('settings')"><v-icon>settings</v-icon> {{$t('app.settings') }}</v-list-tile-title>
+        </v-list-tile> -->
+        <v-list-tile>
+          <v-list-tile-title class="cursor" @click="logout()"><v-icon>&#xE8AC;</v-icon> {{$t('app.logOut') }}</v-list-tile-title>
+        </v-list-tile>
+      </v-list>
     </v-menu>
   </v-toolbar>
 </template>
@@ -84,9 +87,18 @@ export default {
     clipped: false
   }),
   methods: {
+    activateTour () {
+      this.$store.state.tour = Math.floor(Math.random() * Math.floor(10000));
+    },
     fullscreen () {
       document.querySelector('body').classList.toggle('fullscreen');
       this.$util.fullscreen();
+    },
+    reload () {
+      this.$store.commit('setMain', false);
+      this.$nextTick(function () {
+        this.$store.commit('setMain', true);
+      });
     }
   },
   components: { AppLang },
@@ -110,12 +122,13 @@ export default {
 
 <style lang="scss">
 @import '../../assets/scss/_variables.scss';
-
+$heightToolbar: 56px;
 .app-navbar {
   box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.1);
 
   .v-toolbar__content {
     padding: 0 15px;
+    height: $heightToolbar !important;
   }
 
   .v-btn .v-icon {
@@ -178,6 +191,41 @@ body.fullscreen {
 }
 .btn-drawer {
   display: none;
+}
+// Notifications
+.app-notifications {
+  top: 55px !important;
+  overflow: inherit;
+  max-width: 400px;
+  &::before {
+    position: absolute;
+    content: '';
+    top: -10px;
+    border-bottom: 10px solid #eee;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    width: 0;
+    height: 0;
+    left: 50%;
+    margin: 0 0 0 5px;
+  }
+
+  .list {
+    padding: 0;
+
+    iframe {
+      border: none;
+      margin: 0 0 -5px;
+      padding: 0;
+      height: 380px;
+      width: 350px;
+    }
+  }
+
+  .item-notificacion {
+    padding: 10px 0;
+    border-bottom: 1px dotted #c9c9c9;
+  }
 }
 @media (max-width: 1256px) {
   .btn-mini-variant {

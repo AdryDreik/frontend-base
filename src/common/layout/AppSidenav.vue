@@ -146,7 +146,7 @@ $bgSidenav: darken($primary, 5%);
 
   .v-list__tile.primary--text, .v-list__group,
   .sidenav-one .v-list__tile__content {
-    color: lighten($primary, 40%);
+    color: #FFF;
 
     .v-icon {
       color: lighten($warning, 6%);

@@ -1,7 +1,7 @@
 <template>
   <v-breadcrumbs>
     <v-icon slot="divider">chevron_right</v-icon>
-    <v-breadcrumbs-item v-for="item in $store.state.layout.breadcrumbs" :key="item.text" :disabled="item.disabled">
+    <v-breadcrumbs-item v-for="(item, idx) in $store.state.layout.breadcrumbs" :key="idx" :disabled="item.disabled">
       {{ item.text }}
     </v-breadcrumbs-item>
   </v-breadcrumbs>

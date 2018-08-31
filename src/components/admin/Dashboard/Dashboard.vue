@@ -10,10 +10,10 @@
             <div> {{messageIntro}} </div>
           </div>
         </div>
-        <div class="headline text-md-center pb-4">{{institucion}}</div>
+        <div class="headline text-md-center text-sm-center text-xs-center pb-4">{{institucion}}</div>
         <div data-step="1" :data-intro="guiaUsuario[1].mensaje">
           <v-layout row wrap>
-            <v-flex xs4 v-for="(tram, i) in tramites" :key="i" pa-2 class="contador-container">
+            <v-flex xs12 sm12 md4 lg4 v-for="(tram, i) in tramites" :key="i" pa-2 class="contador-container">
               <v-card :color="`${tram.color}`" class="white--text card-1">
                 <v-container>
                   <v-layout row wrap>
@@ -99,8 +99,9 @@
       Grafico
     },
     methods: {
-      /*
+      /**
        * @function tour
+       * @description Realizara una guia visual hacia el usuario
        */
       tour () {
         const _this = this;
