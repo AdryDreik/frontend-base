@@ -3,17 +3,19 @@
     <v-dialog v-model="mostrarConfiguracion" max-width="720" persistent scrollable>
       <v-card class="dialog-token">
         <v-card-title class="headline">
-          <v-flex xs10 sm10 md10 lg10>
-            <v-icon>directions</v-icon> Agregar Flujo Plantilla
-          </v-flex>
-          <v-flex xs10 sm10 md2 lg2 class="text-md-right text-lg-right">
-            <v-tooltip bottom>
-              <v-btn color="primary" icon slot="activator" @click.native="cerrarConfiguracion()">
-                <v-icon class="ml-1" color="white">close</v-icon>
-              </v-btn>
-              <span>Cerrar ventana</span>
-            </v-tooltip>
-          </v-flex>
+          <v-layout row wrap>
+            <v-flex xs10 sm10 md10 lg10 mt-2>
+              <v-icon>directions</v-icon> Agregar Flujo Plantilla
+            </v-flex>
+            <v-flex xs2 sm2 md2 lg2 class="text-md-right text-lg-right text-xs-right text-sm-right">
+              <v-tooltip bottom>
+                <v-btn color="primary" icon slot="activator" @click.native="cerrarConfiguracion()">
+                  <v-icon class="ml-1" color="white">close</v-icon>
+                </v-btn>
+                <span>Cerrar ventana</span>
+              </v-tooltip>
+            </v-flex>
+          </v-layout>
         </v-card-title>
         <v-form
           v-model="valid"
@@ -156,23 +158,31 @@
                     </v-tab-item>
                   </v-tabs-items>
                 </div>
-
             </v-container>
           </v-card-text>
           <v-card-actions style="background-color: white">
-            <small class="error--text text-required">* Los campos son obligatorios</small>
-            <v-spacer></v-spacer>
-            <v-btn
-              @click.native="cerrarConfiguracion">
-              <v-icon>cancel</v-icon> {{$t('common.cancel') }}
-            </v-btn>
-            <v-btn
-              @click.prevent="dibujarFlujo"
-              color="primary"
-              type="submit"
-              :disabled="!valid">
-              <v-icon>check</v-icon> Siguiente
-            </v-btn>
+            <v-layout row wrap>
+              <v-flex xs12 sm12 md8 lg8>
+                <small class="error--text text-required">* Los campos son obligatorios</small>
+              </v-flex>
+              <v-flex xs12 sm12 md2 lg2>
+                <v-btn
+                  block
+                  @click.native="cerrarConfiguracion">
+                  <v-icon>cancel</v-icon> {{$t('common.cancel') }}
+                </v-btn>
+              </v-flex>
+              <v-flex xs12 sm12 md2 lg2>
+                <v-btn
+                  block
+                  @click.prevent="dibujarFlujo"
+                  color="primary"
+                  type="submit"
+                  :disabled="!valid">
+                  <v-icon>check</v-icon> Siguiente
+                </v-btn>
+              </v-flex>
+            </v-layout>
           </v-card-actions>
         </v-form>
       </v-card>
