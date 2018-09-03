@@ -27,10 +27,20 @@
 
           <template slot="form">
             <v-card-title class="headline">
-              <v-flex xs10>
-                <v-icon>business</v-icon> {{ form._id ? 'Editar Instituciones' : 'Agregar Instituciones' }}
-              </v-flex>
-              <v-flex xs2>
+              <v-layout row wrap>
+                <v-flex xs10 sm10 md10 lg10 mt-2>
+                  <v-icon>business</v-icon> {{ form._id ? 'Editar Instituciones' : 'Agregar Instituciones' }}
+                </v-flex>
+                <v-flex xs2 sm2 md2 lg2 text-sm-right text-xs-right text-md-right text-lg-right>
+                  <v-tooltip bottom>
+                    <v-btn slot="activator" color="primary" icon @click.native="$store.commit('closeModal')">
+                      <v-icon color="white" class="ml-1">close</v-icon>
+                    </v-btn>
+                    <span>Cerrar configuración</span>
+                  </v-tooltip>
+                </v-flex>
+              </v-layout>
+              <v-flex xs12 sm12 md12 lg12 text-md-right text-sm-right text-xs-right text-lg-right>
                 <v-chip label color="success" text-color="white" v-if="form.estado == 'ACTIVO'">
                   {{ form.estado }}
                 </v-chip>
@@ -38,9 +48,6 @@
                   {{ form.estado }}
                 </v-chip>
               </v-flex>
-              <v-btn icon @click.native="$store.commit('closeModal')">
-                <v-icon>close</v-icon>
-              </v-btn>
             </v-card-title>
             <v-form
               @submit.prevent="save"
@@ -51,8 +58,8 @@
               <v-card-text>
                 <v-container grid-list-md>
                   <h4>Datos generales</h4>
-                  <v-layout wrap>
-                    <v-flex xs4>
+                  <v-layout wrap row>
+                    <v-flex xs12 sm12 md4 lg4>
                       <v-text-field
                         name="codigo_portal"
                         label="Código único de portal"
@@ -63,13 +70,14 @@
                         required
                       ></v-text-field>
                     </v-flex>
-                    <v-flex xs3>
+                    <v-flex xs12 sm12 md3 lg3>
                       <v-btn
+                        block
                         @click.native="obtenerInstitucionPortal()" color="primary" type="submit">
                         <v-icon>check</v-icon> Obtener datos
                       </v-btn>
                     </v-flex>
-                    <v-flex xs9>
+                    <v-flex xs12 sm12 md9 lg9>
                       <v-text-field
                         name="nombre"
                         :label="$t('entity.crud.name')"
@@ -81,7 +89,7 @@
                         required
                       ></v-text-field>
                     </v-flex>
-                    <v-flex xs3>
+                    <v-flex xs12 sm12 md3 lg3>
                       <v-text-field
                         name="sigla"
                         :label="$t('entity.crud.acronym')"
@@ -90,7 +98,7 @@
                         maxlength="20"
                       ></v-text-field>
                     </v-flex>
-                    <v-flex xs12>
+                    <v-flex xs12 sm12 md12 lg12>
                       <v-text-field
                         name="descripcion"
                         :label="$t('entity.crud.description')"
@@ -104,7 +112,7 @@
                     </v-flex>
                   </v-layout>
                   <h4>Datos de contacto</h4>
-                  <v-layout wrap>
+                  <v-layout wrap row>
                     <v-text-field
                       name="email"
                       :label="$t('entity.crud.email')"
@@ -424,19 +432,16 @@
             </v-btn>
           </v-card-actions>
         </v-form>
-
       </v-card-text>
     </v-card>
   </section>
 </template>
 <script>
-
 import CrudTable from '@/common/util/crud-table/CrudTable.vue';
 import crud from '@/common/util/crud-table/mixins/crud-table';
 import validate from '@/common/mixins/validate';
 import Auth from '../auth/mixins/auth.js';
 const { SUPER_ADMIN } = require('../../../../config');
-
 export default {
   mixins: [ crud, validate, Auth ],
   created () {

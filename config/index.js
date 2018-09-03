@@ -39,13 +39,6 @@ module.exports = {
     // https://vue-loader.vuejs.org/en/options.html#cachebusting
     cacheBusting: true,
     cssSourceMap: true,
-    /* GRUPOS */
-    GRUPO_SOLICITANTE: '000000000000000000000111',
-    GRUPO_SISTEMA: '000000000000000000000555',
-    /* ROLES */
-    SUPER_ADMIN: '000000000000000000000222',
-    ADMIN: '000000000000000000000333',
-    CREADOR_PLANTILLAS: '000000000000000000000444'
   },
   build: {
     // Template for index.html
@@ -61,18 +54,25 @@ module.exports = {
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
-
+    
     // Gzip off by default as many popular static hosts such as
     // Surge or Netlify already gzip all static assets for you.
     // Before setting to `true`, make sure to:
     // npm install --save-dev compression-webpack-plugin
     productionGzip: false,
     productionGzipExtensions: ['js', 'css'],
-
+    
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
     // Set to `true` or `false` to always turn it on or off
     bundleAnalyzerReport: process.env.npm_config_report
-  }
+  },
+  /* GRUPOS */
+  GRUPO_SOLICITANTE: '000000000000000000000111',
+  GRUPO_SISTEMA: '000000000000000000000555',
+  /* ROLES */
+  SUPER_ADMIN: '000000000000000000000222',
+  ADMIN: '000000000000000000000333',
+  CREADOR_PLANTILLAS: '000000000000000000000444'
 };
