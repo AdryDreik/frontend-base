@@ -38,12 +38,19 @@
           <template slot="form">
             <div data-step="3" :data-intro="guiaUsuario[3].mensaje">
               <v-card-title class="headline">
-                <v-flex xs10>
-                  <v-icon>check_box</v-icon> {{ form._id ? 'Editar validación' : 'Crear validación' }}
-                </v-flex>
-                <v-btn icon @click.native="$store.commit('closeModal')" :disabled="disabledTour">
-                  <v-icon>close</v-icon>
-                </v-btn>
+                <v-layout raw wrap>
+                  <v-flex xs10 sm10 md10 lg10 mt-2>
+                    <v-icon>check_box</v-icon> {{ form._id ? 'Editar validación' : 'Crear validación' }}
+                  </v-flex>
+                  <v-flex xs2 sm2 md2 lg2 text-md-right text-lg-right>
+                    <v-tooltip bottom>
+                      <v-btn icon color="primary" slot="activator" @click.native="$store.commit('closeModal')" :disabled="disabledTour">
+                        <v-icon color="white" class="ml-1">close</v-icon>
+                      </v-btn>
+                      <span>Cerrar configuración de validaciones</span>
+                    </v-tooltip>
+                  </v-flex>
+                </v-layout>
               </v-card-title>
               <v-form
                 @submit.prevent="save"
@@ -54,7 +61,7 @@
                 <v-card-text>
                   <v-container grid-list-md>
                     <v-layout wrap>
-                      <v-flex xs6>
+                      <v-flex xs12 sm12 md12 lg12>
                         <v-text-field
                           data-step="4" :data-intro="guiaUsuario[4].mensaje"
                           label="Nombre de la validación"
@@ -152,28 +159,40 @@
                   </v-container>
                 </v-card-text>
                 <v-card-actions>
-                  <small class="error--text text-required">* Los campos son obligatorios</small>
-                  <v-spacer></v-spacer>
-                  <v-btn
-                    :disabled="disabledTour"
-                    data-step="10" :data-intro="guiaUsuario[10].mensaje"
-                    @click.native="closeModal">
-                    <v-icon>cancel</v-icon> {{$t('common.cancel') }}
-                  </v-btn>
-                  <v-btn
-                    :disabled="disabledTour"
-                    data-step="11" :data-intro="guiaUsuario[11].mensaje"
-                    color="primary"
-                    @click.native="showValidationTester">
-                    <v-icon>check</v-icon> Probar
-                  </v-btn>
-                  <v-btn
-                    data-step="12" :data-intro="guiaUsuario[12].mensaje"
-                    color="primary"
-                    type="submit"
-                    :disabled="!valid || disabledTour">
-                    <v-icon>check</v-icon> {{$t('common.save') }}
-                  </v-btn>
+                  <v-layout row wrap>
+                    <v-flex xs12 sm12 md6 lg6>
+                      <small class="error--text text-required">* Los campos son obligatorios</small>
+                    </v-flex>
+                    <v-flex xs12 sm12 md2 lg2 pr-2>
+                      <v-btn
+                        block
+                        :disabled="disabledTour"
+                        data-step="10" :data-intro="guiaUsuario[10].mensaje"
+                        @click.native="closeModal">
+                        <v-icon>cancel</v-icon> {{$t('common.cancel') }}
+                      </v-btn>
+                    </v-flex>
+                    <v-flex xs12 sm12 md2 lg2 pr-2>
+                      <v-btn
+                        block
+                        :disabled="disabledTour"
+                        data-step="11" :data-intro="guiaUsuario[11].mensaje"
+                        color="primary"
+                        @click.native="showValidationTester">
+                        <v-icon>check</v-icon> Probar
+                      </v-btn>
+                    </v-flex>
+                    <v-flex xs12 sm12 md2 lg2 pr-2>
+                      <v-btn
+                        block
+                        data-step="12" :data-intro="guiaUsuario[12].mensaje"
+                        color="primary"
+                        type="submit"
+                        :disabled="!valid || disabledTour">
+                        <v-icon>check</v-icon> {{$t('common.save') }}
+                      </v-btn>
+                    </v-flex>
+                  </v-layout>
                 </v-card-actions>
               </v-form>
             </div>
@@ -233,12 +252,19 @@
     <v-dialog v-model="showTester" max-width="640" persistent scrollable>
       <v-card class="dialog-token">
         <v-card-title class="headline">
-          <v-flex xs10>
-            <v-icon>check_box</v-icon> {{ 'Probar validación' }}
-          </v-flex>
-          <v-btn icon @click.native="closeValidationTester()">
-            <v-icon>close</v-icon>
-          </v-btn>
+          <v-layout row wrap>
+            <v-flex xs10 sm10 md10 lg10 mt-2>
+              <v-icon>check_box</v-icon> {{ 'Probar validación' }}
+            </v-flex>
+            <v-flex xs2 sm2 md2 lg2 text-md-right text-lg-right text-sm-right text-xs-right>
+              <v-tooltip bottom>
+                <v-btn icon color="primary" slot="activator" @click.native="closeValidationTester()">
+                  <v-icon class="ml-1" color="white">close</v-icon>
+                </v-btn>
+                <span>Cerrar ventana</span>
+              </v-tooltip>
+            </v-flex>
+          </v-layout>
         </v-card-title>
         <v-form
           ref="formTester"
@@ -247,7 +273,7 @@
           <v-card-text>
             <v-container grid-list-md>
               <v-layout wrap>
-                <v-flex xs12 md12>
+                <v-flex xs12 sm12 md12 lg12>
                   <v-text-field
                     label="Valor de prueba"
                     prepend-icon="person"
@@ -265,17 +291,26 @@
             </v-container>
           </v-card-text>
           <v-card-actions>
-            <small>Nota.- Pruebe la validación introducida antes de utilizarla en un documento</small>
-            <v-spacer></v-spacer>
-            <v-btn
-              @click.native="closeValidationTester()">
-              <v-icon>cancel</v-icon> Cerrar
-            </v-btn>
-            <v-btn
-              @click.native="testValidation()"
-              color="primary">
-              <v-icon>check</v-icon> Probar
-            </v-btn>
+            <v-layout row wrap>
+              <v-flex xs12 sm12 md8 lg8>
+                <small>Nota.- Pruebe la validación introducida antes de utilizarla en un documento</small>
+              </v-flex>
+              <v-flex xs12 sm12 md2 lg2>
+                <v-btn
+                  block
+                  @click.native="closeValidationTester()">
+                  <v-icon>cancel</v-icon> Cerrar
+                </v-btn>
+              </v-flex>
+              <v-flex xs12 sm12 md2 lg2>
+                <v-btn
+                  block
+                  @click.native="testValidation()"
+                  color="primary">
+                  <v-icon>check</v-icon> Probar
+                </v-btn>
+              </v-flex>
+            </v-layout>
           </v-card-actions>
         </v-form>
       </v-card>

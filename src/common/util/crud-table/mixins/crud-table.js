@@ -54,6 +54,37 @@ export default {
       });
     },
 
+    changeVisible (path, item, id) {
+      this.$confirm('¿Esta seguro de que desea ' + (item.activo ? 'desactivar' : 'activar') + ' este item?', () => {
+        var url = '';
+        if (item.activo) {
+          url = path + item._id + '/desactivar';
+        } else {
+          url = path + item._id + '/activar';
+        }
+        this.$service.put(url)
+          .then(response => {
+            /*
+            if (response && response.finalizado) {
+              item.activo = item.activo ? false : true;
+            }
+            */
+            if (response) {
+              if (!item.activo) {
+                this.$message.success(`¡Registro activado!`, null, {
+                  timeout: 2000
+                });
+              } else {
+                this.$message.warning(`¡Registro desactivado!`, null, {
+                  timeout: 2000
+                });
+              }
+              this.updateList();
+            }
+          });
+      });
+    },
+
     changeActive (obj, id, url, type, callback, method = 'Edit') {
       let active = obj.active === 'ACTIVE';
       this.$confirm(`¿Está seguro de ${active ? 'activar' : 'desactivar'} el registro?.`, () => {
