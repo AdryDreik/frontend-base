@@ -3,10 +3,19 @@
     <v-dialog v-model="mostrarConfiguracion" max-width="900" persistent scrollable>
       <v-card class="dialog-token">
         <v-card-title class="headline">
-          <v-icon>description</v-icon> Configuración de documento
-          <v-btn icon @click.native="cerrarConfiguracion()">
-            <v-icon>close</v-icon>
-          </v-btn>
+          <v-layout row wrap>
+            <v-flex xs10 sm10 md10 lg10 mt-2>
+              <v-icon>description</v-icon> Configuración de documento
+            </v-flex>
+            <v-flex xs2 sm2 md2 lg2 text-md-right>
+              <v-tooltip bottom>
+                <v-btn icon color="primary" slot="activator" @click.native="cerrarConfiguracion()">
+                  <v-icon color="white" class="ml-1">close</v-icon>
+                </v-btn>
+                <span>Cerrar configuración del documento</span>
+              </v-tooltip>
+            </v-flex>
+          </v-layout>
         </v-card-title>
         <v-card-text class="pa-0">
           <v-stepper v-model="e1" alt-labels>
@@ -833,7 +842,6 @@
       };
     }
   };
-
 </script>
 
 <style lang="scss">

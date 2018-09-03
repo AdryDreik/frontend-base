@@ -181,14 +181,6 @@
 /* eslint no-unused-vars:0 */
 /* eslint no-new:0 */
 /* eslint new-cap:0 */
-
-const NAME_INICIO = 'inicio';
-const NAME_FORMULARIO = 'formulario';
-const NAME_INTEROPERABILIDAD = 'interoperabilidad';
-const NAME_PAGOS = 'pagos';
-const NAME_DECISION = 'decision';
-const NAME_FIN = 'fin';
-
 import interoperabilidad from '@/common/util/componentes-basicos/interoperabilidad/interoperabilidad.vue';
 import pasoConfig from '@/common/util/componentes-basicos/pasoConfig/pasoConfig.vue';
 import Ppte from '@/common/util/componentes-basicos/ppte/ppte.vue';
@@ -196,8 +188,6 @@ import Decision from '@//common/util/componentes-basicos/decisionConfig/decision
 import Comodin from '@//common/util/componentes-basicos/comodinConfig/comodinConfig.vue';
 import flujoModal from '@/common/util/componentes-basicos/flujo/flujoModal.vue';
 import { mapState } from 'vuex';
-const { GRUPO_SOLICITANTE, GRUPO_SISTEMA } = require('../../../../config');
-
 import {
 mxMultiplicity,
 mxLog,
@@ -231,6 +221,15 @@ mxGraphModel,
 mxEventObject,
 mxGraphLayout,
 mxRubberband } from 'mxgraph-js';
+
+const NAME_INICIO = 'inicio';
+const NAME_FORMULARIO = 'formulario';
+const NAME_INTEROPERABILIDAD = 'interoperabilidad';
+const NAME_PAGOS = 'pagos';
+const NAME_DECISION = 'decision';
+const NAME_FIN = 'fin';
+
+const { GRUPO_SOLICITANTE, GRUPO_SISTEMA } = require('../../../../config');
 
 export default {
   props: {

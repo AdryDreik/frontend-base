@@ -3,14 +3,18 @@
     <v-dialog v-model="mostrarConfiguracion" max-width="720" persistent scrollable>
       <v-card class="dialog-token">
         <v-card-title class="headline">
-          <v-flex xs10>
+          <v-flex xs10 sm10 md10 lg10>
             <v-icon>directions</v-icon> Agregar Flujo Plantilla
           </v-flex>
-          <v-btn icon @click.native="cerrarConfiguracion()">
-            <v-icon>close</v-icon>
-          </v-btn>
+          <v-flex xs10 sm10 md2 lg2 class="text-md-right text-lg-right">
+            <v-tooltip bottom>
+              <v-btn color="primary" icon slot="activator" @click.native="cerrarConfiguracion()">
+                <v-icon class="ml-1" color="white">close</v-icon>
+              </v-btn>
+              <span>Cerrar ventana</span>
+            </v-tooltip>
+          </v-flex>
         </v-card-title>
-
         <v-form
           v-model="valid"
           ref="formFlujo"

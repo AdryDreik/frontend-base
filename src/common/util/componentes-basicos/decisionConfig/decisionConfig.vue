@@ -213,7 +213,6 @@
       }
     }
   };
-
 </script>
 
 <style lang="scss">

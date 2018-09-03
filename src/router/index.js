@@ -20,6 +20,8 @@ import Log from '@/components/admin/Log';
 import DocumentosPlantilla from '@/components/admin/documentos_plantilla/documentos_plantilla';
 import Formulario from '@/components/admin/formularios/Formularios';
 import ListaFlujos from '@/components/admin/flujos/listaFlujos';
+import pdfsFirmados from '@/components/admin/pdfs-firmados/pdf';
+import Diagramador from '@/components/admin/flujos/diagramador';
 
 Vue.use(Router);
 
@@ -51,9 +53,19 @@ export default new Router({
       component: Formulario
     },
     {
+      path: '/documentos-firmados',
+      name: 'Documentos firmados',
+      component: pdfsFirmados
+    },
+    {
       path: '/lista_flujos',
       name: 'Lista flujos',
       component: ListaFlujos
+    },
+    {
+      path: '/editor_flujos',
+      name: 'Editor de Flujo',
+      component: Diagramador
     },
     {
       path: '/login-ciudadania',
