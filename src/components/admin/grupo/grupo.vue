@@ -36,20 +36,27 @@
 
           <template slot="form">
             <v-card-title class="headline">
-              <v-flex xs10>
-                <v-icon>business</v-icon> {{ form._id ? 'Editar grupos' : 'Agregar grupos' }}
-              </v-flex>
-              <v-flex xs2>
-                <v-chip label color="success" text-color="white" v-if="form.estado == 'ACTIVO'">
-                  {{ form.estado }}
-                </v-chip>
-                <v-chip label color="warning" text-color="white" v-if="form.estado == 'INACTIVO'">
-                  {{ form.estado }}
-                </v-chip>
-              </v-flex>
-              <v-btn icon @click.native="$store.commit('closeModal')">
-                <v-icon>close</v-icon>
-              </v-btn>
+              <v-layout row wrap>
+                <v-flex xs10 sm10 md10 lg10 mt-2>
+                  <v-icon>business</v-icon> {{ form._id ? 'Editar grupos' : 'Agregar grupos' }}
+                </v-flex>
+                <v-flex xs2 sm2 md2 lg2 text-sm-right text-xs-right text-md-right text-lg-right>
+                  <v-tooltip bottom>
+                    <v-btn icon color="primary" slot="activator" @click.native="$store.commit('closeModal')">
+                      <v-icon color="white" class="ml-1">close</v-icon>
+                    </v-btn>
+                    <span>Cerrar configuración</span>
+                  </v-tooltip>
+                </v-flex>
+                <v-flex xs12 sm12 md12 lg12 text-sm-right text-md-right text-lg-right>
+                  <v-chip label color="success" text-color="white" v-if="form.estado == 'ACTIVO'">
+                    {{ form.estado }}
+                  </v-chip>
+                  <v-chip label color="warning" text-color="white" v-if="form.estado == 'INACTIVO'">
+                    {{ form.estado }}
+                  </v-chip>
+                </v-flex>
+              </v-layout>
             </v-card-title>
             <v-form
               @submit.prevent="save"
@@ -59,9 +66,9 @@
               >
               <v-card-text>
                 <v-container grid-list-md>
-                  <v-layout wrap>
+                  <v-layout row wrap>
 
-                    <v-flex xs6>
+                    <v-flex sm12 xs12 md6 lg6>
                       <v-text-field
                         label="Nombre de grupo"
                         prepend-icon="people"
@@ -73,7 +80,7 @@
                         autofocus
                         ></v-text-field>
                     </v-flex>
-                    <v-flex xs12>
+                    <v-flex sm12 xs12 md12 lg12>
                         <v-select
                             :items="instituciones"
                             v-model="form.institucion"
@@ -87,7 +94,7 @@
                             required
                             ></v-select>
                     </v-flex>
-                    <v-flex xs12>
+                    <v-flex sm12 xs12 md12 lg12>
                       <v-text-field
                         name="descripcion"
                         :label="$t('entity.crud.description')"
@@ -102,22 +109,30 @@
                 </v-container>
               </v-card-text>
               <v-card-actions>
-                <small class="error--text text-required">* Los campos son obligatorios</small>
-                <v-spacer></v-spacer>
-                <v-btn
-                  @click.native="$store.commit('closeModal');">
-                  <v-icon>cancel</v-icon> {{$t('common.cancel') }}
-                </v-btn>
-                <v-btn
-                  color="primary"
-                  type="submit"
-                  :disabled="!valid">
-                  <v-icon>check</v-icon> {{$t('common.save') }}
-                </v-btn>
+                <v-layout row wrap>
+                  <v-flex xs12 sm12 md8 lg8>
+                    <small class="error--text text-required">* Los campos son obligatorios</small>
+                  </v-flex>
+                  <v-flex xs12 sm12 md2 lg2>
+                    <v-btn
+                      block
+                      @click.native="$store.commit('closeModal');">
+                      <v-icon>cancel</v-icon> {{$t('common.cancel') }}
+                    </v-btn>
+                  </v-flex>
+                  <v-flex xs12 sm12 md2 lg2>
+                    <v-btn
+                      block
+                      color="primary"
+                      type="submit"
+                      :disabled="!valid">
+                      <v-icon>check</v-icon> {{$t('common.save') }}
+                    </v-btn>
+                  </v-flex>
+                </v-layout>
               </v-card-actions>
             </v-form>
           </template>
-
           <template slot="items" slot-scope="items">
             <td class="text-md-center">
               <v-tooltip bottom>
