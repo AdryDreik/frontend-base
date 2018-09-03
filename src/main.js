@@ -24,6 +24,8 @@ import messages from '@/common/lang/';
 
 // plugins componentes
 import Plugin from '../src/common/plugins/plugins';
+// uploader
+import uploader from '@/common/util/vue-simple-uploader/src';
 
 // libs
 // drag and drop
@@ -151,6 +153,8 @@ Vue.use(VueI18n);
 Vue.use(Waiting);
 // Vue2DnD
 Vue.use(Vue2DnD);
+// Uploader
+Vue.use(uploader);
 // Injectando el plugin
 Vue.use(Plugin);
 const i18n = new VueI18n({

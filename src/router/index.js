@@ -22,6 +22,13 @@ import Formulario from '@/components/admin/formularios/Formularios';
 import ListaFlujos from '@/components/admin/flujos/listaFlujos';
 import pdfsFirmados from '@/components/admin/pdfs-firmados/pdf';
 import Diagramador from '@/components/admin/flujos/diagramador';
+import Grupo from '@/components/admin/grupo/grupo';
+import Institucion from '@/components/admin/institucion/institucion';
+import Plugin from '@/components/plugins/plugins';
+// Importando editor de validaciones
+import EditorValidaciones from '@/components/admin/editor/editor_validaciones';
+// Instanciador
+import DiagramadorInstanciador from '@/components/admin/flujos/diagramadorInstanciador';
 
 Vue.use(Router);
 
@@ -48,9 +55,34 @@ export default new Router({
       component: Formulario
     },
     {
+      path: '/instituciones',
+      name: 'Institucion',
+      component: Institucion
+    },
+    {
+      path: '/usuarios',
+      name: 'Usuario',
+      component: Usuario
+    },
+    {
+      path: '/plugins',
+      name: 'plugins',
+      component: Plugin
+    },
+    {
+      path: '/editor_de_validaciones',
+      name: 'Editor de validaciones',
+      component: EditorValidaciones
+    },
+    {
       path: '/formularios',
       name: 'Formulario',
       component: Formulario
+    },
+    {
+      path: '/instanciador-flujos',
+      name: 'Editor de Flujo Instanciador',
+      component: DiagramadorInstanciador
     },
     {
       path: '/documentos-firmados',
@@ -61,6 +93,11 @@ export default new Router({
       path: '/lista_flujos',
       name: 'Lista flujos',
       component: ListaFlujos
+    },
+    {
+      path: '/grupos',
+      name: 'Grupo',
+      component: Grupo
     },
     {
       path: '/editor_flujos',

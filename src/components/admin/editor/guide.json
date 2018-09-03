@@ -1,0 +1,41 @@
+{
+	"pasos": { 
+		"1" : { 
+			"mensaje": "Esta tabla esta listando todas las validaciones creadas, cada registro posee la opción de editar y desactivar." 
+		},
+		"2" : { 
+			"mensaje": "Este botón tiene la funcion de crear nuevas validaciones." 
+		},
+		"3" : { 
+			"mensaje": "Este es el cuadro de datos que necesita para crear una validación para posteriormente guardarla en nuestra base de datos." 
+		},
+		"4" : { 
+			"mensaje": "Este campo almacenara la información el título con el cual se guardara la validación." 
+		},
+		"5" : { 
+			"mensaje": "Esta es una descripción que tendra la validación, puede ser algo pequeño o un contenido largo." 
+		},
+		"6" : { 
+			"mensaje": "Este campo le permite adicionar un texto con el cual sera mostrado la validación cuando tenga algun error." 
+		},
+		"7" : { 
+			"mensaje": "Estas son las opciones con las cuales se le permite crear una validación, puede ser la libreria validatejs, o un regex o una función solo tiene que seleccionar alguno de esas tres opciones." 
+		},
+		"8" : { 
+			"mensaje": "Es el campo donde se le permite adicionar contenido es decir el código de la validación." 
+		},
+		"9" : { 
+			"mensaje": "Esta campo contiene todos los componentes, como ser el texto, el input, etc. Cuando seleccione uno esta diciendo que la validación que esta creando sera asociado con el elemento seleccionado." 
+		},
+		"10" : { 
+			"mensaje": "Boton para cancelar toda la creación de la validación." 
+		},
+		"11" : { 
+			"mensaje": "Boton para probar o verificar la validación creada" 
+		},
+		"12" : { 
+			"mensaje": "Este boton le permitira guardar los datos en nuestra base de datos." 
+		}
+
+	} 
+}

@@ -1,0 +1,147 @@
+/* visorPlugins */
+@import '../../assets/scss/_variables.scss';
+
+.bloque-ACTIVO {
+  border: 1px solid rgba(#000, .2) !important;
+}
+
+.bloque-DESACTIVADO {
+  border: 1px solid rgba(#777070, .2) !important;
+  background: rgba(#777070, 0.2) !important;
+}
+
+.iconosPlugin {
+  font-size: 5rem;
+  color: darken($color: $primary, $amount: 15%) !important;
+}
+
+.listPlugins {
+  box-sizing: border-box;
+  justify-content: justify;
+  display: flex;
+  flex-wrap: wrap;
+  .bloquePlugin {
+    transition: all ease 0.8s;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(#000, .2);
+    border-radius: 10px;
+    width: 220px;
+    height: 220px;
+    margin: 15px 15px;
+    align-content: center;
+    text-align: center;
+    padding-top: 25px;
+    overflow: hidden;
+    .avatarPlugin {
+      width: 100px;
+      height: 100px;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100%;
+      border-radius: 50%;
+      padding: 10px;
+      border: 1px solid rgba(73, 71, 71, .5);
+      box-shadow: 0 0 2px rgba($color: #000, $alpha: .2);
+      &:hover {
+        // background: rgba($color: #000, $alpha: .2);
+        cursor: pointer;
+      }
+    }
+    .nombre {
+      padding: 20px;
+      padding-top: 30px;
+      font-weight: 700;
+      width: 100%;
+      .nnombre {
+        text-transform: uppercase;
+        float: left;
+        color: $primary ;
+        letter-spacing: -1px;
+      }
+      .nversion {
+        font-size: 12px;
+        letter-spacing: -1px;
+        float: right;
+      }
+    }
+    .autor {
+      font-size: 13px;
+      opacity: 1;
+      padding: 7px;
+
+    } 
+    .descripcion {
+      font-size: 13px;
+      opacity: 1;
+      padding: 20px;
+      color: #FFF;
+    }
+
+    .opciones {
+      .actionsPlugins {
+        position: absolute;
+        margin-left: 80px;
+        margin-top: 0px;
+        list-style-type: none;
+        opacity: 0;
+        transition: all ease 0.5s;
+      }
+    }
+    &:hover{
+      transition: all ease-in 0.8s;
+      border-radius: 10px;
+      background: repeating-linear-gradient( 45deg, #323c80, #606dbc 10px, #465298 10px, #465298 20px);
+      color: #FFF !important;
+      .opciones .actionsPlugins {
+        margin-left: 80px;
+        margin-top: 10px;
+        opacity: 1;
+      }
+      .nnombre {
+        color: #FFF;
+      }
+      .avatarPlugin {
+        transition: all ease 2s;
+        border: 1px solid rgba(#FFF, .5);
+        box-shadow: 0 0 2px rgba($color: #FFF, $alpha: .2);
+      }
+    }
+  }
+
+}
+.height-tmp-true {
+  transition: all ease 0.7s;
+  height: 320px !important;
+}
+.height-tmp-false {
+  height: 220px !important;
+  transition: all ease 0.2s;
+}
+
+
+.editPlugin {
+  width: 50px;
+  height: 50px;
+}
+.deletePlugin {
+  width: 50px;
+  height: 50px;
+}
+
+
+.iconoPlugin {
+  position: relative;
+  background-color: rgba($color: $primary, $alpha: 1);
+  border-radius: 50%;
+  border: 2px solid white;
+  color: white;
+  display: inline-block;
+  font-size: 1.3rem;
+  width: 50px;
+  height: 50px;
+  line-height: 44px;
+  margin: 25px 0 0 0px;
+  text-align: center;
+}
+
+
