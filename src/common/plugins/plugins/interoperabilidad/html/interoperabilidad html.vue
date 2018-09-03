@@ -41,8 +41,8 @@
       <v-container fluid>
         <v-card class="pa-2 mt-2" flat>
           <div>
-            <div class="primary--text text-md-center title">{{documentoPlantilla.titulo}}</div>
-            <div class="text-md-center body-1"><small>Documento de Interoperabilidad</small></div>
+            <div class="primary--text text-md-center title">{{documentoPlantilla.titulo || label}}</div>
+            <!-- <div class="text-md-center body-1"><small>Documento de Interoperabilidad</small></div> -->
           </div>
           <v-list three-line expand class="lista-interoperabilidad">
             <template v-for="(seleccionable, index) in seleccionables">
