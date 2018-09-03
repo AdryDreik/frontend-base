@@ -131,7 +131,7 @@ Vue.use(Message, { timeout: 6000 });
 Vue.use(Loading);
 Vue.use(Service, {
   apiUrl: process.env.API_URL,
-  graphqlUrl: process.env.GRAPHQL_URL,
+  // graphqlUrl: process.env.GRAPHQL_URL,
   authUrl: process.env.AUTH_URL,
   authToken: process.env.AUTH_TOKEN,
   errorFormat: 'error'
