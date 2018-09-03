@@ -20,6 +20,7 @@ export default {
     const graphqlUrl = config && config.graphqlUrl ? config.graphqlUrl : '';
     const authUrl = config && config.authUrl ? config.authUrl : '';
     const authToken = config && config.authToken ? config.authToken : 'Bearer';
+    const instanciadorUrl = config && config.instanciadorUrl ? config.instanciadorUrl : '';
 
     // Plugins
     let instance = new Vue({
@@ -335,5 +336,6 @@ export default {
     Vue.prototype.$apiUrl = apiUrl;
     Vue.prototype.$authUrl = authUrl;
     Vue.prototype.$authToken = authToken;
+    Vue.prototype.$instanciadorUrl = instanciadorUrl;
   }
 };
